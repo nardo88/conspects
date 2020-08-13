@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.4.6.2 (Linux)"/>
+	<meta name="author" content="User"/>
+	<meta name="created" content="2019-06-14T13:21:00"/>
+	<meta name="changedby" content="User"/>
+	<meta name="changed" content="2019-06-14T13:33:00"/>
+	<meta name="AppVersion" content="12.0000"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 120%; text-align: left; orphans: 2; widows: 2 }
+	</style>
+</head>
+<body lang="ru-RU" dir="ltr">
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>Функция
+</b></font><font size="4" style="font-size: 14pt"><span lang="en-US"><b>bind</b></span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt">Рассмотрим
+следующий код:</font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;html&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;head&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;script
+type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;script
+type=&quot;text/javascript&quot;&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">	function
+Mf(event) {</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">		alert('Hello');</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">	}</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">	$(document).ready(function(){</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">		$(&quot;div&quot;).bind(&quot;click&quot;,
+Mf);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">	});</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/script&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/head&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;body&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">	&lt;div
+id=&quot;hide&quot;&gt;текст&lt;/div&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/body&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/html&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 100%"><font size="3" style="font-size: 12pt">В
+разделе </font><font size="3" style="font-size: 12pt"><span lang="en-US">body</span></font><font size="3" style="font-size: 12pt">
+у нас есть блок </font><font size="3" style="font-size: 12pt"><span lang="en-US">div</span></font><font size="3" style="font-size: 12pt">.
+В разделе </font><font size="3" style="font-size: 12pt"><span lang="en-US">head</span></font><font size="3" style="font-size: 12pt">
+мы создали функцию </font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>Mf</b></span></font><font size="3" style="font-size: 12pt">
+которая вызывает метод </font><font size="3" style="font-size: 12pt"><span lang="en-US">alert</span></font><font size="3" style="font-size: 12pt">.
+Важно подметить то, что у нашей функции
+есть входной параметр – </font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>event</b></span></font><font size="3" style="font-size: 12pt">.
+Для чего он? Так как метод </font><font size="3" style="font-size: 12pt"><span lang="en-US">bind</span></font><font size="3" style="font-size: 12pt">
+имеет выходной параметр, который
+называется как раз </font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>event</b></span></font><font size="3" style="font-size: 12pt"><b>
+</b></font><font size="3" style="font-size: 12pt">и его как
+раз нам и необходимо использовать в
+качестве входного для нашей функции.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 100%"><font size="3" style="font-size: 12pt">Теперь
+обратим внимание на раздел:</font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">$(document).ready(function(){</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">		$(&quot;div&quot;).bind(&quot;click&quot;,
+Mf);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 69%"><font size="3" style="font-size: 12pt"><span lang="en-US">	</span></font><font size="3" style="font-size: 12pt">});</font></p>
+<p style="margin-bottom: 0.14in; line-height: 100%"><font size="3" style="font-size: 12pt"><b>$(</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>document</b></span></font><font size="3" style="font-size: 12pt"><b>)
+</b></font><font size="3" style="font-size: 12pt">– говорит
+о том, что мы используем </font><font size="3" style="font-size: 12pt"><span lang="en-US">jQuery</span></font><font size="3" style="font-size: 12pt">
+и на входящем параметре мы используем
+наш документ.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 100%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>Ready</b></span></font><font size="3" style="font-size: 12pt">
+– этот метод говорит о том, что только
+тогда когда страница загрузится полностью
+будет выполняться код в фигурных скобках</font></p>
+<p style="margin-bottom: 0.14in; line-height: 100%"><font size="3" style="font-size: 12pt"><b>$(&quot;</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>div</b></span></font><font size="3" style="font-size: 12pt"><b>&quot;).</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>bind</b></span></font><font size="3" style="font-size: 12pt">
+– здесь мы используем библиотеку </font><font size="3" style="font-size: 12pt"><span lang="en-US">jQuery</span></font><font size="3" style="font-size: 12pt">
+с входящим параметром которой будут
+«все теги </font><font size="3" style="font-size: 12pt"><span lang="en-US">div</span></font><font size="3" style="font-size: 12pt">»
+и вызываем метод </font><font size="3" style="font-size: 12pt"><span lang="en-US">bind</span></font><font size="3" style="font-size: 12pt">,
+который создает событие. Какое? Которое
+мы указали в скобках после </font><font size="3" style="font-size: 12pt"><span lang="en-US">bind</span></font><font size="3" style="font-size: 12pt">.
+</font><font size="3" style="font-size: 12pt"><b>(&quot;</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>click</b></span></font><font size="3" style="font-size: 12pt"><b>&quot;,
+</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>Mf</b></span></font><font size="3" style="font-size: 12pt"><b>)
+</b></font><font size="3" style="font-size: 12pt">в нашем
+случае это </font><font size="3" style="font-size: 12pt"><span lang="en-US">click</span></font><font size="3" style="font-size: 12pt">
+(то есть клик мышкой) и во время клика
+мышки будет выполняться функция </font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>Mf</b></span></font><font size="3" style="font-size: 12pt"><b>.</b></font><font size="3" style="font-size: 12pt">
+Иными словами после нажатия на область
+</font><font size="3" style="font-size: 12pt"><span lang="en-US">div</span></font><font size="3" style="font-size: 12pt">
+будет вылезать информационное окно с
+текстом </font><font size="3" style="font-size: 12pt"><span lang="en-US">Hello</span></font><font size="3" style="font-size: 12pt">.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 100%"><br/>
+<br/>
+
+</p>
+</body>
+</html>

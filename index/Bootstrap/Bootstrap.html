@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+</head>
+<body style=" background: #C7EDFC;">
+	<div class="container">
+	<h1>Bootstrap</h1>
+	<p>Bootstrap - это набор готовых CSS и Java Script кусочков кода, которые помогают ускорить верстку. Плюс в библиотеке bootstrap уже помещено содержание файла reset.css, этот файл обнуляет отступы всех элементов, это позволяет отображать элементы во всех браузерах одинаково.</p>
+	<h2>Подключение Bootstrap</h2>
+	<p>Библиотеку Bootstrap можно скачать с официального <a href="https://getbootstrap.com/docs/3.4/getting-started/">сайта</a></p>
+	<p>После того как скачали архив с библиотеками, открываем его и видим внутри папки:
+		<ul>
+			<li>CSS</li>
+			<li>js</li>
+			<li>fonts</li>
+		</ul></p>
+	<p>Из папки CSS вытаскиваем файл который называется bootstrap.css. Этот файл помещаем в папку CSS нашего проекта</p>
+	<p>Теперь в index.html в разделе head мы подключаем этот файл как обычный файл CSS. <b>ВАЖНО</b> - что бы этот файл в списке подключенных файлов CSS был самым первым.</p>
+	<p>Так же библиотеки bootstrap можно подключать используя CDN ссылки. Вот некоторые из них:</p>
+	<p><b>Библиотека CSS</b></p>
+	<xmp><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></xmp>
+	<p><b>Библиотека Java Script</b></p>
+	<xmp><script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script></xmp>
+	<br><br><br>
+	<h2>Container от Bootstrap</h2>
+	<p>Если нам необходимо что бы наш сайт имел по бокам одинаковые отступы по всей высоте сайта, то необходимо весь код тела сайта поместить в div с классом "container"</p>
+	<img src="prim1.jpg" alt="">
+	<img src="prim2.jpg" alt="">
+	<br>
+	<br>
+	<br>
+	<h2>Система сетки от Bootstrap</h2>
+	<p>Рассмотрим таблицу</p>
+	<img src="prim3.jpg" alt="">
+	<br><br>
+	<p>Bootstrap разделяет ширину экрана на 4 вида:</p>
+	<ul>
+		<li>меньше 768px - смартфоны</li>
+		<li>больше или равно 768px - планшеты</li>
+		<li>больше или равно 992px - небольшие мониторы</li>
+		<li>больше или равно 1200px - широкоформатные экраны</li>
+	</ul>
+	<p>Этим видам экрана соответствуют классы:</p>
+	<ul>
+		<li>.col-xs-</li>
+		<li>.col-sm-</li>
+		<li>.col-md-</li>
+		<li>.col-lg-</li>
+	</ul>
+	<p>После дефиса указывается количество колонок которое должен занимать блок по ширине экрана</p>
+	<p>Любой из этих экранов делится на 12 колонок. (это максимум, больше быть не должно) Выглядит это вот так:</p>
+	<img src="prim4.jpg" alt="" style=" margin-bottom: 20px; ">
+	<p>Как это работает? допустим у нас есть блок (Этому блоку кстати необходимо присвоить класс <b>row</b>). Этот блок занимает 100% от ширины экрана (соответственно он будет занимать 12 колонок). Внутри этого блока у нас есть два блока. Первый будет занимать 4 колонки, а второй оставшиеся 8. Вот как это будет выглядеть:</p>
+
+	<div class="col-md-12 col-xs-12" style="min-height: 200px; border: 1px black solid;  margin-bottom: 20px;">
+		<div class="col-md-4 col-xs-12" style="background-color: #93EE93; text-align: center; font-weight: 800; min-height: 200px;">col-md-4</div>
+		<div class="col-md-8 col-xs-12" style=" background-color: #FFB7B7; text-align: center; font-weight: 800; min-height: 200px; ">col-md-8</div>
+	</div>
+
+	<p>Таким образом мы можем группировать наши элементы сайта. Это очень удобно! Более того такой метод помогает нам адаптировать сайт под разные размеры экранов, так как мы можем добавить к нашим блокам дополнительные классы, например <b>col-xs</b> и указать что он будет занимать все 12 колонок, тогда как только ширина экрана станет меньше 768px, наши колонки выравнятся в столбец.</p>
+
+</div>
+</body>
+</html>

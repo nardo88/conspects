@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>Радио</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.min.css">
+
+    <style>
+        .code {
+            width: 700px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        h1,h2,p{
+            margin-left: 20px;
+            margin-bottom: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Радио</h1>
+
+
+
+
+    <div class="container">
+        <div class="radio-container">
+
+            <div class="radio-player">
+                <div class="radio-cover">
+                    <img class="radio-cover__img" src="radio/start.jpg" alt="обложка">
+                </div>
+                <h3 class="radio-header__big">Выбери радиостанцию</h3>
+            </div>
+
+            <form class="radio-navigation">
+                <h2 class="radio-header">Другие радиостанции</h2>
+                <ul class="radio-list">
+                    <li class="radio-item">
+                        <label>
+                            <div class="radio-check">
+                                <img class="radio-img" src="radio/RTLGroove.png" alt="обложка">
+                            </div>
+                            <input class="radio-btn" type="radio" id="RTLGroove" name="radioStantion"
+                                data-radio-stantion="http://shoutcast.rtl.it:3040/">
+                            <span class="radio-name">RTL Groove</span>
+                        </label>
+                    </li>
+
+                    <li class="radio-item">
+                        <label>
+                            <div class="radio-check">
+                                <img class="radio-img" src="radio/Energy.png" alt="обложка">
+                            </div>
+                            <input class="radio-btn" type="radio" id="energy" name="radioStantion"
+                                data-radio-stantion="http://ic4.101.ru:8000/region_energy_161">
+                            <span class="radio-name">Energy</span>
+                        </label>
+                    </li>
+
+                    <li class="radio-item">
+                        <label>
+                            <div class="radio-check">
+                                <img class="radio-img" src="radio/Record.jpg" alt="обложка">
+                            </div>
+                            <input class="radio-btn" type="radio" id="recordRus" name="radioStantion"
+                                data-radio-stantion="http://air.radiorecord.ru:8102/rus_320">
+                            <span class="radio-name">Record Rus</span>
+                        </label>
+                    </li>
+
+                    <li class="radio-item">
+                        <label>
+                            <div class="radio-check">
+                                <img class="radio-img" src="radio/slowRadio.jpg" alt="обложка">
+                            </div>
+                            <input class="radio-btn" type="radio" id="slowRadio" name="radioStantion"
+                                data-radio-stantion="http://air.radiorecord.ru:8102/mdl_320">
+                            <span class="radio-name">Медляк FM</span>
+                        </label>
+                    </li>
+
+                    <li class="radio-item">
+                        <label>
+                            <div class="radio-check">
+                                <img class="radio-img" src="radio/dorojnoe.png" alt="обложка">
+                            </div>
+                            <input class="radio-btn" type="radio" id="roadRadio" name="radioStantion"
+                                data-radio-stantion="http://dorognoe.hostingradio.ru:8000/dorognoe">
+                            <span class="radio-name">Дорожное Радио</span>
+                        </label>
+                    </li>
+
+                    <li class="radio-item">
+                        <label>
+                            <div class="radio-check">
+                                <img class="radio-img" src="radio/90.jpg" alt="обложка">
+                            </div>
+                            <input class="radio-btn" type="radio" id="90years" name="radioStantion"
+                                data-radio-stantion="http://online.radiorecord.ru:8102/sd90_320">
+                            <span class="radio-name">90-e</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <section class="footer-fix radio-footer">
+        <button class="radio-stop fa fa-play"></button>
+        <div class="vilume_wrapper">
+            <span class="video-icon radio-icon-value-Off fa fa-volume-down"></span>
+            <input type="range" class="video-volume radio-volum" min="0" max="100" step="1" value="50">
+            <span class="video-icon fa fa-volume-up"></span>
+        </div>
+    </section>
+
+
+    <h2>Разбор верстки</h2>
+    <p>Вся верстка делится на две части, на контейнер с радио и на секцию с кнопками паузы-запуска, там же находится
+        регулятор громкости. Начнем с самой массивной верней части с контейнера который содержит в себе радио (условно)
+    </p>
+    <p>Контейнер так же разделен на две части. Первая часть - радио-плеер</p>
+    <img class="code" src="./code1.png" alt="">
+    <p>Здесь все просто: блок с картинкой и блок с названием радиостанции</p>
+    <p>Теперь рассмотрим вторую часть. Здесь у нас форма со списком UL</p>
+    <img class="code" src="./code2.png" alt="">
+    <p>Рассмотрим содержимое li</p>
+    <img class="code" src="./code3.png" alt="">
+    <p>Здесь важно то, что содержимое li мы оборачиваем в label. Но к этому мы еще вернумся. Посмотрим что же внутри:</p>
+    <p>Первое это блок внутрь которого помещаем картинку. Затем к этому блоку будем применять стили (добавлять класс active)</p>
+    <p>Далее идет тег input c типом radio (radioButton) этому тегу мы указываем свойство name. Т.к. у всех элементом li будет input (type='radio') и у всех будет name одинаковое, то нельзя будет активировать несколько inputov одновременно. Через это и будет осуществляться переключение каналов радио. Так же input мы создали data атрибут и в него записали URL потоковой передачи радиостанции</p>
+    <p>Ну и наконец добавили span - который содержит название сранции.</p>
+    <p>Теперь вернемся к label. При помощи стилей мы скрыли кнопку radio и теперь так как мы все обернули в label, все что внутри label будет реагировать на клик и все это будет влиять на radioButton</p>
+    <p>Рассмотрим последнюю часть верстки</p>
+    <img class="code" src="./code4.png" alt="">
+    <p>Все что здесь нас интересует это кнопка radio-stop, так как все остальное относится к регулировке громкости. Там все тоже самое что и у видео. Поэтому повторно это разбирать не буду.</p>
+    <h2>Разбор JavaScript</h2>
+    <p>Как обычно начинаем с объявления переменных что бы получить доступ к элементам DOM дерева</p>
+    <img class="code" src="./code5.png" alt="">
+    <p>Далее мы должны объявить новую переменную в которую поместим результат вызова конструктора Audio</p>
+    <img class="code" src="./code6.png" alt="">
+    <p>После этого надо нашему новому объекту указать тип</p>
+    <img class="code" src="./code7.png" alt="">
+    <p><b>audio/aac</b> - говорит о том, что объект audio теперь является radio плеером</p>
+    <p>Теперь нам надо что бы при открытии страницы кнопка RadioStop была не активна, так как мы только открыли страницу и останавливать нам еще нечего</p>
+    <img class="code" src="./code8.png" alt="">
+    <p>Теперь напишем функцию, которая будет изменять иконку на кнопке</p>
+    <img class="code" src="./code9.png" alt="">
+    <p>Если наше радио на паузе тогда добавляем кнопке класс fa-play (появится иконка play). Здесь же удалится иконка stop блоку radio добавится класс play c помощью которого картинка с логотипом радио начнет крутиться (анимация через CSS)</p>
+    <p>Иначе - делаем все в точности наоборот</p>
+    <p>Еще один косметический код, который при нажатии на radio-кнопку будет добавлять к элементу списка li еще один класс, который добавляет серый ободок выбранной станции</p>
+    <img class="code" src="./code10.png" alt="">
+    <h2>Включение радио</h2>
+    <p>Так как список ul содержащий radio-кнопки находится внутри тега form - radioNavigation мы можем на нашу форму повесить слушатель на событие Change, это событие срабатывает каждый раз когда в форме что-то меняется, radio-кнопку переключили, выпадающий списко вызвали и поменяли значение - все это вызывает событие:</p>
+    <img class="code" src="./code11.png" alt="">
+    <p>Функция которая будет вызываться при событии имеет входной параметр <b>event</b>. Первое что мы делаем это получаем элемент таргета (т.е. по каком уэлементы мы кликнули). Далее мы обращаемся к элементу таргета и применяем к нему метод <b>closest</b>. Что делает этот метод? он поднимается на верх по иерархии вложенности dom дерева и ищет элемент верстки класс которого совпадает с классом который мы задаем входным параметром методу. В нашем случае - это radio-item. этот элемент мы помещаем в переменную parent</p>
+    <p>Далее мы вызываем функцию selectItem и на вход даем ей наш элемент который помещен в parent и с помощью функции этому элементу добавляется класс select</p>
+    <p>Следующий три строчки изменяют такст и картинку на верхнем блоке</p>
+    <p>Теперь как же запускается радио:</p>
+    <img class="code" src="./code12.png" alt="">
+    <p>Мы обращаемся к свойству src нашего объекта audio (радио) и помещаем в него значение data атрибута radio кнопки</p>
+    <p>После чего обращаемся к объекту audio и вызываем у него метод play()</p>
+    <p>После вызываем функция для смены иконки</p>
+    <h2>выключение радио</h2>
+    <p>Рассмотрим код который мы повесили на слушатель клика на кнопку stop</p>
+    <img class="code" src="./code13.png" alt="">
+    <p>Тут все просто если радио поет значит его на паузу, иначе применяем метод play. в конце добавляем функцию по смене ионки кнопки</p>
+
+
+
+    <script>
+        const radio = document.querySelector('.radio')
+        const radioNavigation = document.querySelector('.radio-navigation')
+        const radioCoverImg = document.querySelector('.radio-cover__img')
+        const radioItem = document.querySelectorAll('.radio-item')
+        const radioHeaderBig = document.querySelector('.radio-header__big')
+        const radioStop = document.querySelector('.radio-stop')
+        const radioVolum = document.querySelector('.radio-volum')
+        const radioIconValueOff = document.querySelector('.radio-icon-value-Off')
+
+        const audio = new Audio()
+
+        audio.type = 'audio/aac'
+
+        radioStop.disabled = true
+
+        const changeIconPlay = () => {
+            if (audio.paused) {
+                radioStop.classList.add('fa-play')
+                radioStop.classList.remove('fa-stop')
+                radio.classList.remove('play')
+            } else {
+                radioStop.classList.add('fa-stop')
+                radioStop.classList.remove('fa-play')
+                radio.classList.add('play')
+
+            }
+        }
+
+        const selectItem = elem => {
+            radioItem.forEach(item => item.classList.remove('select'))
+            elem.classList.add('select')
+        }
+
+        radioNavigation.addEventListener('change', event => {
+            const target = event.target
+            const parent = target.closest('.radio-item')
+
+            selectItem(parent)
+
+            const title = parent.querySelector('.radio-name').textContent
+
+            radioHeaderBig.textContent = title
+            radioCoverImg.src = parent.querySelector('.radio-img').src
+            radioStop.disabled = false
+
+            audio.src = target.dataset.radioStantion
+            audio.play()
+
+            changeIconPlay()
+        })
+
+
+        radioStop.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play()
+            } else {
+                audio.pause()
+            }
+            changeIconPlay()
+        })
+
+        radioVolum.value = 50
+
+        radioVolum.addEventListener('input', () => {
+            audio.volume = radioVolum.value / 100
+        })
+
+
+        let radioVolumeValue
+
+        const changeRadioVolume = (value) => {
+            audio.volume = value / 100
+            radioVolum.value = value
+        }
+
+        radioIconValueOff.addEventListener('click', () => {
+            if (audio.volume != 0) {
+                radioVolumeValue = radioVolum.value
+                changeRadioVolume(0)
+                radioIconValueOff.classList.add('fa-volume-off')
+                radioIconValueOff.classList.remove('fa-volume-down')
+
+            } else {
+
+                changeRadioVolume(radioVolumeValue)
+                radioIconValueOff.classList.remove('fa-volume-off')
+                radioIconValueOff.classList.add('fa-volume-down')
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .logo{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="./visualstudiocode_93981.png" alt="">
+    <h1>Установка и настройка VS Code</h1>
+    <p>Саму прогу качаем с <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></p>
+    <p>Как русифицировать?</p>
+    <p>Открываем расширения и вводим Russian</p>
+    <p>ищем Russian Language Pack for Visual Studio Code
+ и просто его инсталируем. После перезапуска редактор будет на русском    </p>
+ <p>настройки</p>
+<p>Файл с настройками находится по пути: C:\Users\nardo\AppData\Roaming\Code\User</p>
+<p>Открываем файл <b>settings</b> и добавляем туда код</p>
+<xmp>
+    {
+        "files.autoSave": "onFocusChange",
+        "editor.tabSize": 4,
+        "editor.wordWrap": "on",
+        "workbench.startupEditor": "newUntitledFile",
+        "workbench.colorTheme": "Community Material Theme"
+    }
+</xmp>
+<h2>Плагины</h2>
+<p><b>JS Quick Console</b> - позволяет быстро призвать <b>console.log</b> (Ctrl + Shift + L)</p>
+<p><b>Live Server</b> - крутой аналог Browser Sync</p>
+<p><b>open in browser</b> - позволяет открывать из редатора файлы в браузере</p>
+<p><b>All Autocomplete</b> - позволяет автозаполнять классы или переменные которые мы уже объявили</p>
+<p><b>Autoprefixer</b> - автоматом проставляет префиксы</p>
+<p><b>Beautify</b> - приводит код в красивое положение </p>
+<p><b>ESLint</b> - проверяет правильность кода JS </p>
+<p><b>Sass</b> - Для написания Sass (Scss) файлов</p>
+<p><b>Polacode-2020</b> - делает скриншоты кода. Для этого зажимает Ctrl + Shift + P - вводим >polacode и жмем Enter</p>
+<p><b>Color Picker</b> - позволяет вызвать палитру цветов. Длы высова просто наводим курсор на цвет (#000)</p>
+<p><b>Color Highlight</b> - подсвечивает цвета в CSS</p>
+<p><b>AutoFileName</b> - позволяет указывать автоматом имена в свойстве src для вызова ставим <b style="font-size: 18px;">./</b> </p>
+<p><b>Bracket Pair Colorizer</b> - этот плагин подсвечивает скобки в JS</p>
+<p><b>Highlight Matching Tag</b> - подсвечивает теги в html</p>
+
+<h2>Установка темы</h2>
+<p><b>Material Theme</b> - название темы</p>
+<p><b>Community Material Theme</b> - название цветовой темы</p>
+
+
+
+</body>
+</html>

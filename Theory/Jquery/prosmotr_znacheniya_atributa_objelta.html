@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p style="font-size: 1.4em; font-weight: bold;">Просмотр значений атрибутов объектов</p>
+<p>Рассмотрим следующий код</p>
+<p style="text-indent: 30px;">var <span>elements</span> = $("img");</p>
+<p style="text-indent: 30px;">var <span>text</span> = "";</p>
+<p style="text-indent: 30px;">for (ver i = 0; i < elements.length; i++) {</p>
+<p style="text-indent: 35px;">text += elements[i].alt + "\n";</p>
+<p style="text-indent: 35px;">}</p>
+<p style="text-indent: 30px;">alert (text);</p>
+<p>Переменной element присвоили значение всех объектов img, после чего element стал массивом.</p>
+<p>Далее запускаем цикл for: от переменной i = 0 до i меньше длины массива (elements.length), переменной text присваивается значения атрибутов всех ячеек массива</p>
+<p>"\n" - так как информация выводится методом alert, то эта строчка переносит текст на новую строку каждый тик цикла</p>
+</body>
+</html>

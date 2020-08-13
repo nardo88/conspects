@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>jquery в WordPress</h1>
+	<p>Может случиться так что в Wordpress не будут работать скрипты которые используют библиотеку jquery. Дело в том что WordPress подключает свою библиотеку jquery, в которой не предусмотрено обращаться к jquery с помощью символа "$". Что бы jquery работал корректно, необходимо либо обращаться к jquery через константу "jQuery" (соблюдая регистр) либо в обернуть весь наш код в такую обертку:</p>
+	<xmp>
+jQuery(document).ready(function($){
+
+
+});
+	</xmp>
+	<p>При этом в файле <b>functions.php</b> прописывать добавление библиотеки <b>НАДО!</b></p>
+</body>
+</html>

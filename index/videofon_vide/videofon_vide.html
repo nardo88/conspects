@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="section" data-vide-bg='video/ocean'>
+	<div class="wrap">
+		<h1>Результат</h1>
+	</div>
+</div>
+
+<div >
+	<h2>Разбор</h2>
+	<p>Заходим на сайт <a href="http://vodkabears.github.io/vide/" target="_blank">VIDE</a></p>
+	<p>Скачиваем архив, из которого нам нужна папка <b>dist</b>. Из нее мы копируем библиотеку <b>jquery.vide.min</b> и помещаем ее в папку js нашего проекта. Ну и конечно же не забываем подключить внизу нашего сайта</p>
+	<p>Далее нам понадобится папка <b>Video</b>. В этой папке должны находится четыре элемента:</p>
+	<ul>
+		<li>Файл с фоном который загрузится в случаем слабого интернета или если видео будет не доступно.</li>
+		<li>Видео в формате mp4</li>
+		<li>Видео в формате Ogg</li>
+		<li>Видео в формате WEBM</li>
+	</ul>
+	<p>Как получить наше видео в форматах Ogg и WEBM? гуглим любой конвертер и все!</p>
+	<p>Где можно качать видео. вот <a href="https://coverr.co/" target="_blank">ЗДЕСЬ</a></p>
+</div>
+<p>Теперь как же установить видео фон с помощью библиотеки VIDE. Очень просто. Блоку с секцией мы просто добавляем атрибут - <b>data-vide-bg='путь к видео без расширения'</b></p>
+<p>Вот как это выглядело у меня:</p>
+<img src="images/prim1.jpg" alt="">
+
+
+
+
+
+	
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.vide.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

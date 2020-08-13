@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p style="font-size: 1.4em; font-weight: bold;">Добавление записей в БД с помощью кода</p>
+<p style="font-size: 1.3em; font-weight: bold;">Добавление записей</p>
+<p>Рассмотрим следующий код:</p>
+<div style="font-size: 1.3em; background-color: #D7F6FB; width: 90%; ">
+	$mysqli->query("INSERT INTO `users` (`login`, `password`, `reg_date`) VALUES ('123', '".md5("123")."', '".time()."')");
+
+</div>
+<ul style="line-height: 30px;">
+	<li><span style="font-size: 1.3em; font-weight: bold;">query</span> - это оператор говорит о том, что добавление записи будет с помощью SQL запроса (в скобках  указывается SQL запрос)</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">INSERT INTO</span> - оператор SQL говорит о том что идет добавление записи</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">users</span> - название таблицы куда будет добавляться запись. Обращаем внимание на то что этот атрибут записан в <strong>косых</strong> одинарных кавычках</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">login, password, reg_date</span> - поля таблицы. так же указываются в <strong>косых</strong> одинарных кавычках</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">VALUES</span> - какие значения добавляем. (в скобках в одинарных <strong>прямых</strong> кавычках указываем значения)</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;"><span style="color: red;">'</span>".md5("123")."<span style="color: red;">'</span></span> - здесь пароль будет зашифрован методом md5</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;"><span style="color: red;">'</span>".time()."<span style="color: red;">'</span></span> - дата регистрации будет указана с помощью функции <strong>tlme()</strong>. эта функция показывает сколько прошло секунд с 1970 года</li>
+</ul>
+<p style="font-size: 1.3em; font-weight: bold;">Редактирование записей</p>
+<p>Рассмотрим следующий код:</p>
+<div style="font-size: 1.3em; background-color: #D7F6FB; width: 90%; ">
+	$mysqli->query("UPDATE `users` SET `reg_date` = '123' WHERE `users`.`id` = 4");
+
+</div>
+<ul style="line-height: 30px;">
+	<li><span style="font-size: 1.3em; font-weight: bold;">UPDATE</span> - изменить</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">`users`</span> - где меняем т.е. в таблице users</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">SET</span> - какое поле</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">`reg_date`</span> - столбец таблицы (в <strong>косых</strong> одинарных кавычках)</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">'123'</span> - какое значение присвоить (в одинарных <strong>прямых</strong> кавычках)</li>
+	<li><span style="font-size: 1.3em; font-weight: bold;">WHERE</span> - где (буквально) т.е. указываем какую строку меняем. по запросу получается где в таблице users id равен 4. (users и id в <strong>косых</strong> одинарных кавычках)</li>
+
+</ul>
+
+
+<p>Пример где видно как задавать множество условий WHERE:</p>
+<div style="font-size: 1.3em; background-color: #D7F6FB; width: 90%; ">
+	$mysqli->query("UPDATE `users` SET `reg_date` = '1' WHERE `login` = 'shop' OR (`id` > 4 AND `ID` < 8)");
+
+</div>
+<p>Иными словами запрос можно прочитать так: изменить в таблице USERS поле REG_DATE (присвоить значение - 1) где LOGIN равен слову SHOP или где ID больше 4 и меньше 8.</p>
+
+<p style="font-size: 1.3em; font-weight: bold;">Удаление записей</p>
+<p>Рассмотрим следующий код:</p>
+<div style="font-size: 1.3em; background-color: #D7F6FB; width: 90%; ">
+	$mysqli->query("DELETE FROM `users` WHERE `id` > 4 AND `id` < 7");
+
+</div>
+<p>SQL можно прочитать так: удалить из таблицы users записи где id больше 4 и меньше 7</p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+		#checkbox{
+			display: none;
+		}
+		.label{
+			padding-left: 20px;
+		}
+
+		.label::before{
+			content: '';
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			border: 2px solid #061e37;
+			border-radius: 3px;
+			vertical-align: middle;
+			margin-left: -10px;
+			margin-right: 10px;
+		}
+		input[type="checkbox"]:checked + .label::before {
+			content: '';
+			/*\2714*/
+			/*color: rgb(0, 128, 0);*/
+			text-align: center;
+			font-size: 15px;
+			background-image: url(checked-symbol.png);
+			-webkit-background-size: cover;
+			background-size: cover;
+		}
+
+	</style>
+</head>
+<body>
+
+	<input type="checkbox" id="checkbox">
+	<label class="label" for="checkbox">Пример</label>
+
+
+	<br>
+	<br>
+	<br>
+	<h3>Код html</h3><br>
+	<img src="prim1.jpg"><br>
+	<h3>Код CSS</h3><br>
+	<img src="prim2.jpg"><br>
+	<p>
+	<ul><b>#checkbox</b>
+		<li><b>display: none;</b> - прячем наш checkbo т.к. квадратик будем рисовать сами.</li>
+	</ul>
+	</p>
+	<p>
+		<ul><b>.label</b>
+			<li><b>padding-left: 20px;</b> - сделаем небольшой отступ для будущего квадратика</li>
+		</ul>
+	</p>
+	<p>
+		<ul><b>.label::before</b> - рисуем квадратик с помощью псевдоэлемента before
+			<li><b>content: '';</b> - пустой контент</li>
+			<li><b>display: inline-block;</b> - делаем элемент блочным что бы задавать высоту и ширину</li>
+			<li><b>width: 18px;</b> - ширина</li>
+			<li><b>height: 18px;</b> - высота</li>
+			<li><b>border: 2px solid #061e37;</b> - создаем обводку квадратика</li>
+			<li><b>border-radius: 3px;</b> - делаем его немного закругленным</li>
+			<li><b>vertical-align: middle;</b> - выравниваем текст по вертикали относительно квадратика</li>
+			<li><b>margin-left: -10px;</b> - двигаем квадратик по оси X</li>
+			<li><b>margin-right: 10px;</b> - двигаем квадратик по оси X</li>
+		</ul>
+	</p>
+
+	<p>
+		<ul><b>input[type="checkbox"]:checked + .label::before </b> - если input с типом "checkbox" в состоянии checked (т.е. нажат) то применяются стили к следующему ( + ) элементу ( .label::before ). Т.е. мы задаем стили как будет выглядеть квадратик после того как мы нажали по нему (или по тексту). Можно делать что угодно, например установить background-image: и использовать любую картинку.
+			<li><b>content: '';</b></li>
+			<li><b>text-align: center;</b> - выравниваем содержимое квадратика по центру</li>
+			<li><b>font-size: 15px;</b> - размер содержимого квадратика</li>
+			<li><b>background-image: url(checked-symbol.png);</b> - установили картинку (иконка галочки)</li>
+			<li><b>background-size: cover;</b> - подогнали размер картинки.</li>
+		</ul>
+	</p>
+</body>
+</html>

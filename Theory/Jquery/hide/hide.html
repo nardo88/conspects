@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>Функция hide()</h2>
+	<p><span style="font-size: 1.2em; font-weight: bold;">Функция hide</span> - изменяет значение display элемента на значение none и элемент пропадает.</p>
+	<p>У функции <b>hide</b> есть два входных параметра. Первый задает скорость исчезания элемента. Этот параметр может принимать либо числовое значение в милисекундах (100-1000), либо задаваться оператором (слово либо fast (200 милисекунд) либо slow (600 милсекунд)).</p>
+	<p>Пример:</p>
+	<img src="prim1.jpg" alt="">
+	<p>На заданном примере с помощью Jquery мы обращаемся к элементу с классом anim и вызываем событие click. событие вызывает функцию, которая применяет к этому же элементу функцию hide.</p>
+	<p>Вторым входным параметром функции hide может быть функцию, которая будет выполнена после того как элемент исчез</p>
+	<p>Пример:</p>
+	<img src="prim2.jpg" alt="">
+	<p>Функция hide затрагивает не только свойство display. Оно так же изменяет параметры width, height, а так же opaciti. Используя эту функцию надо быть аккуратнее, так как весь сайт может перекособочить.</p>
+	<div style="width: 300px; height: 100px; background-color: green; color: white; text-align: center; font-size: 1.2em; font-weight: bold; cursor: pointer;" id="hide">Пример исчезания объекта. кликните по объекту</div>
+	<script src="jquery.js"></script>
+	<script>
+		$("#hide").click(function(){
+			$(this).hide("slow");
+		});
+	</script>
+</body>
+</html>

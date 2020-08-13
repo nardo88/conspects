@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .nav{
+            display: none;
+        }
+        .burger_button{
+            padding: 15px 0;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            outline: none;
+            height: 29px;
+        }
+
+        .burger_item{
+            position: relative;
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #394b50;
+            font-size: 0;
+        }
+
+        .burger_item:before{
+            content: '';
+            width: 28px;
+            height: 3px;
+            background: #394b50;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            transition: .2s;
+
+        }
+
+        .burger_item:after{
+            content: '';
+            width: 28px;
+            height: 3px;
+            background: #394b50;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            transition: .2s;
+
+        }
+
+        .open{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            left: 0;
+            background: #bdbcbc;
+            width: 100%;
+            padding-left: 40px;
+            z-index: 1000;
+        }
+
+        .active_burger{
+            height: 0;
+        }
+
+        .active_burger:before{
+            top: 0;
+            transform: rotate(45deg);
+
+        }
+
+        .active_burger:after{
+            bottom: -3px;
+            transform: rotate(-45deg);
+
+        }
+
+        img{
+            width: 700px;
+        }
+
+        .min{
+            width: 400px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Бургер на нативном JS c анимацией</h1>
+    <header class="header">
+        <div class="header_wrapper">
+            <nav class="nav">
+                <a href="#" class="nav_link">Home</a>
+                <a href="#" class="nav_link">Our Works</a>
+                <a href="#" class="nav_link">Our Clients</a>
+                <a href="#" class="nav_link">Price</a>
+                <a href="#" class="nav_link">Contacts</a>
+            </nav>
+            <button class="burger_button">
+                <span class="burger_item"></span>
+            </button>
+        </div>
+
+        <script>
+            const burgerButton = document.querySelector('.burger_button') 
+            const nav = document.querySelector('.nav')
+            const navLink = document.querySelectorAll('.nav_link')
+            const burgerItem = document.querySelector('.burger_item')
+
+           burgerButton.addEventListener('click', () => {
+                nav.classList.toggle('open')
+                burgerItem.classList.toggle('active_burger')
+           })
+
+           navLink.forEach(item => {
+               item.addEventListener('click', () => {
+                nav.classList.remove('open')
+                burgerItem.classList.remove('active_burger')
+
+               })
+           })
+
+
+
+
+        </script>
+    </header>
+    <h2>Разметка</h2>
+    <img src="./code1.png" alt="">
+    <h2>Стили</h2>
+    <img class="min" src="./code2.png" alt="">
+    <h2>Код JS</h2>
+    <img src="./code3.png" alt="">
+
+    
+    
+</body>
+</html>

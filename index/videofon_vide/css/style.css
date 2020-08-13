@@ -1,0 +1,23 @@
+﻿*{
+	margin: 0;
+	padding: 0;
+
+}
+
+p{
+	margin: 10px;
+}
+.section{
+	margin: 0;
+	width: 100%;
+	height: 600px;
+	display: flex;
+	align-items: center;
+
+	background-size: cover;
+}
+.wrap{
+	margin: 0 auto;
+	text-align: center;
+	color: #fff;
+}

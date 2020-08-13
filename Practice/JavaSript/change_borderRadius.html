@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#block{
+			width: 200px;
+			height: 100px;
+			background: green; 
+		}
+		body{
+			flex-direction: column;
+			font-size: 1.2em;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<h2>Цель</h2>
+		<p>Верхний левый угол:
+	<input type="range" id="vlu" min="0" max="100" value="0" oninput="fun1()">
+	<input type="text" id="vluz" value="0">
+	</p>
+	<p>Верхний правый угол:
+	<input type="range" id="vpu" min="0" max="100" value="0" oninput="fun1()">
+	<input type="text" id="vpuz" value="0">
+	</p>
+	<p>Нижний правый угол:
+	<input type="range" id="npu" min="0" max="100" value="0" oninput="fun1()">
+	<input type="text" id="npuz" value="0">
+	</p>
+	<p>Нижний левый угол:
+	<input type="range" id="nlu" min="0" max="100" value="0" oninput="fun1()">
+	<input type="text" id="nluz" value="0">
+	</p>
+	<div id="block"></div>
+
+
+
+
+
+<script>
+
+	function fun1() {
+		var vlu = document.getElementById('vlu').value;
+		var vpu = document.getElementById('vpu').value;
+		var npu = document.getElementById('npu').value;
+		var nlu = document.getElementById('nlu').value;
+		var vluz = document.getElementById('vluz');
+		var vpuz = document.getElementById('vpuz');
+		var npuz = document.getElementById('npuz');
+		var nluz = document.getElementById('nluz');
+
+		var block = document.getElementById('block');
+
+
+		vluz.value = vlu;
+		vpuz.value = vpu;
+		npuz.value = npu;
+		nluz.value = nlu;
+
+		block.style.borderRadius=vlu+'px ' +vpu+'px ' +npu+'px ' +nlu+'px ';
+
+	}
+
+
+</script>
+
+	</div>
+	<div>
+		<p>Рассмотрим код html</p>
+		<img src="change_borderRadius/prim1.jpg">
+		<p>Здесь особое внимание хочется уделить на событие которое мы обрабатываем у input. Атрибут событий <b>oninput</b> позволяет задать срабатывание скрипта, когда элемент получает ввод данных от пользователя. Это событие аналогично событию onchange. Разница заключается в том, что событие oninputhtml5 происходит сразу после того как значение элемента изменилось, а событие onchange происходит, когда элемент теряет фокус. </p>
+		<p>Теперь рассмотрим код JavaScript</p>
+		<img src="change_borderRadius/prim2.jpg">
+		<p>Сначала мы объявляем девять переменных типа каждого элемента документа. Далее мы присваиваем значениям value каждого input-text, значения value бегунка. И в самом конце мы для переменной типа block указываем стили для свойства borderRadius. Важно не напутать с соединением строк.</p>
+
+
+
+	</div>
+
+</body>
+</html>

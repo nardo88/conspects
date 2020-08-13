@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Динамический адаптив</h1>
+    <p>Для работы подключаем к проекту <a href="./dynamic_adapt-master.rar">dinamic_adaptive</a></p>
+    <p>Теперь блоку который переносим в другое место даем data атрибут - <b>data-da</b></p>
+    <xmp>
+Название | Значение по-умолчанию | Описание
+------------- | ------------- | ------------- 
+`куда (имя класса)` | _\[обязательный\]_ | Класс блока, в который нужно будет "перебросить" текущий объект. Если класс не уникален, объек перебросится в первый элемент с этим классом.
+`какой` | last | Позиция на которую нужно переместить объект внутри родителя `куда`. Кроме цифр можно указать слова `first` (в начало блока) или `last` (в конец блока)
+`когда` | 767 | Брейкпоинт при котором перемещать объект.
+`тип`* | max | Тип срабатывания брейкпоинта. max - Desktop First, min - Mobile First. *При использовании `min` в некоторых (редких) ситуациях может возникнуть неточность порядка вывода элементов.
+
+## Примеры
+
+```html
+<div data-da="content__column_garden" class="content__block">Я Коля</div>
+<div data-da="content__column_garden,2" class="content__block">Я Коля</div>
+<div data-da="content__column_garden,2,992" class="content__block">Я Коля</div>
+<div data-da="content__column_garden,2,992,min" class="content__block">Я Коля</div>
+```
+    </xmp>
+</body>
+</html>

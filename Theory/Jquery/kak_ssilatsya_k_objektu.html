@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p><strong>Как ссылаться к обьекту по ID</strong></p>
+<p>Рассмотрим следующий код:</p>
+<p><xmp>
+	<div id="test">Текст</div>
+	<script>
+		var test_1 = $("#test").html();
+		alert(test_1);
+	</script>
+</xmp></p>
+<p>т.е. переменной test_1 присвоилось значение текста заключенного в теге div. В функции $ в скобках указывается id нужного объекта, обязательно с решёткой</p>
+
+</body>
+</html>

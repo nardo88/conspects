@@ -1,0 +1,57 @@
+﻿body{
+	margin-bottom: 100px;
+}
+
+.rotateItem{
+	width: 70px;
+	height: 50px;
+	background-color: #8593F9;
+	border: 1px solid;
+	
+	
+}
+
+#rotateItem11{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+.examples{
+	padding: 0 50px;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	display: flex;
+	flex-wrap: wrap;
+	width: 700px;
+	
+
+}
+.examples h2{
+	margin: 0 auto;
+	font-family: sans-serif;
+	color: #5231DE
+}
+
+.rotate{
+border: 2px solid green; 
+margin: 10px; 
+display: inline-block; 
+width: 300px; 
+padding: 10px; 
+border-radius: 10px;
+position: relative;
+height: 150px;
+}
+.rotate h4{
+	text-align: center;
+}
+
+
+.transform-origin{
+transform-origin:  top left;
+}
+
+#rotate5{
+	z-index: 9;
+	position: relative;
+}

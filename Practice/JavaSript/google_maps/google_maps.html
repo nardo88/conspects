@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<style>
+
+
+	</style>
+</head>
+<body>
+  <h2>Результат</h2>
+	<div id="map" style="width: 1000px; height: 500px; "></div>
+  <div>
+    <h2>Разбор</h2>
+    <p>Добавление google карт осуществляется при помощи подключения API</p>
+    <p>Рассмотрим HTML код:</p>
+    <img src="prim1.jpg">
+    <p>Сначала добавляем в документ блок div в который и будут помещаться наши карты. Этот блок должен иметь три свойства. id="map", высоту и ширину. Если мы не зададим высоту и ширину то наш блок будем площадью 0 пикселей, и мы ничего не увидим.</p>
+    <p>Тепррь нам необходимо подключить скрипт с API кодом. Этот код копируется с <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank">сайта</a> </p>
+    <p>Далее выделаем облать под скрипт JavaScript и добавляем туда функцию initMap. У этой функции два параметра:
+        <ul>
+          <li><b>center:</b> - это координаты по умолчанию</li>
+          <li><b>zoom</b> - это степень приближения</li>
+        </ul>
+
+    </p>
+    <p>В разделе document.getElementById('map') в одинарных кавычках мы указываем id нашего блока div</p>
+  </div>
+
+
+
+
+
+
+
+
+
+<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJoCR3Mp5iHifkQ_hNdP_AYNj1duYK-4Q&callback=initMap">
+ </script>
+
+
+ 
+</body>
+</html>

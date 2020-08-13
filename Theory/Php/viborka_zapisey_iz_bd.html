@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p style="font-size: 1.4em; font-weight: bold;">Выборка записей из БД MySQL c помощью кода php</p>
+<p>Рассмотрим следующий код:</p>
+<div style="font-size: 1.3em; background-color: #F7E4E4; width: 70%; height: 50px; padding: 10px;">
+$mysqli->query("SELECT * FROM `users`");	
+
+
+</div>
+
+<ul>
+	<li><strong>SELECT</strong> - выбрать</li>
+	<li><strong>*</strong> - все записи</li>
+	<li><strong>FROM</strong> - из таблицы `users` (обязательно <strong>косые</strong> одинарные кавычки)</li>
+
+</ul>
+<p>Теперь рассмотрим способ как выводить на экран данные таблицы. Рассмотрим следующий код:</p>
+<div style="font-size: 1.3em; background-color: #F7E4E4; padding: 10px;">
+	<xmp><?php</xmp>
+
+	<p style="text-indent: 1em;"><span style="color: #0866FD">function</span> <span style="color: #26882A;"> printResult </span>( <span style="color: #92702C">$result_set</span>){  // создаем функцию</p>
+
+		<p style="text-indent: 2em;"><span style="color: #E51313">while </span> (($row = $result_set-><span style="color: #0866FD;">fetch_assoc</span>()) <span style="color: red">!=</span> <span style="color: #81048A"> false </span>) { </p>
+
+			<p style="text-indent: 2em;"> print_r($row);</p>
+			<p ><xmp>    echo "<br/>";</xmp></p>
+		<p style="text-indent: 2em;"> }</p> 
+		<p style="text-indent: 1em;"> echo "Количество записей равно - ".$result_set->num_rows;</p> 
+
+	<p style="text-indent: 1em;"> }</p> 
+
+<p>  $mysqli = new mysqli("localhost", "root", "", "mybase");  // Подключение к БД</p> 
+<p> $mysqli->query("SET NAMES 'utf8'"); // Устанавливаем кодировку</p> 
+<p> $result_set = $mysqli->(<span style="color: red">"SELECT * FROM </span>'users'");  // Создаем переменную</p> 
+<p> printResult($result_set);  // Вызываем функцию</p> 
+<p> $mysqli->close();  // Закрываем соединение</p> 
+
+<xmp>?></xmp>
+</div>
+<p>Первое что бы делаем это подключаемся к БД</p>
+<p>Второе - создаем переменную <strong> $result_set</strong> и помещаем в нее рзультат запроса <strong>SELECT * FROM 'user'</strong></p>
+<p>Далее мы создаем функцию printResult с входным параметром. В качестве входного параметра мы будем использовать нашу переменную <strong>$result_set</strong></p>
+<p>В нашей функции мы будем запускать цикл</p>
+<p>В качестве проверяемого условия цикла мы используем функцию <strong>fetch_assoc()</strong>. Что делает эта функция? Она присваивает какой либо переменной всю строку таблицы. И на каждый тик цикла она будет присваивать переменной <strong>$row</strong> последующую строку таблицы. Т.е переменная <strong>$row</strong> каждый тик цикла будет превращаться в ассоциативный массив. Когда строки кончатся функция выдаст значение false.</p>
+<p>Подытожим. Цикл будет выполняться до тех пор пока функция <strong>fetch_assoc()</strong> не выдаст значение false ( !=false ) в то время как она присваивает переменной <strong>$row</strong> значения полей таблицы</p>
+<p>Кажды цикл будет выполняться код:</p>
+<div style="font-size: 1.3em; background-color: #F7E4E4; padding: 10px; width: 200px;">
+	<xmp>print_r($row);
+
+echo "<br/>";</xmp>
+</div>
+<p>Т.е. каждый раз на экран будет выводится значения массива $row с новой строки</p>
+<p>Когда цикл прекратится функция выведет на экран надпись с количкством записей. Функция num_rows как раз показывает сколько строк в таблице.</p>
+<p>В конце кода мы вызываем нашу функцию и на вход даем ей нашу переменную <strong>$result_set</strong>. после чего закрываем соединение.</p>
+<p style="font-size: 1.3em; font-weight: bold;">Выборка записей с использованием условия WHERE</p>
+<p>Пример кода:</p>
+<div style="font-size: 1.3em; background-color: #F7E4E4; padding: 10px; width: 600px;">
+$mysqli->("SELECT `id`, `login` FROM `users` WHERE `id` > 7");
+
+</div>
+<p>Выбрать значения полей id и login из таблицы users где id больше 7</p>
+</body>
+</html>

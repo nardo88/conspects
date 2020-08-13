@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+		.icon{
+			fill: #A8A8A8;
+			height: 30px;
+			width: 30px;
+		}
+
+		.icon_link{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 40px;
+			width: 40px;
+			border: 1px solid #C4C3C3;
+		}
+
+		.icon_link:hover{
+			background-color: #C4C3C3;
+		}
+
+		.icon_link:hover .icon{
+			fill: #DB6C6C;
+		}
+
+	</style>
+</head>
+<body>
+
+	<svg style="display: none;" >
+		<symbol id="facebook" viewBox="0 0 512 512">
+			<g>
+				<path d="M288,176v-64c0-17.664,14.336-32,32-32h32V0h-64c-53.024,0-96,42.976-96,96v80h-64v80h64v256h96V256h64l32-80H288z"/>
+			</g>
+		</symbol>			
+	</svg>
+
+
+	<h1>Работа с картинками в формате svg</h1>
+	<h3>Пример</h3>
+
+
+	
+		<a class="icon_link" href="#!">
+			<svg class="icon">
+				<use xlink:href="#facebook"></use>
+			</svg>
+		</a>
+	
+
+
+	<p>Изображения в формате svg можно скачать на сайте <a href="https://www.flaticon.com" target="_blank">flaticon.com</a></p>
+	<p>Почему лучше использовать изображения в формате svg? потому что изображения формата svg являются векторными, и при любом масштабировании они не теряют качество.</p>
+	<p>После открываем изображение через sublimetext и нам необходимо скопировать код картинки который заключен в тег: "g"</p>
+	<img src="prim1.jpg" alt="">
+	<p>Теперь переходим в наш файл html после открывающегося тега body создаем тег svg. добавляем ему атрибут style и задаем свойство "display: none" что бы наши иконки именно тут не отображались. Внутри тега svg мы помещаем тег symbol и задаем этому тегу id. по этому id мы будем вызывать нашу иконку.</p>
+	<p>Внутрь тега symbol мы копируем код который мы скопировали из файла svg (тот что в теге "g"). Посел чего надо из файла svg скопировать свойство <b>viewBox</b> и вставить его атрибутом в тег symbol. в итоге все выглядит вот так:</p>
+	<img src="prim2.jpg" alt="">
+	<p>Теперь как нам вызывать нашу картинку?</p>
+	<p>вызываем тег svg внутри него помещаем тег use и атрибутом в него вставляем: xlink:href="". в кавычках мы указываем селектор который указывал в теге symbol (id)</p>
+	<img src="prim3.jpg" alt="">
+	<p>Как нам теперь стлизовать нашу картинку? тегу svg мы можем задать класс и в CSS задавать стили этому классу.</p>
+	<p>Для указания цвета заливки изображения используется такое свойство как: fill: #f3f3f3;</p>
+	<p>Стилизация примера:</p>
+	<img src="prim4.jpg" alt="">
+</body>
+</html>

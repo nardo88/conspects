@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p style="font-size: 1.4em; font-weight: bold;">Подключение к БД</p>
+<p>Рассмотрим следующий код:</p>
+<p>
+<xmp>	
+<?php
+   $mysqli = new mysqli ("localhost", "root", "", "myBase");
+   $mysqli->query("SET NAMES 'utf8'");
+   $mysqli->close();
+?>
+</xmp>
+</p>
+<p>В первой строке мы создаем объект типа <strong>mysqli</strong> у которого есть четыре параметра:</p>
+<p>
+	<ul>
+		<li><strong>localhost</strong> - имя хоста с БД. (Если мы используем Denwer или OpenServer, мы указываем localhost. Если мы арендуем хостинг, то указываем тот хостинг что арендовали).</li>
+		<li><strong>root</strong> - учетная запись администратора в phpmyadmin.</li>
+		<li><strong>""</strong> - тут указывается пароль админа БД. в Denwer он пустой.</li>
+		<li><strong>myBase</strong> - имя нашей базы данных.</li>
+	</ul>
+
+</p>
+<p>Во второй строке мы устанавливаем кодировку utf8.</p>
+<p>В трейтьей строке мы закрываем соединение с БД.</p>
+</body>
+</html>

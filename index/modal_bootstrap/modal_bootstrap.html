@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+<h1>Модальное окно от Bootstrap</h1>
+<div class="container">
+
+<a href="#myModal" data-toggle="modal">Открыть модальное окно</a>
+
+<button class="btn btn-success" data-toggle="modal" data-target="#myModal">Кнопка вывода модального окна</button>
+
+</div>
+
+
+<p>Для того что бы работали модальные окна от Bootstrap необходимо подключить библиотеки:</p>
+<span class="zagolovok">CSS библиотека от bootstrap</span>
+<xmp><link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</xmp>
+<span class="zagolovok">Библиотека от JQuery</span>
+<xmp><script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script></xmp>
+<span class="zagolovok">Библиотека JavaScript от Bootstrap</span>
+<xmp><script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script></xmp>
+<p>Теперь в раздел где должно будет появляться окно надо вставить такой код:</p>
+
+
+<!-- Пример кода -->
+<xmp><div class="modal fade" >
+	<!-- Само (белое) модальное окно -->
+  <div class="modal-dialog" role="document">
+	<!-- Содержимое модального окна -->
+    <div class="modal-content">
+    	<!-- Шапка модального окна (кнопка закрыть и заголовок) -->
+      <div class="modal-header">
+      	<!-- Кнопка закрыть -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <!-- Подзаголовок -->
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <!-- Тело модального окна -->
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <!-- подвальная часть модального окна -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal --></xmp>
+
+<p>Теперь как вызвать наше модальное окно?</p>
+<p>Допустим у нас есть кнопка которая будет вызывать модальное окно. Первое что надо сделать это присвоить идентификатор блоку с классом "modal fade"</p>
+<img src="images/prim1.jpg" alt="">
+<p>Теперь нашей кнопке надо присвоить два атрибута:</p>
+<ul>
+	<li>data-toggle="modal"</li>
+	<li>data-target="#id_блока"</li>
+</ul>
+<p>Т.е. наша кнопка будет выглядеть вот так:</p>
+<img src="images/prim2.jpg" alt="">
+<p>Теперь при нажатии на кнопку быдет вылезать модальное окно.</p>
+<p>В случае если нам необходимо что бы модальное окно вызывала ссылка, то ссылке мы добавляем так же атрибут <b>data-toggle="modal"</b> и в атрибуте href мы указываем решетку и id нашего блока</p>
+<img src="images/prim3.jpg" alt="">
+<p>Может быть такое, что нам необходимо изменять размер модального окна. В этом случае блоку с классом "modal-dialog" мы добавляем класс:</p>
+<ul>
+	<li><b>modal-lg</b> - большое модальное окно</li>
+	<li><b>modal-sm</b> - маленькое модальное окно</li>
+</ul>
+<p>Больше информации по модальным окна от Bootastrap читаем <a href="https://getbootstrap.com/docs/3.4/javascript/#modals" target="_blank">ЗДЕСЬ</a></p>
+
+
+
+
+	
+<div class="modal fade" id="myModal">
+	<!-- Само (белое) модальное окно -->
+  <div class="modal-dialog modal-lg" role="document">
+	<!-- Содержимое модального окна -->
+    <div class="modal-content">
+    	<!-- Шапка модального окна (кнопка закрыть и заголовок) -->
+      <div class="modal-header">
+      	<!-- Кнопка закрыть -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <!-- Подзаголовок -->
+        <h4 class="modal-title">Заголовок моего модального окна</h4>
+      </div>
+      <!-- Тело модального окна -->
+      <div class="modal-body">
+        <p>Содержимое моего модального окна</p>
+      </div>
+      <!-- подвальная часть модального окна -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+       
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+<script src="js/jquery.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

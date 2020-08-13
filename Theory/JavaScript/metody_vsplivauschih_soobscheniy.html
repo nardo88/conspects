@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.4.6.2 (Linux)"/>
+	<meta name="author" content="User"/>
+	<meta name="created" content="2019-06-13T14:08:00"/>
+	<meta name="changedby" content="User"/>
+	<meta name="changed" content="2019-06-13T14:17:00"/>
+	<meta name="AppVersion" content="12.0000"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 120%; text-align: left; orphans: 2; widows: 2 }
+	</style>
+</head>
+<body lang="ru-RU" dir="ltr">
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>Методы
+всплывающих сообщений</b></font></p>
+<ol>
+	<li/>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>метод
+	</b></font><font size="4" style="font-size: 14pt"><span lang="en-US"><b>Alert</b></span></font></p>
+</ol>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Этот
+метод вызывает всплывающее окно</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>Пример:</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">var
+str = “Max”;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">Alert
+(“Hello ” + str);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">В
+итоге откроется окно с надписью «</font><font size="3" style="font-size: 12pt"><span lang="en-US">Hello
+Max</span></font><font size="3" style="font-size: 12pt">»</font></p>
+<ol start="2">
+	<li/>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>метод
+	</b></font><font size="4" style="font-size: 14pt"><span lang="en-US"><b>confirm</b></span></font></p>
+</ol>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Этот
+метод вызывает всплывающее окно с двумя
+кнопками: «ОК» и «</font><font size="3" style="font-size: 12pt"><span lang="en-US">Cancel</span></font><font size="3" style="font-size: 12pt">».
+У метода есть возвращаемый параметр
+типа </font><font size="3" style="font-size: 12pt"><span lang="en-US">Boolean</span></font><font size="3" style="font-size: 12pt">.
+Если</font><font size="3" style="font-size: 12pt"><span lang="en-US">
+</span></font><font size="3" style="font-size: 12pt">жмем</font><font size="3" style="font-size: 12pt"><span lang="en-US">
+</span></font><font size="3" style="font-size: 12pt">ОК</font><font size="3" style="font-size: 12pt"><span lang="en-US">
+– </span></font><font size="3" style="font-size: 12pt">результат</font><font size="3" style="font-size: 12pt"><span lang="en-US">
+True, Cancel – False.</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>Пример</u></font><font size="3" style="font-size: 12pt"><span lang="en-US"><u>:</u></span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">If
+(confirm (“Are you sure”)){</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">Alert
+(“Hello”);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">}</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">Else
+{</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">Alert
+(“Good Bay”);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">}</span></font></p>
+<ol start="3">
+	<li/>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>метод
+	</b></font><font size="4" style="font-size: 14pt"><span lang="en-US"><b>prompt</b></span></font></p>
+</ol>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Этот
+метод вызывает окно с полем ввода и то
+что мы введем присваивается выходному
+параметру метода. Т.е. значение выходного
+параметра мы можем присвоить любой
+другой переменной.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>Пример</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">var</span></font><font size="3" style="font-size: 12pt">
+</font><font size="3" style="font-size: 12pt"><span lang="en-US">cop</span></font><font size="3" style="font-size: 12pt">;</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">cop</span></font><font size="3" style="font-size: 12pt">
+= </font><font size="3" style="font-size: 12pt"><span lang="en-US">prompt</span></font><font size="3" style="font-size: 12pt">
+(“введите свое имя”);</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">alert
+(“</span></font><font size="3" style="font-size: 12pt">ваше имя
+</font><font size="3" style="font-size: 12pt"><span lang="en-US">”</span></font><font size="3" style="font-size: 12pt">+
+</font><font size="3" style="font-size: 12pt"><span lang="en-US">cop);</span></font></p>
+</body>
+</html>

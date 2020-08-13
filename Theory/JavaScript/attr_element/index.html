@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>Атрибуты</h2>
+	<p>Элементам DOM соответствуют HTML-теги, у которых есть текстовые атрибуты.</p>
+	<p>Доступ к атрибутам осуществляется при помощи стандартных методов:</p>
+	<ul>
+		<li><b>elem.hasAttribute(name)</b> - проверяет наличие атрибута</li>
+		<li><b>elem.getAttribute(name)</b> - получает значение атрибута</li>
+		<li><b>elem.setAttribute(name, value)</b> - устанавливает атрибут</li>
+		<li><b>elem.removeAttribute(name)</b> - удаляет атрибут</li>
+	</ul>
+
+	<p>Также все атрибуты элемента можно получить с помощью свойства <b>elem.attributes</b></p>
+	<h2>Обращение к свойствам:</h2>
+	<p>В отличие от свойств, атрибуты:
+		<ul>
+			<li>Всегда являются строками.</li>
+			<li>Их имя нечувствительно к регистру (ведь это HTML)</li>
+			<li>Видны в innerHTML (за исключением старых IE)</li>
+		</ul></p>
+	<p><b>свойство value</b> - elem.value</p>
+	<p><b>свойство classList</b> - elem.classList
+	
+	<h3>Методы classList:</h3>
+	<ul>
+		<li><b>elem.classList.contains("class")</b> - возвращает true/false, в зависимости от того, есть ли у элемента класс class</li>
+		<li><b>elem.classList.add/remove("class")</b> - добавляет/удаляет класс class</li>
+		<li><b>elem.classList.toggle("class")</b> - если класса class нет, добавляет его, если есть – удаляет.</li>
+	</ul>
+	
+	</p>
+	<h2>Обращение к свойствам CSS</h2>
+	<p>elem.style.styleName</p>
+	<p>Пример. Как получить значение свойства display</p>
+	<p>var s = elem.style.display;</p>
+	<p>Пример как задать свойство CSS</p>
+	<p>elem.style.display = 'block';</p>
+
+	<h2>Некоторые атрибуты элемента:</h2>
+	<ul>
+		<li><b>elem.offsetHeight</b> - высота элемента</li>
+		<li><b>elem.offsetWidth</b> - ширина элемента</li>
+	</ul>
+	
+</body>
+</html>

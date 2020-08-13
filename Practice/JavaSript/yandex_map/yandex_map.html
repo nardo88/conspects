@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+   
+    
+</head>
+
+<body>
+    <h2>Результат</h2>
+    <div id="map" style="width: 600px; height: 400px"></div>
+
+    <div>
+        <h2>Разбор</h2>
+        <p>Рассмотрим код</p>
+        <img src="prim1.jpg">
+        <p>Сначала объявляем блок div с идентификатором id="map" и с заданными высотой и шириной.</p>
+        <p>Затем надо подключить функцию API</p>
+        <p>Код функции:</p>
+
+        <p>
+        &lt;script src="https://api-maps.yandex.ru/2.1/?apikey=<189a8ee7-db62-4dda-bc2b-6ee7f12ac42c>&lang=ru_RU" &gt;
+        &lt;/script&gt;    
+
+        </p>
+        <p>После этого добавляем скрипт с функцией init которая будет передавать нашему блоку с id="map" карты</p>
+        <p>У функции есть два параметра: center (координаты карты) и zoom (степень приближения)</p>
+    </div>
+
+
+  
+
+
+
+
+
+
+
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=<189a8ee7-db62-4dda-bc2b-6ee7f12ac42c>&lang=ru_RU" >
+    </script>
+    <script>
+        ymaps.ready(init);    
+        function init(){ 
+            var myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64],
+                zoom: 7
+            }); 
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" href="slick/slick.css">
+	<link rel="stylesheet" href="slick/slick-theme.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .slider_wrap{
+      margin-left: 30px;
+      width: 60%;
+      height: 380px;
+      border: 1px solid;
+
+}
+
+.slide_item{
+  width: 200px;
+  height: 250px;
+  background-color: #F79B9B;
+  margin-left: 10px;
+  margin-top: 20px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.test{
+  width: 95%;
+  height: 95%;
+  background-color: #223B8E;
+  margin: auto;
+  margin-top: auto;
+}
+.slick-center {
+   transform: scale(1.25);
+}
+.slick-list { 
+  padding:45px 60px !important;
+  /*margin-left:30px !important;*/
+}
+  </style>
+</head>
+<body>
+
+<h1>Slick слайдер</h1>
+
+<section class="for_slider">
+	<div class="container">
+		<h2 class="section-header">
+			Результат
+		</h2>
+		<div class="my-slider">
+
+			<div class="slider-block" >
+				<h3>Заголовок 1</h3>
+				<img class="slide-img" src="assets/images/glaz.png" alt="">
+				<p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, eligendi odio tempora perspiciatis doloribus quibusdam!</p>
+			</div>
+
+			<div class="slider-block" >
+				<h3>Заголовок 2</h3>
+				<img class="slide-img" src="assets/images/baks.png" alt="">
+				<p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, aliquam. ipsum dolor sit amet, consectetur.</p>
+			</div>
+
+			<div class="slider-block">
+				<h3>Заголовок 3</h3>
+				<img class="slide-img" src="assets/images/raketa.png" alt="">
+				<p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, praesentium. ipsum dolor sit amet, consectetur.</p>
+			</div>
+
+			<div class="slider-block">
+				<h3>Заголовок 4</h3>
+				<img class="slide-img" src="assets/images/darts.png" alt="">
+				<p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, velit! ipsum dolor sit amet, consectetur.</p>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<p>Первой что нам надо сделать, это зайти на <a href="https://kenwheeler.github.io/slick/" target="_blank">сайт</a> создателя слайдера, нажать <b>get it now</b> и скачать архив с	исходниками. Внутри архива нам нужна папка папка slick (не slick-1.8.1, а именно slick). Эту папку мы закидываем в папку с проектом.</p>
+<p>Теперь необходимо подготовить разметку.</p>
+<img src="prim1.jpg" alt="">
+<p>сначала мы готовим секцию. В этой секции будет контайнер div. Этот контейнер содержит заголовок h2 и блок со слайдером.</p>
+<p>Теперь внутрь блока с классом my-slider мы должны добавить то количество блоков, сколько у нас будет слайдов. Этот блок будет иметь класс - <b>.slider-block</b>. Допустим у нас 4 слайда, значит надо сделать 4 блока. Каждый блок будет содержать заголовок, картинку и небольшой текст. Значит, 1 блок будет выглядеть так:</p>
+<img src="prim2.jpg" alt="">
+<p>Вся же разметка выглядит вот так:</p>
+<img src="prim3.jpg" alt="">
+<p>После того как все разделы заполнили (вписали заголовки, тексты и указали картинки) подключаем наш слайдер</p>
+<p>Подключается он в несколько этапов.</p>
+<p><b>Первое</b> - надо подключить стили slik slider. Подключаем все перед закрывающим тегом <b>body</b>. Сами файлы стилей находятся в папке slick, которую мы добавили вначале. Здесь нам надо подключить два файла: <b>slick.css</b> и <b>slick-theme.css</b></p>
+<img src="prim4.jpg" alt="">
+<p><b>Второе</b> - подключаем сам слайдер, это файл <b>slick.min.js</b></p>
+<img src="prim5.jpg" alt="">
+<p><b>Третье</b> - инициализируем сам слайдер. Для этого под подключенными библиотеками и стилями пишем тег <b>script</b> и внутрь него помещаем код:</p>
+<xmp>$(document).ready(function(){
+  $('.your-class').slick({
+    setting-name: setting-value
+  });
+});</xmp>
+<p>Вместо <b>.your-class</b> - мы вписываем имя класса блока со слайдером. У меня это <b>my-slider</b>. Строчку <b>setting-name: setting-value</b> просто удаляем.</p>
+<img src="prim6.jpg" alt="">
+<p>Все наш слайдер подключен. Теперь мы можем его конфигурировать. Вся конфигурация помещается в массив входящим параметром в функцию slick</p>
+<img src="prim7.jpg" alt="">
+<br>
+<br>
+<br>
+<h2>Теперь рассмотрим способ как сделать адаптивный слайдер.</h2>
+<p>Задача: сделать так, что бы при широков экране отображались все 4 слайда и прокручивать было бы нечего, при среднем экране (планшет) отображалось 2 слайда и при прокруте показывались остальные 2, и наконец при просмотре с мобильного устройства, будет показываться 1 слайд и прокрутка будет по одному слайду.</p>
+<p>Первое что надо сделать это добавить вот такие значения в наш скрипт:</p>
+<xmp>infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1</xmp>
+  <p>Что это означает:
+  <ul>
+  	<li><b>infinite: true,</b> - это то что можно бесконечно пролистывать наш слайдер</li>
+  	<li><b>slidesToShow: 4</b> - сколько отображать слайдев по умолчанию</li>
+  	<li><b>slidesToScroll: 1</b> - по сколько пролистывать слайдов</li>
+  	
+  </ul></p>
+  <p>Выглядит теперь это вот так:</p>
+  <img src="prim8.jpg" alt="">
+  <p>Теперь добавим адапливности. За адаптивность отвечает такое свойство в Slick как responsive</p>
+  <p>В нашем скрипте ставим запятую после последнего свойства и вставляем такой код:</p>
+  <xmp>responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true
+       }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+
+]</xmp>
+<p>Как мы видим тут три блока, каждый отвечает за отображение слайдов в зависимости от ширины экрана, здесь указано 1024, 600 и 480. Меняем ширину экрана на наши значения и указываем сколько слайдов будет когда показывать и по сколько слайдев будет скролится. У меня это выглядело так:</p>
+<img src="prim9.jpg" alt="">
+<p>Все. теперь немного постилизуем что бы все выглядело ровно.</p>
+<img src="prim10.jpg" alt="">
+<p><b>my-slider</b>
+<ul>
+	<li><b>width: 100%;</b> - задаем 100% ширину нашего слайдера</li>
+</ul>
+</p>
+<p><b>.slide-img</b> - стилизуем картинки в слайде
+	<ul>
+		<li><b>display: block;</b> - делаем их блоками что бы можно было выставлять автоматические отступы</li>
+		<li><b>margin: 0 auto;</b> - центрируем картинку</li>
+	</ul>
+</p>
+<p><b>.slider-block</b> - на этом участке мы говорим что текст у блочных элементов будет выравниваться по центру, таким образом наши заголовки и текты встанут по центру
+
+</p>
+<p><b>.slider-block p</b> - задаем стили для параграфа который внутри блока слайдера
+<ul>
+	<li><b>display: inline-block;</b> - делаем его блоком с возможностью выравнить в линию (без этого текст в параграфе не выравнится по центру)</li>
+	<li><b>width: 70%;</b> - зададим ширину блока</li>
+	
+</ul>
+</p>
+<p><b>.slick-active</b> - в этом разделе мы отключаем обводку у слайдов</p>
+<br><br>
+<h2>Добавление кнопок прокрутки</h2>
+<p>В самом слайдере уже предусмотрены кнопки прокрутки, но чаще всего эти кнопки нам не подойдут так как в макете будут указаны свои кнопки прокрутки. Как нам добавить свои.</p>
+<p>Первое что надо сделать это добавить в наш скрипт тег button и дать ему свой класс:</p>
+<img src="prim11.jpg" alt="">
+<p><b>prevArrow:</b> - это кнопка влево</p>
+<p><b>nextArrow:</b> - это кнопка вправо</p>
+<p>Теперь рассмотрим стили для этих классов</p>
+<img src="prim12.jpg" alt="">
+<ul>
+	<li><b>cursor: pointer;</b> - выставляем курсор</li>
+	<li><b>position: absolute;</b> - абсолютное позиционирование</li>
+	<li><b>top: 50%;</b> - выставляем по середине по горизонтали</li>
+	<li><b>left: 0;</b> - прижимаем к левому краю</li>
+	<li><b>transform: translateY(-50%);</b> - корректируем централизацию по вертикали</li>
+	<li><b>z-index: 999;</b> - делаем кнопку выше всех</li>
+	<li><b>width: 2rem;</b> - ширина кнопки</li>
+	<li><b>height: 2rem;</b> - высота кнопки</li>
+	<li><b>border: none;</b> - убираем обводку</li>
+	<li><b>background: url(../images/left.png) center no-repeat;</b> - на фон выставляем картинку из макета, выставляем ее по центру и не замощаем ей пространство</li>
+	<li><b>background-size: 70%;</b> - размер фонового изображения отностительно размеров кнопки</li>
+	
+</ul>
+<p>Стилизация второй кнопки аналогичная, за исключанием что параметр не left а right и путь к картинке другой.</p>
+
+<br><br>
+<h3>Как сделать увеличенный центральный слайд</h3>
+<p>Пример</p>
+<div class="slider_wrap">
+  <div class="center">
+    <div class="slide_item"><div class="test"></div></div>
+    <div class="slide_item"><div class="test"></div></div>
+    <div class="slide_item"><div class="test"></div></div>
+    <div class="slide_item"><div class="test"></div></div>
+    <div class="slide_item"><div class="test"></div></div>
+    <div class="slide_item"><div class="test"></div></div>
+    <div class="slide_item"><div class="test"></div></div>
+  </div>
+</div>
+<p>Код JavaScript:</p>
+<xmp>$('.center').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+});</xmp>
+<p>Здесь обязатыльным условием то, что мы задаем свойство <b>centerMode: true,</b> - обязательно то что бы в слайдере выводилось нечетное количество слайдов (в нашем случае это - 3)</p>
+<p>Так же выставляем свойство - <b>centerPadding:</b></p>
+<p>Теперь что надо сделать, что бы центральный слайд увеличивался в размерах? для этого мы задаем дополнительные стили классу - <b>.slick-center</b> и <b>.slick-list</b>. Эти классы создает сам slick слайдер. Выглядеть это будет так:</p>
+<img src="prim13.jpg" alt="">
+<br>
+<h3>Как сделать так что бы ширина слайда была регулируемой?</h3>
+<p>За это отвечает свойство <b>variableWidth</b>, значение выставляет true и ширина слайдов будет такая которую мы укажем в верстке.</p>
+
+<ul>
+  <li><b>vertical</b> - отвечает за вертикальную прокрутку. значение false по умолчанию.</li>
+  <li><b>focusOnSelect</b> - Включить фокус на выбранный элемент (нажмите)</li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/script.js"></script>
+<!-- Подключаем стили слайдера -->
+
+<!-- Подключаем сам слайдер -->
+<script src="slick/slick.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('.my-slider').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2,
+        prevArrow: '<button class="prev"></button>',
+        nextArrow: '<button class="next"></button>',
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+        prevArrow: '<button class="prev"></button>',
+        nextArrow: '<button class="next"></button>',
+        slidesToScroll: 1
+      }
+    }
+  ]
+
+
+  });
+
+
+
+  $('.center').slick({
+  centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    focusOnSelect: true,
+
+
+ 
+});
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.item{
+			width: 100px;
+			height: 50px;
+			margin: 10px;
+		}
+		.color_red{
+			border: 3px solid red;
+		}	
+
+		.color_green{
+			border: 3px solid green;
+		}
+
+		.color_blue{
+			border: 3px solid blue;
+
+		}
+		
+
+		.wrapper_items{
+			width: 400px;
+			display: flex;
+			-webkit-flex-wrap: wrap;
+			-moz-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			-o-flex-wrap: wrap;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+		}
+		.wrapper_button{
+			width: 400px;
+			display: flex;
+			justify-content: center;
+		}
+
+		.btn{
+			width: 60px;
+			height: 30px;
+			outline: none;
+			cursor: pointer;
+			font-family: sans-serif;
+			color: #fff;
+			border: none;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin: 10px;
+
+		}
+		.btn:hover{
+			opacity: .7;
+		}
+
+		.green{
+			background-color: green;
+		}
+		.red{
+			background-color: red;
+
+		}
+		.blue{
+			background-color: blue;
+		}
+		.all{
+			background-color: gray;
+		}
+		.hide{
+			width: 0;
+			height: 0;
+			border: 0;
+			margin: 0;
+			padding: 0;
+			transition: .9s;
+		}
+
+		.wrapper_all{
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Фильтрация элементов</h1>
+	<h2>Пример</h2>
+	<div class="wrapper_all">
+		<div class="wrapper_button">
+			<input class="btn green" type="button" value="green">
+			<input class="btn red" type="button" value="red">
+			<input class="btn blue" type="button" value="blue">
+			<input class="btn all" type="button" value="all">
+
+		</div>
+		<div class="wrapper_items">
+			<div class="item color_red"></div>
+			<div class="item color_green"></div>
+			<div class="item color_blue"></div>
+			<div class="item color_green"></div>
+			<div class="item color_red"></div>
+			<div class="item color_blue"></div>
+			<div class="item color_green"></div>
+			<div class="item color_blue"></div>
+			<div class="item color_red"></div>
+
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<img src="prim1.jpg" alt="">
+	<script>
+
+		const folterItem = document.querySelectorAll('.item');
+		const btn = document.querySelectorAll('.btn');
+
+		for (var i = 0; i < btn.length; i++){
+			btn[i].addEventListener('click', function (event) {
+				let color = event.target.classList;
+
+				if(color == "btn green"){
+					folterItem.forEach(elem => {
+					elem.classList.remove('hide');
+					if (!elem.classList.contains("color_green")){
+						elem.classList.add('hide');
+						}
+					});
+				}
+				if(color == "btn red"){
+					folterItem.forEach(elem => {
+					elem.classList.remove('hide');
+					if (!elem.classList.contains("color_red")){
+						elem.classList.add('hide');
+						}
+					});
+				}
+				if(color == "btn blue"){
+					folterItem.forEach(elem => {
+					elem.classList.remove('hide');
+					if (!elem.classList.contains("color_blue")){
+						elem.classList.add('hide');
+
+						}
+					});
+				}
+				if(color == "btn all"){
+					folterItem.forEach(elem => {
+					elem.classList.remove('hide');
+					});
+				}
+			});
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿.spis{
+	width: 300px;
+	/*list-style-type: none;*/
+}
+.btn{
+	width: 300px;
+	height: 30px;
+	display: block;
+	margin-bottom: 10px;
+}
+.input{
+	width: 300px;
+	height: 30px;
+	margin-bottom: 10px;
+	display: block;
+}

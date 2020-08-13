@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="stik">
+	<h2>Функция slideToggle</h2>
+	<p id="hide"><span style="font-weight: bold; font-size: 1.2em;">Функция slideToggle</span> - позволяет плавно отобразить или скрыть элемент. Если изначально элемент отображается, то он будет скрыт, если элемент скрыт, то он будет отображен. Пример как работает эта функция можно посмотреть нажав по заголовку статьи.</p>
+	<p>Синтаксис:</p>
+	<img src="prim1.jpg" alt="">
+	<p>Пример:</p>
+	<img src="prim2.jpg" alt="">
+	<p>Скорость можно указать как и в милисекундах, так и словом (slow = 600 милисекунд, fast = 200 милисекунд)</p>
+
+</div>
+
+<script src="jquery.js"></script>
+<script>
+	$("#stik").click(function(){
+		$("#hide").slideToggle("slow");
+	});
+</script>
+</body>
+</html>

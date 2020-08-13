@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+	margin: 0;
+	flex-direction: column;
+}
+
+.result{
+	width: 100%;
+	justify-content: center;
+	
+}
+
+.section {
+	margin: auto;
+	width: 90%;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+	overflow: hidden;
+
+}
+
+.logo {
+	width: 250px;
+	height: auto;
+
+	z-index: 1;
+	transition: 2s;
+}
+
+.bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('siti.jpg');
+	background-size: cover;
+
+	filter: blur(10px);
+	transition: 2s;
+}
+
+.logo:hover{
+	filter: blur(8px);
+	transform: scale(1.2);
+	opacity: 0.5;
+}
+
+.logo:hover~.bg{
+	
+	filter: blur(0);
+	transform: scale(1.5);
+}
+
+p {
+	font-size: 1.2em;
+}
+
+
+
+
+
+	</style>
+</head>
+<body>
+<div class="result">
+	<h2>Цель</h2>
+	<section class="section">
+		<img src="logo.png" class="logo">
+
+		<div class="bg"></div>
+	</section>
+
+</div>
+
+<div>
+	
+	<p>Рассмотрим сначала код html</p>
+	<img src="prim1.jpg">
+	<p>Здесь важно отметить то, что мы не будем выставлять фон body, а фоновую картинку города выделим в отдельный блок с классом "bg". и блок "bg" и логотип мы помеoftv в тег <b>section</b>. Так же надо добавить то, что для того что бы логотип не отображался с белым фоном в виде квадрата, надо найти такую картинку, где будет специальный фон.</p>
+	<p>Теперь рассмотрим код CSS</p>
+
+
+
+
+		
+	<img src="prim2.jpg">
+	
+	
+	<p><b>Блок .section</b>
+		<ul>
+			<li><b>width: 100%;</b> - ширина 100% относительно родительского элемента</li>
+			<li><b>height: 100vh;</b> - высота 100% высоты окна (1vh - 1% высоты окна)</li>
+			<li><b>display: flex;</b> - отображаем блоки в линию</li>
+			<li><b>justify-content: center;</b> - распределяем пространство вокруг блоков - по центру</li>
+			<li><b>align-items: center;</b> - Свойство align-items выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении, в нашем случае по центру</li>
+			<li><b>position: relative;</b> - устанавливаем положение элемента относительно его исходного места. Это нужно для того что бы при увеличении картинки фона не появлялись скролы</li>
+			<li><b>overflow: hidden;</b> - скрываем скролы</li>
+		</ul>
+	</p>
+	
+
+<p><b>Блок .logon</b>
+		<ul>
+			<li><b>width: 250px;</b> - ширина 250 пикселей</li>
+			<li><b>height: auto;</b> - высота выщитывается автоматически после задания ширины</li>
+			<li><b>z-index: 1;</b> - позиционируем элемент первым, что бы он был выше фоновой картинки не смотря на то что фону дадим значение absolute</li>
+			<li><b>transition: 2s;</b> - указываем время перехода 2 секунды, т.е. при наведении мыши изменения будут не моментальны а в течении 2 секунд</li>
+			
+		</ul>
+	</p>
+
+<p><b>Блок .bg</b>
+		<ul>
+			<li><b>position: absolute;</b> - абсолютное позиционирование</li>
+			<li><b>top: 0;</b> - расстояние от верней границы элемента до верхней границы родительского элемента</li>
+			<li><b>left: 0;</b> - расстояние от лево границы элемента до левой границы родительского элемента</li>
+			<li><b>width: 100%;, height: 100%;</b> - ширина и высота 100% относительно родительского элемента</li>
+			<li><b>background-image: url('siti.jpg');</b> - ссылка на фоновую картинку</li>
+			<li><b>background-size: cover;</b> - Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока.</li>
+			<li><b>filter: blur(10px);</b> - применяем фильтр размытия в 10 пикселей</li>
+			<li><b>transition: 2s;</b> - время перехода 2 секунды</li>
+			
+		</ul>
+	</p>
+
+
+
+
+<p><b>Блок .logo:hover</b>
+		<ul>
+			<li><b>filter: blur(8px);</b> - при наведении к логотипу применится эффект размытия </li>
+			<li><b>transform: scale(1.2);</b> - при наведении размер картинки умножится на 1.2 т.е. увеличится на 20%</li>
+			<li><b>opacity: 0.5;</b> - при наведении прозрачность станет 0.5</li>
+			
+			
+		</ul>
+	</p>
+
+<p><b>Блок .logo:hover~.bg</b> 
+
+<p>Пара слов об <span style="font-size: 1.3em; font-weight: bold;">"~"</span> - этот элемент говорит о том что после наведения на класс logo стили будут применяться к соседнему классу bg. т.е. элемент ~ говорит о том что стили будут применяться ко всем соседним элементам, но так как мы указали к каким конкретно, то стили будут применяться только к bg</p>
+
+
+		<ul>
+			<li><b>filter: blur(0);</b> - отменяется эффект размытия </li>
+			<li><b>transform: scale(1.5);</b> - при наведении размер картинки умножится на 1.5 т.е. увеличится на 50%</li>
+		</ul>
+	</p>
+
+</div>
+
+</div>
+</body>
+</html>

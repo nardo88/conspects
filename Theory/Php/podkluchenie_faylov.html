@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.4.6.2 (Linux)"/>
+	<meta name="author" content="Максим Кузнецов"/>
+	<meta name="created" content="2019-06-14T18:33:00"/>
+	<meta name="changedby" content="Максим Кузнецов"/>
+	<meta name="changed" content="2019-06-14T18:48:00"/>
+	<meta name="AppVersion" content="12.0000"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 120%; text-align: left; orphans: 2; widows: 2 }
+	</style>
+</head>
+<body lang="ru-RU" dir="ltr">
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>Подключение
+файлов в </b></font><font size="4" style="font-size: 14pt"><span lang="en-US"><b>php</b></span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Для
+чего нужно подключение файлов? В том
+случае если нам необходимо разбить
+страницу на части и затем периодически
+менять одну часть, и т.к. эта часть будет
+подключена к 500 страницам, то это будет,
+как будто мы отредактировали 500 страниц.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">  <font size="3" style="font-size: 12pt"><u>Пример</u></font></p>
+<ol>
+	<li/>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Файл</b></font></p>
+</ol>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;html&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;head&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;title&gt;</span></font><font size="3" style="font-size: 12pt">Заголовок</font><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/title&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/head&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;body&gt;</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<ol start="2">
+	<li/>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Файл</b></font></p>
+</ol>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;?php</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">?&gt;</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<ol start="3">
+	<li/>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Файл</b></font></p>
+</ol>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/body&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/html&gt;</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Итак,
+наша страница разделена на 3 части:
+шапка, тело и низ.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Что
+бы объединить их в одну страничку, во
+втором файле внутри кода </font><font size="3" style="font-size: 12pt"><span lang="en-US">php</span></font><font size="3" style="font-size: 12pt">
+используем оператор </font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>require</b></span></font><font size="3" style="font-size: 12pt"><b>
+&quot;&quot;</b></font><font size="3" style="font-size: 12pt">, а в
+кавычках указываем путь к нашим файлам
+с шапкой и низом сайта.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Вот
+как это должно будет выглядеть:</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;?php</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">require
+&quot;header.php&quot;;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">require
+&quot;footer.php&quot;;</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">?&gt;</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>require</b></span></font><font size="3" style="font-size: 12pt">
+– этот оператор объединяет файлы и в
+случае если один из файлов недоступен,
+то </font><font size="3" style="font-size: 12pt"><span lang="en-US">php</span></font><font size="3" style="font-size: 12pt">
+выдаст ошибку и страница не загрузится</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>include</b></span></font><font size="3" style="font-size: 12pt">
+– этот оператор так же объединяет файлы
+и в случае если один из файлов недостпен
+то страница загрузится с тем что доступно</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Операторы
+</font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>require</b></span></font><font size="3" style="font-size: 12pt"><b>-</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>once</b></span></font><font size="3" style="font-size: 12pt"><b>
+</b></font><font size="3" style="font-size: 12pt">и</font><font size="3" style="font-size: 12pt"><b>
+</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>include</b></span></font><font size="3" style="font-size: 12pt"><b>-</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>once</b></span></font><font size="3" style="font-size: 12pt"><b>
+– </b></font><font size="3" style="font-size: 12pt">исключают
+повторение блоков &lt;</font><font size="3" style="font-size: 12pt"><span lang="en-US">html</span></font><font size="3" style="font-size: 12pt">&gt;&lt;/</font><font size="3" style="font-size: 12pt"><span lang="en-US">html</span></font><font size="3" style="font-size: 12pt">&gt;
+и &lt;</font><font size="3" style="font-size: 12pt"><span lang="en-US">body</span></font><font size="3" style="font-size: 12pt">&gt;&lt;/</font><font size="3" style="font-size: 12pt"><span lang="en-US">body</span></font><font size="3" style="font-size: 12pt">&gt;</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<title>Аудио плеер</title>
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.min.css">
+    <style>
+        .code{
+            width: 700px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .min_code{
+            width: 500px;
+            height: 100px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1,h2,p{
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Аудио плеер</h1>
+    <article class="player-block audio">
+        <div class="container">
+            <div class="audio-container">
+                <div class="audio-cover">
+                    <img class="audio-img" src="audio/hello.jpg" alt="обложка">
+                </div>
+                <h3 class="audio-header">Крути пластинку</h3>
+                <audio class="audio-player" src="audio/hello.mp3"></audio>
+            </div>
+        </div>
+        <footer class="footer-fix audio-footer">
+            <nav class="audio-navigation">
+                <div class="audio-btns">
+                    <button class="audio-button audio-button__prev fa fa-step-backward"></button>
+                    <button class="audio-button audio-button__play fa fa-play"></button>
+                    <button class="audio-button audio-button__next fa fa-step-forward"></button>
+                </div>
+                <span class="audio-time audio-time__passed">00:00</span>
+                <div class="audio-progress">
+                    <div class="audio-progress__timing"></div>
+                </div>
+                <span class="audio-time audio-time__total">00:00</span>
+            </nav>
+        </footer>
+    </article>
+    <h2>Описание</h2>
+    <p>рассмотрим верстку</p>
+    <img src="./code1.png" alt="" class="code">
+    <p>Верстка состоит из двух частей. В верхней части у нас изображение трека, название трека и сам тег audio</p>
+    <p>В нижней части мы реализовали интерфейс управления воспроизведением. Тут есть кнопка play/pause, next, prew, два параграфа которые указывают на текущее и тотальное время трека. А так же самое интересное - полоса прокрутки. Эта полоса в этом случае не input type range, а влок div внутри которого другой блок с бэкграундом красного цвета. Ширина этого блока (внутреннего) будет соответствовать текущему времени трека.</p>
+    <h2>Код JavaScript</h2>
+    <p>По традиции начинаем с получения элементов DOM дерева</p>
+    <img src="./code2.png" alt="" class="code">
+    <p>Так как в примере мы не используем сервер с бэкэндом, который бы по запросу нам возвращал треки, мы создадим массив с названиями наших тректов</p>
+    <img src="./code3.png" alt="" class="min_code">
+    <p>Теперь создадим глобальную переменную, которая будет в себе хранить индекс текуего трека в массиве</p>
+    <img src="./code4.png" alt="" class="min_code">
+    <p>Начнем с самой главной функции, которая отвечает за навигацию аудио-плеера (пауза/play, next, prew)</p>
+    <img src="./code5.png" alt="" class="code">
+    <p>На блок с навигацией мы вешаем слушатель события по клику. У callback функции есть входной параметр - event. Первое что мы делаем, это объявляем две переменные/ Первая с помощью оператора event мы получаем доступ до объекта по которому совершили клик. Вторая переменная получает значение текущего имени трека в массиве.</p>
+    <p>Дальше у нас идет условие - если класс элемента в таргете равен - audio-button__play, тогда мы с помоью метода toggle добавляем или удаляем классы компонентам.</p>
+    <p>Дальше внутри условия идет второе условие - если плеер на паузе - запускаем его, иначе останавливаем. И последнее что делается в первом условии это мы меняем на верхней части плеера картинку и название трека (трек пишем в uppercase)</p>
+    <p>Второе условие и третье одинаковые по назначению. Если нажали кнопку next запускаем функцию nextTrack(), если нажали кнопку prev, то запускаем функцию prevTrack()</p>
+    <p>Рассмотрим что делают эти функции. Начнем с nextTrack</p>
+    <img src="./code6.png" alt="" class="code">
+    <p>Если глабальная переменная имеет значение равное длине массива треков минус 1, тогда присваиваем ей значение 0., иначе увеличиваем ее значение на 1. Дальше применяем функцию loadTrack() </p>
+    <p>Функция prevTrack делает обратную задачу. Если значение глобальной переменной не равно 0, то уменьшаем ее значение на 1, иначе присваиваем ей значение длины массива минус 1. И так же вызываем функцию loadTrack</p>
+    <img src="./code7.png" alt="" class="code">
+    <p>Теперь рассмотрим что же делает функцию loadTrack</p>
+    <img src="./code8.png" alt="" class="code">
+    <p>Здесь мы создаем две переменные. В первую записываем булевое значение - на паузе ли наш плеер. Вторая переменная в себя включает имя текущего трека в массиве.</p>
+    <p>Дальше с помощью шаблонныз строк мы заполняем значения свойств <b>src</b> картинки превью и аудио-плеера. Далее заполняем название трека на превью</p>
+    <p>И дальше условие, если плеер был на паузе, оставляем его на паузе, если плеер играл, тогда пусть играет. Для чего так: это нужно что бы если плеер играет и мы нажали next то плеер тут же его будет проигрывать.</p>
+    <p>Рассмотрим следующую функцию</p>
+    <img src="./code9.png" alt="" class="code">
+    <p>На наш аудио-плеер мы повесили слушатель события <b>timeupdate</b> - это событие срабатывает во время проигрывания трека. Во время этого события мы запускаем функцию - <b>updateTime()</b>. Рассмотрим ее</p>
+    <img src="./code10.png" alt="" class="code">
+    <p>Здесь ровно тоже самое что мы делали на видеоплеере. Получали значения текущего и тотального времени трека. получали прогресс с помощью деления текущего на тотальное и умножение на 100.</p>
+    <p>Здесь только разница что с помощью JS мы меняем свойство width у блока с красным фоном - присваиваем значение переменной progress и добавляем % что бы ширина была в процентах.  Ну а дальше спомощью метода Math мы получаем округленные (floor) значения секунд и минут тотального и текущего времени. После чего с помощью шаблонных строк заполняем тег p (параграф который отвечает за отображение времени)</p>
+    <p>функция addZero делат тоже самое что и в видео, она добавляет 0 если секунд или минут меньше 10. что бы время было в формате 00:00</p>
+    <p>Почему мы вынесли этот код в отдельную функцию? все просто эту же функцию мы вызовем во время события у плеера которое называется - <b>canplay</b></p>
+    <img src="./code11.png" alt="" class="code">
+    <p>Что это за событие? оно срабатывает тогда когда плеер готов что-то воспроизвести. Зачем мы это делаем?. Дело в том что если остановить плеер и просто полистать треки, то в теги в которых отображается тотальное время не отображается всемя трека (там просто нули). Для этого мы вызываем функцию обновления времени при событии когда трек готов</p>
+    <p>Теперь рассмотрим что будет происходить когда трек закончится</p>
+    <img src="./code12.png" alt="" class="code">
+    <p>Будет запущена функцию nextTrack и плеер запустится.</p>
+    <p>Последнее что мы разберем это как перематывать видео</p>
+    <img src="./code13.png" alt="" class="code">
+    <p>Вешаем слушатель события клик на блок отвечающий за шкалу трека. Callback функция принимает event</p>
+    <p>Далее мы объявляем переменную X в которую записываем значение в пикселях рассточние от левой границы блока до места клика.</p>
+    <p>Далее объявляем переменную в которую записываем текущую ширину блока audioProgress (clientWidth - позволяет получать текущее значение ширины т.к оно может меняться в зависимости от ширины экрана устройства, т.е приложение адаптивно)</p>
+    <p>Далее мы объявляем переменную куда записываем результат выражения и этот результат передаем в свойство currentTime нашему плееру.</p>
+    
+
+
+
+    <script>
+  	
+	const audio = document.querySelector('.audio')
+	const audioImg = document.querySelector('.audio-img')
+	const audioHeader = document.querySelector('.audio-header')
+	const audioPlayer = document.querySelector('.audio-player')
+	const audioNavigation = document.querySelector('.audio-navigation')
+	const audioButtonPlay = document.querySelector('.audio-button__play')
+	const audioProgress = document.querySelector('.audio-progress')
+	const audioProgressTiming = document.querySelector('.audio-progress__timing')
+	const audioTimePassed = document.querySelector('.audio-time__passed')
+	const audioTimeTotal = document.querySelector('.audio-time__total')
+
+	const playList = ['hello', 'flow', 'speed']
+
+	let trackIndex = 0;
+
+	const loadTrack = () =>{
+		const isPlayed = audioPlayer.paused
+		const track = playList[trackIndex];
+
+		audioImg.src = `./audio/${track}.jpg`
+		audioPlayer.src = `./audio/${track}.mp3`
+
+		audioHeader.textContent = track.toUpperCase()
+
+		if (isPlayed){
+			audioPlayer.pause()
+		} else {
+			audioPlayer.play()
+		}
+	}
+
+
+
+	const prevTrack = () => {
+		if (trackIndex !== 0){
+			trackIndex--
+		} else {
+			trackIndex = playList.length - 1
+		}
+		loadTrack()
+	}
+
+	const nextTrack = () => {
+		if (trackIndex === playList.length - 1){
+			trackIndex = 0
+		}else {
+			trackIndex++
+		}
+		loadTrack()
+	}
+
+    // Функция для запуска плеера нажимая по кнопкам навигации 
+
+	audioNavigation.addEventListener('click', event => {
+		const target = event.target
+		const track = playList[trackIndex];
+
+		if (target.classList.contains('audio-button__play')){
+			audio.classList.toggle('play')
+			audioButtonPlay.classList.toggle('fa-play')
+			audioButtonPlay.classList.toggle('fa-pause')
+
+			if (audioPlayer.paused){
+				audioPlayer.play()
+			} else {
+				audioPlayer.pause()
+			}
+			audioHeader.textContent = track.toUpperCase()
+			audioImg.src = `./audio/${track}.jpg`
+			
+		}
+
+		if (target.classList.contains('audio-button__prev')){
+			prevTrack()
+		}
+
+		if (target.classList.contains('audio-button__next')){
+			nextTrack()
+		}
+		
+	})
+
+	audioPlayer.addEventListener('ended', () => {
+		nextTrack()
+		audioPlayer.play()
+	})
+
+    const addZero = n => n < 10 ? '0' + n : n
+
+	const updateTyme = () =>{
+		const duration = audioPlayer.duration
+		const currentTime = audioPlayer.currentTime
+		const progress = (currentTime / duration) *100
+
+		audioProgressTiming.style.width = progress + '%'
+
+		const minutesPassed = Math.floor(currentTime / 60) || '0'
+		const secondsPassed = Math.floor(currentTime % 60) || '0'
+
+		const minutesTotal = Math.floor(duration / 60) || '0'
+		const secondsTotal = Math.floor(duration % 60) || '0'
+
+		audioTimePassed.textContent = `${addZero(minutesPassed)}:${addZero(secondsPassed)}`
+		audioTimeTotal.textContent = `${addZero(minutesTotal)}:${addZero(secondsTotal)}`
+	}
+
+	audioPlayer.addEventListener('timeupdate', () => {
+        updateTyme()
+
+	})
+
+	audioProgress.addEventListener('click', event => {
+		const x = event.offsetX
+		const allWidth = audioProgress.clientWidth
+		const progress = ( x / allWidth ) * audioPlayer.duration
+
+		audioPlayer.currentTime = progress
+	})
+
+	audioPlayer.addEventListener('canplay', () => {
+		updateTyme()
+	})
+
+
+    </script>
+</body>
+</html>

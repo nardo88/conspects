@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<title>ЯTunes</title>
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/style.min.css">
+</head>
+<body>
+	<h1>Манипуляции с video плеером</h1>
+	<br>
+
+
+	<div class="container">
+		<div class="video-container">
+			<video src="video/rocket_launching.mp4" class="video-player" poster="video/play.svg"></video>
+			<nav class="video-navigation">
+				<button class="video-button video-button__play fa fa-play"></button>
+				<button class="video-button video-button__stop fa fa-stop"></button>
+				<p class="video-time video-time__passed">00:00</p>
+				<input type="range" class="video-progress" min="0" max="100" step="0.1" value="0">
+				<p class="video-time video-time__total">00:00</p>
+				<span class="video-icon fa fa-volume-down"></span>
+				<input type="range" class="video-volume" min="0" max="100" step="1" value="100">
+				<span class="video-icon fa fa-volume-up"></span>
+				<p class="fa fa-external-link"></p>
+			</nav>
+		</div>
+	</div>
+
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p>Сначала рассмотрим верстку</p>
+	<img class="code" src="./code.png">
+	<p>Есть тег video которому мы задали свойство src и дали ему класс - <b>video-player</b></p>
+	<p>Далее идет блок с навигацией. Здесь у нас две кнопки, затем input c типом range, а так же два параграфа которые выводят время текущее и всемя тотальное</p>
+	<p>Затем идут два спана которые являются иконками уровня звука, еще один input c типом range, он будет регулятором громкости. И наконец кнопка в виде тега p (параграф) который будет раскрывать наше видео на весь экран.</p>
+	<h2>Код JavaScript</h2>
+	<p>Теперь рассмотрим код JS. Рассматривать будем сегментами:</p>
+	<p>Первое что мы делаем - это создаем переменные для обращения DOM элементам.</p>
+	<img src="./code1.png" alt="" class="code">
+	<h2>Запуск видео</h2>
+	<p>Теперь напишем функцию, которая будет запускать и останавливать на плеер</p>
+	<img src="./code2.png" alt="" class="code">
+	<p>В этой функции условие, если элемент <b>videoPlayer</b> стоит на паузе, тогда мы обращаемся в этому элементу и применяем к нему метод <b>play()</b>, иначе - мы применяем к нему метод <b>pause()</b></p>
+	<p>Эту функцию мы повесим с помощью <b>addEventListener</b> по клику на два элемента:</p>
+	<img src="./code3.png" alt="" class="code">
+	<p>Первый это сам плеер, а второй - это кнопка включения и выключения. НО!</p>
+	<p>Нам нужно что бы при нажатии на кнопку включения/паузы у нас менялась иконка. Длаться это будет с помощью смены класса. Вот как будет выглядеть эта функция:</p>
+	<img src="./code4.png" alt="" class="code">
+	<p>Теперь повесим эту функцию на события плеера:</p>
+	<img src="./code5.png" alt="" class="code">
+	<p>Теперь рассмотрим как мы будем обрабатывать клик по нажатии на кнопку stop</p>
+	<img src="./code6.png" alt="" class="code">
+	<p>Повесим эту функцию на собитые клика кнопки stop</p>
+	<img src="./code7.png" alt="" class="code">
+	<h2>Событие timeupdate</h2>
+	<p>Теперь расмотрим событие для плеера, которое называется <b>timeupdate</b>, т.е. что будет происходить, когда видео будет проигрываться</p>
+	<img src="./code8.png" alt="" class="code">
+	<p>Первое что мы делаем это объявляем переменные <b>currentTime</b> и <b>duration</b>. В currentTime мы помещаем значение времени в секундах текущего времени проигрывания. В durationмы помещаем значение тотального времени видео в секундах. Для наглядности можно вывести эти значения в консоль и посмотреть на них</p>
+	<p>Далее мы создаем с помощью оператора let четыре переменные которые будут содеражать в себе минуты и секунды значений currentTime и duration (получаем мы их математическим путем через деление и остаток (%), а так же при помощи метода <b>floor</b>, который округляет до целого числа получаемое значение)</p>
+	<p>что означает строчка:</p>
+	<img src="./code9.png" alt="" class="code">
+	<p>нашему input c типом range мы присваиваем значение полученное через деление текущего времени на тотальное и помноженное на 100. В этом случае мы получаем процент времени текущего проигрывания.</p>
+	<p>После этого мы заполняем наши параграыф которые указывают время в минутах и в секундах с помощью строковой интерполяции</p>
+	<h2>Переметока видео</h2>
+	<p>Теперь рассмотрим следующее событие:</p>
+	<img src="./code10.png" alt="" class="code">
+	<p>На наш бегунок, который отвечает за перемотку видео мы вешаем слушатель события который называется input. Это событие срабатывает каждый раз, когда меняется значение input (в нашем случае это сдвиг бегунка)</p>
+	<p>Тут у нас опять математическое выражение. Сначала мы получаем два значения: тотальное время видео и текущее значение бегунка.</p>
+	<p>После этого мы присваиваем свойству <b>currentTime</b> видеоплеера, которое отвечает за текущее время проигрывания и присваиваем ему значение произведения значений переменных value и duration поделенное на 100</p>
+
+	<h2>Изменение громкости</h2>
+	<p>Для того что бы регулировать громкость видеоплеера можно использовать свойство - <b>volume</b>. Рассмотрим код:</p>
+	<img src="./code11.png" alt="" class="code">
+	<p>На бегунок, который отвечает за звук, мы вешаем слушатель события - input и при каждом срабатывании этого события мы обращаемся к videoPlayer и присваиваем к свойству volume значение value бегунка поделенное на 100</p>
+	<img src="./code12.png" alt="" class="code">
+	<p>В этой строчке мы устанавливаем значение звука плеера по умолчанию при открытии страницы. Так при открытии страницы нам надо установить значение бегунка в значение которое бы соответсвовало значения volume видеоплеера. Делается это так:</p>
+	<img src="./code13.png" alt="" class="code">
+	<h2>Mute - отключение громкости</h2>
+	<p>Рассмотрим код:</p>
+	<img src="./code14.png" alt="" class="code">
+	<p>Начнем с конца. Мы обращаемся к кнопке faVolumeDown и вешаем на нее слушатель сыбытия <b>click</b>. Внутри функции у нас условие:</p>
+	<p>Если громкость плеера НЕ РАВНА нулю, т.е. например имеет значение 0.5, тогда это значение мы записываем во внешнюю - глобальную переменную - <b>videoVolumeValue</b>. После этого мы сбрасываем значение volume плеера до нуля.</p>
+	<p>Если же иначе (т.е значение volume плеера равно нулю) тогда мы вызываем функцию changeVolume и на вход этой функции мы даем значение которое до этого записали в переменную videoVolumeValue.</p>
+	<p>Теперь рассмотрим что же делает эта функция? Ничего необычного она присваивает входящее значение и присваивает его к значению volume плеера поделянное на 100 и присваивает его к значению value бегунка.</p>
+	<h2>FULL SCREEN</h2>
+	<p>Что бы развернуть видео на весь экран, тут все просто, на кнопку вешаем слушатель события click и по клику обращаемся к нашему плееру и применяем к нему метод - <b>requestFullscreen</b></p>
+	<img src="./code15.png" alt="" class="code">
+
+
+
+<script>
+	const videoPlayer = document.querySelector('.video-player')
+	const videoButtonPlay = document.querySelector('.video-button__play')
+	const videoButtonStop = document.querySelector('.video-button__stop')
+	const videoTimePassed = document.querySelector('.video-time__passed')
+	const videoProgress = document.querySelector('.video-progress')
+	const videoTimeTotal = document.querySelector('.video-time__total')
+	const videoVolume = document.querySelector('.video-volume')
+	const faVolumeDown = document.querySelector('.fa-volume-down')
+	const faExternalLink = document.querySelector('.fa-external-link')
+
+	const toggleIcon = () => {
+		if (videoPlayer.paused){
+			videoButtonPlay.classList.remove('fa-pause')
+			videoButtonPlay.classList.add('fa-play')
+
+		} else {
+			videoButtonPlay.classList.add('fa-pause')
+			videoButtonPlay.classList.remove('fa-play')
+		}
+	}
+	
+	const togglePlay = () => {
+		if (videoPlayer.paused){
+			videoPlayer.play()
+		} else {
+			videoPlayer.pause()
+		}
+	}
+	
+	const stopPlay = () => {
+		videoPlayer.pause()
+		videoPlayer.currentTime = 0
+	}
+	
+	const addZero = (n) => n < 10 ? '0'+ n : n
+	
+	videoPlayer.addEventListener('click', togglePlay)
+	videoButtonPlay.addEventListener('click', togglePlay)
+	videoPlayer.addEventListener('play', toggleIcon)
+	videoPlayer.addEventListener('pause', toggleIcon)
+	videoButtonStop.addEventListener('click', stopPlay)
+	
+	videoPlayer.addEventListener('timeupdate', () => {
+		const currentTime = videoPlayer.currentTime
+		const duration = videoPlayer.duration
+
+		let minutePassed = Math.floor(currentTime / 60)
+		let secondsPassed = Math.floor(currentTime % 60)
+
+		let minuteTotal = Math.floor(duration / 60)
+		let secondsTotal = Math.floor(duration % 60)
+
+		videoProgress.value = (currentTime / duration) * 100
+
+		videoTimePassed.textContent = `${addZero(minutePassed)}:${addZero(secondsPassed)}`
+		videoTimeTotal.textContent = `${addZero(minuteTotal)}:${addZero(secondsTotal)}`
+	})
+
+	videoProgress.addEventListener('input', () => {
+		const duration = videoPlayer.duration
+		const value = videoProgress.value
+
+		videoPlayer.currentTime = (value * duration) / 100
+	})
+
+	videoVolume.addEventListener('input', () => {
+		videoPlayer.volume = videoVolume.value / 100
+	})
+
+	videoPlayer.volume = 0.2
+
+	videoVolume.value = videoPlayer.volume * 100
+
+	const changeVolume = (val) => {
+			videoPlayer.volume = val / 100
+			videoVolume.value = val
+	}
+
+	let videoVolumeValue
+
+	faVolumeDown.addEventListener('click', () => {
+				
+		if (videoPlayer.volume != 0 ){
+			videoVolumeValue = videoVolume.value
+			changeVolume(0)
+
+		} else {
+			changeVolume(videoVolumeValue)
+		}
+	})
+
+	faExternalLink.addEventListener('click', () => {
+		videoPlayer.requestFullscreen()
+	})
+</script>
+
+</body>
+</html>

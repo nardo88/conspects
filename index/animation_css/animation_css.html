@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="animation.css">
+	<link href="https://fonts.googleapis.com/css?family=Barriecito&display=swap" rel="stylesheet">
+	<style>
+		.prim1{
+			text-align: center;
+			width: 50%;
+			height: 100px;
+			font-size: 1.5em; 
+			font-weight: 700;
+			font-family: 'Barriecito', cursive;
+			margin: 0 auto;
+			animation-iteration-count: infinite;
+
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Animation CSS</h1>
+	
+
+	<div class="prim1 wow wobble" data-wow-duration="3s">Пример анимации</div>
+
+	<h2>Разбор</h2>
+	<p>Как это работает? Сначала нам надо зайти на <a href="https://daneden.github.io/animate.css/" target="_blank">сайт разработчика</a> и скачать <a href="animation.rar" download>библиотеку CSS</a></p>
+	<p>Далее эту библиотеку подключаем как обычную библиотеку CSS</p>
+	<p>Теперь для того что бы анимация применилась к элементу необходимо в атрибут "class" добавить слово "animated" и через пробел название анимации</p>
+	<img src="prim1.jpg" alt="">
+	<p>Как смотреть название анимации? так же на главной странице разработчика в выпадающем списке мы можем посмотреть название анимации и как она себя ведет</p>
+	<h2>WOW JS</h2>
+	<p>Как можно управлять временем начала анимации. Если это не делать то анимация начнется сразу после загрузки страницы. А что если объект анимации находится в самом низу страницы, и пока пользователь доскролит до нашей анимации она уже пройдет. Вот для решения этой задачи и используется библиотека WOW js.</p>
+	<p><a href="wow_js.rar" download="">саму библиотеку</a> можно скачать с <a href="https://github.com/matthieua/WOW" target="_blank">гитхаб сайта разработчика</a></p>
+	<p>Далее необходимо из архива в папке <b>disr</b> вытащить файл wow.js и подключить ее как обычный script в своем документе.</p>
+	<p>Теперь необходимо инициализировать этот скрипт. Для этого просто содаем внизу нашего документа раздел script и внутрь него помещаем код:</p>
+	<p>new WOW().init();</p>
+	<img src="prim2.jpg" alt="">
+	<p>Теперь вместо слова "animated" в класс элемента добавляем слово "wow" и через пробел название анимации</p>
+	<img src="prim3.jpg" alt="">
+	<p>Атрибутом <b>data-wow-duration="1s"</b> - мы задаем скорость анимации в секундах.</p>
+
+
+
+	<script src="wow.min.js"></script>
+	<script>
+		
+	new WOW().init();
+	</script>
+</body>
+</html>

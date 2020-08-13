@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		.primer_img{
+			width: 400px;
+			height: 500px;
+			/*filter: opacity(50%);*/
+
+		}
+
+		.control_wrapper{
+			margin-top: 20px;
+			display: flex;
+		}
+
+		.control_wrapper label{
+			width: 100px;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<p style="font-size: 1.3em; font-weight: bold;">Фильтры</p>
+<p>Фильтры можно применять практически ко всем объектам. Но чаще их применяют к изображениям с использованием псевдокласса hover</p>
+<p>Рассмотрим синтаксис фильтров:</p>
+
+<div style="background-color: #F2E0EB; padding: 5px; width: 20%">
+<p><span style="color: red;">img</span>:hover {<br></p>
+<p style="text-indent: 2.1em;"><span style="color: blue; ">filter</span>: <span style="color: blue;">blur</span>(5px);</p>
+<p>}</p>
+</div>
+
+<ul>
+	<li><b>img</b> - объект к которому будут применяться фильтры. (картинка)</li>
+	<li><b>hover</b> - псевдокласс</li>
+	<li><b>filter</b> - оператор объявления фильтра</li>
+	<li><b>blur</b> - тип фильтра</li>
+	
+
+</ul>
+
+
+</p>
+<p>Какие фильтры бывают:</p>
+<ul>
+	<li><b>blur</b> - этот фильтр применяет к изображению эффект размытия. величина размытия указывается в пикселях. большее значение увеличит эффект размытия</li>
+	<li><b>brightness</b> - влияет на яркость. 0% - полностью черное изображение 100% - оригинал. можно утсановить 130% изображение будет ярче оригинала</li>
+	<li><b>contrast</b> - влияет на контраст. 0% - полностью серое изображение 100% - оригинал, 130% - более контрасное</li>
+	<li><b>greyscale</b> - делает изображение черно-белым. 0% - оригинал 100% - полностью черно-белое изображение</li>
+	<li><b>hue-rotate</b> - применяет к изображению поворот оттенка. входящий параметр в deg (пример 200deg)</li>
+	<li><b>invert</b> - применяет инверсию (негатив) к изображению. входящий параметр в %</li>
+	<li><b>opacity</b> - прозрачность. 0% - полностью прозрачная 100% - оригинал</li>
+	<li><b>saturate</b> - изменяет насыщенность картинки 0% - ненасыщенная 100% - оригинал 130% - насыщеннее оригинала</li>
+	<li><b>sepia</b> - применяет сепию к изображению</li>
+
+</ul>
+
+<h3>ПРИМЕРЫ</h3>
+
+<div class="prim_wraper">
+	<img id="primer_img" class="primer_img" src="primer.jpg" alt="">
+
+</div>
+<div class="control_wrapper">
+	<label for="#blur">blur</label>
+	<input id="blur" type="range" min="0" max="100" step="1" value="0"  oninput="change_blur()">
+	<label id="blur_value" for="#blur">0px</label>
+</div>
+<div class="control_wrapper">
+	<label for="#brightness">brightness</label>
+	<input id="brightness" type="range" min="0" max="100" step="1" value="100"  oninput="change_brightness()">
+	<label id="brightness_value" for="#brightness">100%</label>
+</div>
+
+<div class="control_wrapper">
+	<label for="#contrast">contrast</label>
+	<input id="contrast" type="range" min="0" max="100" step="1" value="100"  oninput="change_contrast()">
+	<label id="contrast_value" for="#contrast">100%</label>
+</div>
+
+<div class="control_wrapper">
+	<label for="#greyscale">greyscale</label>
+	<input id="greyscale" type="range" min="0" max="100" step="1" value="0"  oninput="change_greyscale()">
+	<label id="greyscale_value" for="#greyscale">0%</label>
+</div>
+
+<div class="control_wrapper">
+	<label for="#hue_rotate">hue-rotate</label>
+	<input id="hue_rotate" type="range" min="0" max="300" step="1" value="0"  oninput="change_hue_rotate()">
+	<label id="hue_rotate_value" for="#hue_rotate">0deg</label>
+</div>
+
+<div class="control_wrapper">
+	<label for="#invert">invert</label>
+	<input id="invert" type="range" min="0" max="100" step="1" value="0"  oninput="change_invert()">
+	<label id="invert_value" for="#invert">0%</label>
+</div>
+
+<div class="control_wrapper">
+	<label for="#opaciti">opacity</label>
+	<input id="opaciti" type="range" min="0" max="100" step="1" value="100"  oninput="change_opaciti()">
+	<label id="opaciti_value" for="#opaciti">100%</label>
+</div>
+
+<div class="control_wrapper">
+	<label for="#saturate">saturate</label>
+	<input id="saturate" type="range" min="0" max="130" step="1" value="100"  oninput="change_saturate()">
+	<label id="saturate_value" for="#saturate">100%</label>
+</div>
+<script>
+	
+		function change_blur() {
+		let primer_img = document.getElementById('primer_img');
+		let blur = document.getElementById('blur').value;
+		let blur_value = document.getElementById('blur_value');
+		
+		blur_value.innerHTML = blur + 'px';
+		primer_img.style.filter = 'blur('+blur+'px)';
+		
+	}
+
+
+	function change_brightness() {
+		let brightness = document.getElementById('brightness').value;
+		let brightness_value = document.getElementById('brightness_value');
+			
+		brightness_value.innerHTML = brightness + '%';
+		primer_img.style.filter = 'brightness('+brightness+'%)';
+
+	}
+
+	function change_contrast() {
+		let contrast = document.getElementById('contrast').value;
+		let contrast_value = document.getElementById('contrast_value');
+			
+		contrast_value.innerHTML = contrast + '%';
+		primer_img.style.filter = 'contrast('+contrast+'%)';
+
+	}
+
+		function change_greyscale() {
+		let greyscale = document.getElementById('greyscale').value;
+		let greyscale_value = document.getElementById('greyscale_value');
+			
+		greyscale_value.innerHTML = greyscale + '%';
+		primer_img.style.filter = 'grayscale('+greyscale+'%)';
+
+	}
+
+			function change_hue_rotate() {
+		let hue_rotate = document.getElementById('hue_rotate').value;
+		let hue_rotate_value = document.getElementById('hue_rotate_value');
+			
+		hue_rotate_value.innerHTML = hue_rotate + 'deg';
+		primer_img.style.filter = 'hue-rotate('+hue_rotate+'deg)';
+
+	}
+	
+
+
+			function change_invert() {
+		let invert = document.getElementById('invert').value;
+		letinvert_value = document.getElementById('invert_value');
+			
+		invert_value.innerHTML = invert + '%';
+		primer_img.style.filter = 'invert('+invert+'%)';
+
+	}
+
+				function change_opaciti() {
+		let opaciti = document.getElementById('opaciti').value;
+		opaciti_value = document.getElementById('opaciti_value');
+			
+		opaciti_value.innerHTML = opaciti + '%';
+		primer_img.style.filter = 'opacity('+opaciti+'%)';
+
+	}
+
+
+	function change_saturate() {
+		let saturate = document.getElementById('saturate').value;
+		saturate_value = document.getElementById('saturate_value');
+			
+		saturate_value.innerHTML = saturate + '%';
+		primer_img.style.filter = 'saturate('+saturate+'%)';
+
+	}
+</script>
+</body>
+</html>

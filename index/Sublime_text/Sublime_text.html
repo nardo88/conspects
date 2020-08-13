@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div style="display: flex; flex-direction: column; align-items: center;">
+	<img src="sublime_text.png" style="width: 250px; height: 250px; ">
+	<h1>Установка и настройка Sublime Text</h1>
+</div>
+
+<div >
+	
+	<p>Скачать программу можно с <a href="https://www.sublimetext.com/3" target="_blank" style="font-size: 1.1em;">официального сайта</a>. </p>
+	<h2>Активация</h2>
+	<p>Для активации программы заходим на сайт <a href="https://hexed.it/" target = '_blank'>hexed.it</a></p>
+	<p>Нажимаем <b>open</b> и указываем на файл <b>sublime_text</b></p>
+	<p>После этого в строке поиска вбиваем: <b>97 94 0D</b> и жмем поиск</p>
+	<p>После того как раздел был найден значения 97 94 0D меняем на 00 00 00</p>
+	<p>После этого жмем кнопку <b>Export</b> и созраняем файл на рабочий стол. После этого этим же файлом заменяем основной.</p>
+	<p>Следующий шаг - надо в файле host добавить две строчки:</p>
+	<p><b>
+		127.0.0.1 license.sublimehq.com # SublimeText <br>
+		127.0.0.1 www.sublimetext.com # SublimeText
+	</b>
+	</p>
+	<p>Теперь открываем sublime - Help - Enter License и вводим:</p>
+	<p style="border: 1px solid red; width: 30%; margin: 0 auto; text-align: center; padding: 10px;">
+	----- BEGIN LICENSE ----- <br>	
+	TwitterInc<br>
+	200 User License<br>
+	EA7E-890007<br>
+	1D77F72E 390CDD93 4DCBA022 FAF60790<br>
+	61AA12C0 A37081C5 D0316412 4584D136<br>
+	94D7F7D4 95BC8C1C 527DA828 560BB037<br>
+	D1EDDD8C AE7B379F 50C9D69D B35179EF<br>
+	2FE898C4 8E4277A8 555CE714 E1FB0E43<br>
+	D5D52613 C3D12E98 BC49967F 7652EED2<br>
+	9D2D2E61 67610860 6D338B72 5CF95C69<br>
+	E36B85CC 84991F19 7575D828 470A92AB<br>
+	------ END LICENSE ------<br>
+	</p>
+
+
+</div>
+
+<div>
+	<h2 style="text-align: center;">Теперь пару слов о плагинах</h2>
+	<p>Забавный парадокс, для того что бы установить в Sublime Text плагины, надо установить в него плагин.</p>
+	<p>Для этого надо установить Package control. Для этого открываем Sublime Text и запускаем консоль (Ctrl + ~) и копируем туда вот такой текст:</p>
+	<p style="border: 1px solid red; margin: 0 auto; width: 30%; padding: 10px;">import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)</p>
+	<p>После этого перезапускаем Sublime Text, и нажимаем сочетание клавишь Ctrl + Shift + p. Откроетра икно ввода. В окне вводт слово instal, и в списке должен появиться Package Control: Install Package</p>
+	<img src="prim1.jpg" style="display: block; margin: 10px auto;">
+	<p>Выбираем его, после чего можно устанавливать плагины. Какие плагины необходимо установить:</p>
+	
+		<p><b>Emmet</b> - этот плагин позволяет не печатать теги полностью. Так же он помогает быстро создавать вложенные теги
+			<br>
+			пример: <br>
+		<img src="prim2.jpg" alt="" style="display: block; margin: 10px auto;"><br>
+		 после написания такой строки и нажатия кнопки tab плагин создаст блок с классом parent и восемь блоков с классом daughter
+		 <br>
+		 <img src="prim3.jpg" alt="" style="display: block; margin: 10px auto;"></p>
+		<p><b>AutoFileName</b> - этот плагин позволяет в тегах a и img в атрибутах src указывать файлы которые находятся в той же директории что и сам документ html. т.е - когда мы встанем на атрибут src у нас появится выпадающий список с выбором файлов</p>
+		<p><b>brackethighlighter</b> - этот плагин подсвечивает теги открытия и тег закрытия у выбранного элемента</p>
+		<p><b>ColorPicker</b> - Крошечный, но очень полезный плагин добавит возможность выбирать и подбирать цвет из круговой палитры в hex-формате. Открывается в отдельном окошке и позволяет выбрать цвет как из палитры, так и из любого места на экране.<b>Для вызова палиты зажимаем Ctrl+Shift+C</b></p>
+		<p><b>ColorHelper</b> - Штука, которая есть во многих средах разработки, но почему-то упущена в Саблайме – превью цвета.</p>
+		<p><b>Browser Sync</b> - синхронизация кода с браузером</p>
+		<p><b>Terminal</b> - позволяет запустить терминал из директории файла. Для запуска жмем сочетание клавиш: <b>Ctrl + Shift + T</b></p>
+		<p><b>JavaScript Completions</b> - Автокомплит для JavaScript</p>
+		<p><b>Console Wrap</b> - при помощи клавиш Ctrl + Shift + Q оборачивает выделенный текст в консоль</p>
+
+
+<h2>Установка темы</h2>
+<p>Зажимаем Ctrl+Shift +B, выбираем <b>Package Control: Install Package</b> и вводим там <b>AfterGlow</b>. Поиск выдаст тему After Glow</p>
+<p>Выбираем ее, после установки откроется двойное окно <b>Settings</b></p>
+<img src="prim4.jpg" alt="">
+<p>в правой части надо добавить следующий текст:</p>
+<xmp>
+{
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"font_face": "Consolas",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"save_on_focus_lost": true,
+	"tabs_small": true,
+	"theme": "Material-Theme.sublime-theme",
+	"tab_size": 2,
+}
+</xmp>
+<p>После чего сохраняем (Ctrl+S)</p>
+<p>Здесь же мы настроили автосохранение файлов командой:</p>
+<p><b>"save_on_focus_lost": true,</b></p>
+<h2>Расширение JSX для React</h2>
+<p>Первое что нужно сделать это установить плагин <b>Babel</b></p>	
+<p>После этого открываем в меню: <b>Preferences</b> - <b>Key Bindings</b></p>
+<p>Откроется окно которое поделено на две части. В праву сторону копируем код:</p>
+	<xmp>[
+	{
+  "keys": ["tab"], 
+  "command": "expand_abbreviation_by_tab", 
+
+  // put comma-separated syntax selectors for which 
+  // you want to expandEmmet abbreviations into "operand" key 
+  // instead of SCOPE_SELECTOR.
+  // Examples: source.js, text.html - source
+  "context": [
+    {
+      "operand": "meta.group.braces.round.js, text.html", 
+      "operator": "equal", 
+      "match_all": true, 
+      "key": "selector"
+    }, 
+
+    // run only if there's no selected text
+    {
+      "match_all": true, 
+      "key": "selection_empty"
+    },
+
+    // don't work if there are active tabstops
+    {
+      "operator": "equal", 
+      "operand": false, 
+      "match_all": true, 
+      "key": "has_next_field"
+    }, 
+
+    // don't work if completion popup is visible and you
+    // want to insert completion with Tab. If you want to
+    // expand Emmet with Tab even if popup is visible -- 
+    // remove this section
+    {
+      "operand": false, 
+      "operator": "equal", 
+      "match_all": true, 
+      "key": "auto_complete_visible"
+    }, 
+    {
+      "match_all": true, 
+      "key": "is_abbreviation"
+    }
+  ]
+}
+]
+</xmp>
+<p>Теперь после того как мы открыли файл который содержит JSX код мы идем по меню: <b>View</b> - <b>Syntax</b> - <b>Babel</b> - <b>JavaScript (Babel)</b></p>	
+</div>
+</body>
+</html>

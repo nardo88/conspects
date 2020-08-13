@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.number{
+			display: inline-flex;
+			width: 25px;
+			height: 25px;
+			border: 2px solid #000;
+			background-color: green;
+			border-radius: 50%;
+			font-size: 18px;
+			justify-content: center;
+			-ms-align-items: center;
+			align-items: center;
+			font-weight: bold;
+
+		}
+
+		.spread{
+			font-weight: bold; 
+			font-size: 20px; 
+			background-color: #ABA9A9; 
+			padding-left: 5px;
+			padding-right: 5px;
+
+
+		}
+		.title{
+			font-weight: bold;
+			font-size: 18px;
+			background-color: #ABA9A9; 
+			border-radius: 50px;
+
+		}
+	</style>
+</head>
+<body>
+	<h1>Spread, Rest</h1>
+	<h2>Spread</h2>
+	<p>Оператор <b>spraed</b> используется для манипуляции с массивами и объектами. Этот оператор выглядит просто как три точки - <span class="spread">...</span></p>
+	<p>Что он делает?</p>
+	<p class="title"><span class="number">1</span> Разворачивает массив/объект в строчку</p>
+	<p>Например, у нас есть массив:</p>
+	<img src="prim1.jpg" alt="">
+	<p>Если мы в консоль выведем этот массив с <span class="spread" title="spread">...</span></p>
+	<img src="prim2.jpg" alt="">
+	<p>то получим результат</p>
+	<img src="prim3.jpg" alt="">
+	<p class="title"><span class="number">2</span> Клонирует массив/объект</p>
+	<p>Допустим у нас есть пустой массив</p>
+	<img src="prim4.jpg" alt="">
+	<p>c помощью оператора <b>spread</b> мы можем клонировать наш старый массив в новый</p>
+	<img src="prim5.jpg" alt="">
+	<p>В результате массив <b>allCities</b> будет иметь содержание массива <b>citiesRussia</b></p>
+	<p>Но это еще не все. Допустим у нас есть два массива <b>citiesRussia</b> и <b>citiesEurope</b></p>
+	<img src="prim6.jpg" alt="">
+	<p>Теперь с помощью <span class="spread" title="spread">...</span> мы можем оба эти массива клонировать в один</p>
+	<img src="prim7.jpg" alt="">
+	<p class="title"><span class="number">3</span> Работа с объектами</p>
+	<p>Здесь так же как и с массивами, либо раскрыть, либо клонировать. но рассмотрим один пример:</p>
+	<p>Допустим у нас есть два объекта</p>
+	<img src="prim8.jpg" alt="">
+	<p>C помощью <span class="spread" title="spread">...</span> мы так же объединяем эти два объекта в один</p>
+	<img src="prim9.jpg" alt="">
+	<p>Первое на что хочу обратить внимание это то, что в отличии от объекта мы здесь применяем круглые и кудрявые скобки.</p>
+	<p>Так же обратим внимание на то, что у обоих объектов есть одинаковый ключ <b>Moscow</b> c разными значениями. В новый массив попадет то значение, объект которого был указан последним. Т.е. в нашем примере объект <b>citiesEuropePopulations</b> был указан последним, а это значит что значение ключа moscow будет - 25</p>
+	<h2>Rest</h2>
+	<p>Оператор <b>rest</b> слыжит наоборот, для соединения отдельных значений в массив или в объект. Rest выглядит так же как и spread - <span class="spread" title="rest">...</span></p>
+	<p class="title"><span class="number">1</span> Пример с массивом</p>
+	<img src="prim10.jpg" alt="">
+	<p>т.е. в входной параметр, сначала зашли только первые два числа массива, а все остальное записалось в массив rest, к которому мы применили метод массива reduce</p>
+	<p class="title"><span class="number">2</span> Пример с объектом</p>
+	<p>У нас есть объект</p>
+	<img src="prim11.jpg" alt="">
+	<p>затем создаем новые переменные</p>
+	<img src="prim12.jpg" alt="">
+	<p>В результате у нас создались две строковые переменные <b>name</b> и <b>age</b>, а все остальное при помощи оператора <b>rest</b> залетело в новый объект <b>address</b>. Если вывести теперь в консоль наш новый объект то мы увидим такой результат:</p>
+	<img src="prim13.jpg" alt="">
+
+
+
+	<script>
+		
+		const person = {
+			name: 'Max',
+			age: 25,
+			country: 'Russia',
+			city: 'Moscow'
+		}
+
+		const {name, age, ...address } = person
+
+		console.log(address)
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="container">
+	<h1>Magnific Popup</h1>
+
+	<!-- Результат -->
+	<div class="rez">
+
+
+		<a class="image_link" href="images/1.jpg"> Вызов модального окна</a>
+
+	</div>
+
+
+
+
+<!-- Описание -->
+<p>Для работы модального окна от Magnific Popup нам по традиции надо подключить библиотеки:</p>
+<span class="zagol">Файл со стилями от Magnific</span>
+<xmp><link rel="stylesheet" href="css/magnific-popup.css"></xmp>
+<span class="zagol">Файл JQuery</span>
+<xmp><script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script></xmp>
+<span class="zagol">Файл со скриптами от Magnific</span>
+<xmp><script src="js/jquery.magnific-popup.js"></script></xmp>
+<p>Для подключения файлов со стилями и со скриптами от Magnific, необходимо скачать архив с этими файлами <a href="https://github.com/dimsemenov/Magnific-Popup" target="_blank"> ОТСЮДА</a></p>
+<p>Распаковываем архив и здесь нам нужна папка "dist", внутри этой папки нам понадобятся два файла:</p>
+<ul>
+	<li>magnific-popup.css</li>
+	<li>jquery.magnific-popup.min.js</li>
+</ul>
+<p>Эти файлы мы помещаем в папки CSS и js соответственно.</p>
+<p>Допустим что нам надо открыть картинку в модальном окне по нажатии на ссылку.</p>
+<p>Создаем нашу ссылку. В атрибудет <b>href</b> мы даем путь до картинке и так же присвоим нашей ссылке класс - image_link</p>
+<img src="images/prim1.jpg" alt="">
+<p>После этого нам необходимо инициализировать нашу ссылку, для этого подключаем файл с нашим скриптом и помещаем туда вот такой код:</p>
+<xmp>$(document).ready(function() {
+  $('.image_link').magnificPopup({type:'image'});
+});</xmp>
+<p>Вот второй строчке с помощью JQuery мы обращаемся к нашей ссылке по классу image_link</p>
+<p>Теперь по нажатии кнопки будет вылезать модальное окно с картинкой.</p>
+<p>Больше информации по настройке модальных окон от Magnific читать <a href="https://dimsemenov.com/plugins/magnific-popup/documentation.html" target="_blank"> ЗДЕСЬ</a></p>
+
+
+
+	
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

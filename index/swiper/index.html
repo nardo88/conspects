@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./swiper/swiper.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div class="conspect">
+        <h1>Слайдер Swiper</h1>
+    <p>официальный сайт <a href="https://swiperjs.com/" target='_blank'>слайдера</a></p>
+    <h2>Подключение</h2>
+    <p>Как обычно два пути подключения: CDN или качать библиотеки</p>
+    <h3>Ссылки CDN</h3>
+    <xmp>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    </xmp>
+
+    <p><a href="./swiper.zip">Архив</a> с библиотеками для локальной установки</p>
+
+
+    <h2>Разметка</h2>
+    <p>пример разметки:</p>
+    <img class="img_item_700" src="./code.png" alt="">
+
+    <h3>Шаблон</h3>
+    <xmp>
+        <div class="swiper-container">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev button_prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </xmp>
+
+    <h3>размер слайдера</h3>
+    <p>Классу <b>swiper-container</b> задаем размеры высоты и ширины, какие размеры укажем это и будут размеры нашего
+        слайдера</p>
+    <h3>Инициализация</h3>
+    <p>В файле JS прописываем инициализацию вот таким образом</p>
+    <img class="img_item_500" src="./code1.png" alt="">
+    <h3>Шаблон</h3>
+    <xmp>
+        let mySwiper = new Swiper('.swiper-container', {
+
+        })
+    </xmp>
+    <h2>Конфигурация</h2>
+    <p><b>slidesPerView</b> - количество отображаемых слайдов (числовое значение)</p>
+    <p><b>width</b> - задает ширину слайда (по умолчанию высчитывается из 100%)</p>
+
+    <p><b>spaceBetween</b> - расстояние бежду слайдами в пикселях (числовое значение)</p>
+    <p><b>loop</b> - петля (true или false)</p>
+    <p><b>pagination</b> - добавляет пагинацию для слайдера</p>
+    <img class="prim" src="./prim1.jpg" alt="">
+    <p>в качестве <b>el</b> мы передаем класс блока в который мы помещаем пагинацию</p>
+    <p>В type мы передали значение bullets - что означает что пагинация будет в виде точек. Так же можно указать
+        <b>fraction</b> - то в качестве пагинации будут цифры </p>
+    <p>Пагинацию мы можем стилизовать, для этого просто добавляем стили для классов <b>swiper-pagination-bullet</b> и
+        <b>swiper-pagination-bullet-active</b></p>
+    <p>Так же если указать clickable: true то с помощью пагинации мы можем переключать слайды</p>
+    <p><b>navigation</b> - устанавливает кнопки для прокрутки слайдера</p>
+    <img src="./prim2.jpg" alt="">
+    <p>В качестве элементов кнопок указываем классы элементов, для их стилизации так же в CSS обращаемся к их классам
+        (можем отстилизовать свои классы и просто в JS ПЕРЕДАТЬ СВОИ ПАРАМЕТРЫ). Что бы отстилизовать кнопки которые
+        идут по умолчанию, для этого обращаемся к псевдоэлементу after (скрываем его display: none и задаем стили классу
+        кнопки)</p>
+    <p>Что бы вывести кнопки за пределы слайдера, нужно создать блок за пределом блока swiper-wrapper и туда поместить
+        наши блоки с кнопками</p>
+    <p><b>slidesPerGroup</b> - указывает сколько слайдов будет скролится за раз, по умолчанию значение 1</p>
+    <p><b>slideToclickedSlide</b> - позволяет переключать слайд по клику по нему. По умолчанию имеет значение false</p>
+    <p><b>centeredSlides</b> - позволяем держать в центре главный слайд, хорошо работает вместе с предыдущем свойством,
+        при клике на соседний слайд именно он становится центральным</p>
+    <p><b>autoplay</b> - позволяет прокручивать автоматом слайдер. свойство autoplay является объектом и в него мы
+        передаем свйотсво delay со скоростью в милисекундах</p>
+    <img src="./prim3.jpg" alt="">
+    <h2>Адаптация</h2>
+    <p>Для адаптации мы слайдеру добавляем свойство <b>breakpoints</b>. Это свойство так же является объектом, ключами
+        которого являются так же объекты. Указываем ширину экрана и что при этой ширине будет происходить</p>
+    <img src="./prim4.jpg" alt="">
+    <h2>Разная ширина слайда</h2>
+    <p>для того что бы задать разную ширину для слайдов, в свойстве <b>slidesPerView</b> указываем не количество
+        (цифру), а указываем слово auto. После этого в стилях свойству width слайда так же указываем значение auto</p>
+    <h2>Увеличенный слайд по центру</h2>
+    <p>Первое что делаем это задаем еще одно свойство слайдеру - <b>centeredSlides: true,</b>, затем задаем стили вот
+        такие:</p>
+    <img src="./prim5.jpg" alt="">
+    <p>контейнеру задаем падинги, иначе наш увеличенный слайд будет скрываться из за свойства overflow: hidden</p>
+    <p>К классу <b>swiper-slide-active</b> применяем свойство <b>transform: scale(1.2);</b> и что бы все это было
+        плавно, добавляем transition</p>
+    <h2>слайдер с превью</h2>
+    <p>Для превью просто создаем два слайдера. И главному слайдеру в качестве свойства <b>thumbs</b> передаем объект который будет ссылаться на второй слайдер</p>
+    <h3>Разметка</h3>
+    <img class="img_item_700" src="./code2.png" alt="">
+    <h3>JavaScript</h3>
+    <img class="img_item_700" src="./code3.png" alt="">
+    <h3>Результат</h3>
+    </div>
+
+    
+    <section class="section">
+        <div class="swiper-container wrapper_main">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide_item_main"><img class="img_slide" src="./img/1.jpg" alt=""></div>
+                <div class="swiper-slide slide_item_main"><img class="img_slide" src="./img/2.jpg" alt=""></div>
+                <div class="swiper-slide slide_item_main"><img class="img_slide" src="./img/3.jpg" alt=""></div>
+                <div class="swiper-slide slide_item_main"><img class="img_slide" src="./img/4.jpg" alt=""></div>
+                <div class="swiper-slide slide_item_main"><img class="img_slide" src="./img/5.jpg" alt=""></div>
+            </div>
+        
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+
+
+        <div class="swiper-container wrapper_nav">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide_item_nav"><img class="img_slide" src="./img/1.jpg" alt=""></div>
+                <div class="swiper-slide slide_item_nav"><img class="img_slide" src="./img/2.jpg" alt=""></div>
+                <div class="swiper-slide slide_item_nav"><img class="img_slide" src="./img/3.jpg" alt=""></div>
+                <div class="swiper-slide slide_item_nav"><img class="img_slide" src="./img/4.jpg" alt=""></div>
+                <div class="swiper-slide slide_item_nav"><img class="img_slide" src="./img/5.jpg" alt=""></div>
+            </div>
+        
+        </div>
+    </section>
+
+    <h2>Кастомные классы</h2>
+    <p>Что если мы не хотим использовать названия классов которые есть по умолчанию (swiper-container, swiper-wrapper и swiper-slide)</p>
+    <p>Для этого в конфиге слайдера указываем новые классы. Рассмотрим сначала разметку html</p>
+    <img src="./code4.png" alt="разметка" class="img_item_500">
+    <p>Теперь в JavaScript добавим свойства нашему слайдеру</p>
+    <img src="./code5.png" alt="JS" class="img_item_500">
+
+    <p>Здесь ключавыми свойствами являются <b>slideClass</b> и <b>wrapperClass</b></p>
+    <p>Теперь осталось только добавить немного стилей нашим классам, что бы слайдер заработал</p>
+    <img src="./code6.png" alt="JS" class="img_item_300">
+
+    <div class="slider">
+        <div class="slider_wrapper">
+            <div class="slider_item slide"><img class="img_slide" src="./img/1.jpg" alt=""></div>
+            <div class="slider_item slide"><img class="img_slide" src="./img/2.jpg" alt=""></div>
+            <div class="slider_item slide"><img class="img_slide" src="./img/3.jpg" alt=""></div>
+            <div class="slider_item slide"><img class="img_slide" src="./img/4.jpg" alt=""></div>
+            <div class="slider_item slide"><img class="img_slide" src="./img/5.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <h2>Несколько слайдеров с одинаковыми классами на одной странице</h2>
+    <p>Рассмотрим код HTML</p>
+    <img src="./code7.png" alt="JS" class="img_item_500">
+    <p>Что бы обработать эти слайдеры мы создаем переменную куда помещаем массив все слайдеров. Далее проходимся по массиву методом forEach и на каждой итерации создаем новый слайдер. Стилизуем с помощью добавления дополнительных классов сонтейнеру и слайдам</p>
+    <p>код JS</p>
+    <img src="./code8.png" alt="JS" class="img_item_500">
+    <h2>Превращение в слайдер на мобильных устройствах</h2>
+    <p>Задача при уменьшении экрана до размена мобильного устройства обычная разметка превращается в слайдер</p>
+    <p>Разметка:</p>
+    <img src="./code9.png" alt="JS" class="img_item_300">
+    <p>Теперь добавим немного стилей</p>
+    <img src="./code10.png" alt="JS" class="img_item_300">
+    <p>Теперь создадим медиазапрос с такими параметрами:</p>
+    <img src="./code11.png" alt="JS" class="img_item_300">
+    <p>Далее контейнеру зададим data атрибут</p>
+    <img src="./code12.png" alt="JS" class="img_item_500">
+    <p>Теперь приступим к JS</p>
+    <img src="./code13.png" alt="JS" class="img_item_700">
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+    <script src="./swiper/swiper.min.js"></script>
+    <script>
+        const slider = document.querySelector('.slider')
+
+        let customClass = new Swiper(slider, {
+            slideClass: 'slider_item',
+            wrapperClass: 'slider_wrapper',
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+
+        })
+
+    </script>
+
+
+    <script>
+        const mainSlider = document.querySelector('.wrapper_main')
+        const navSlider = document.querySelector('.wrapper_nav')
+
+        let navSwiper = new Swiper(navSlider, {
+            slidesPerView: 5,
+            spaceBetween: 10,
+
+        })
+
+        let mainSwiper = new Swiper(mainSlider, {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            thumbs: {
+                swiper: navSwiper
+            }
+
+        })
+       
+    </script>
+
+</body>
+
+</html>

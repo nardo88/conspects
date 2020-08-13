@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Прототипы в JavaScript</h1>
+	<p>Рассмотрим код</p>
+	<img src="prim1.jpg" alt="">
+	<p>Объект <b>person</b> является дочерним объектом рдительского объекта <b>Object</b> и наследует все его свойства и мметоды. <b>Object</b> - является прототипом для <b>person</b></p>
+	<p>Точно так же можно было объявить объект <b>person</b> так:</p>
+	<img src="prim2.jpg" alt="">
+	<h2>Object.prototype</h2>
+	<p>Теперь рассмотрим такой код:</p>
+	<img src="prim3.jpg" alt="">
+	<p>C помощью метода <b>prototype</b> мы обращаемся к объекту <b>Object</b> (к прототипу) и дописываем в него новый метод. После этого, все дочерние объекты прототипа <b>Object</b> наследуют этот метод. Так как объект <b>Object</b> является прототипом для нашего объекта <b>person</b> то мы можем в консоли вызвать метод sayHello у объекта person.</p>
+	<img src="prim4.jpg" alt="">
+
+	<h2>Object.create()</h2>
+	<p>В метод <b>create</b> мы можем передать объект, которыйв последствии будет прототипом для необходимого объекта.</p>
+	<p>Рассмотрим код:</p>
+	<img src="prim5.jpg" alt="">
+	<p>т.е. для объекта <b>lena</b> прототипом будет <b>person</b>, а это значит что лена наследует все его свойства и методы. т.е. в консоли можно вызвать метод <b>greet</b></p>
+	<img src="prim6.jpg" alt="">
+
+	<script>
+
+
+
+		const person = new Object({
+			name: 'Max',
+			age: 25,
+			greet: function () {
+				console.log('Greet!')
+			}
+		})
+
+
+		Object.prototype.sayHello = function () {
+			console.log('Hello')
+		}
+		
+
+		const lena = Object.create(person)
+
+	</script>
+</body>
+</html>

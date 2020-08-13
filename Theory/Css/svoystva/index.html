@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<p><h2>Основные свойства</h2></p>
+<div>
+<p style="font-size: 1.3em;"><b>box-sizing</b> - Применяется для изменения алгоритма расчета ширины и высоты элемента.</p>
+<p><u>Синтаксис</u></p>
+<p>box-sizing: content-box | border-box | padding-box | inherit</p>
+<p><u>Значения</u></p>
+<p><ul>
+	<li><b>content-box</b> - Основывается на стандартах CSS, при этом свойства width и height задают ширину и высоту контента и не включают в себя значения отступов, полей и границ.</li>
+	<li><b>border-box</b> - Свойства width и height включают в себя значения полей и границ, но не отступов (margin). Эта модель используется браузером Internet Exporer в режиме несовместимости.</li>
+	<li><b>padding-box</b> - Свойства width и height включают в себя значения полей, но не отступов (margin) и границ (border).</li>
+	<li><b>inherit</b> - Наследует значение родителя.</li>
+</ul></p>
+</div>
+<br>
+
+<div>
+<p><span style="font-size: 1.3em; font-weight: bold;">opacity</span> - Определяет уровень прозрачности элемента веб-страницы. При частичной или полной прозрачности через элемент проступает фоновый рисунок или другие элементы, расположенные ниже полупрозрачного объекта.</p>
+<p><u>Синтаксис</u></p>
+<p>opacity: значение</p>	
+</div>
+
+<div>
+	<p><span style="font-size: 1.3em; font-weight: bold;">transition</span> - Задаёт промежуток времени, в течение которого должен осуществляться переход. Время перехода указывается в секундах или миллисекундах</p>
+
+</div>
+
+<div>
+	<p><span style="font-size: 1.3em; font-weight: bold;">overflow</span> - Свойство overflow управляет отображением содержания блочного элемента, если оно целиком не помещается и выходит за область заданных размеров.
+
+	<ul>
+		<li><b>visible</b> - Отображается все содержание элемента, даже за пределами установленной высоты и ширины</li>
+		<li><b>hidden</b> - Отображается только область внутри элемента, остальное будет скрыто.</li>
+		<li><b>scroll</b> - Всегда добавляются полосы прокрутки.</li>
+		<li><b>auto</b> - Полосы прокрутки добавляются только при необходимости.</li>
+		<li><b>inherit</b> - Наследует значение родителя.</li>
+	</ul>
+
+	</p>
+
+
+</div>
+
+<div>
+	<p><span style="font-size: 1.3em; font-weight: bold;">display</span> - Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе.
+	</p>
+	<p>Значения:</p>
+	<ul>
+		<li><b>block</b> - Элемент показывается как блочный</li>
+		<li><b>inline</b> - выравнивает элементы в линию</li>
+		<li><b>inline-block</b> - элементы становятся блоками и выравниваются в линию</li>
+		<li><b>none</b> - элемент отключается, исчезает</li>
+		<li><b>flex</b> - выравнивает блоки в линию</li>
+		
+	</ul>
+
+
+</div>
+
+<div>
+	<p><span style="font-size: 1.3em; font-weight: bold;">position</span> - Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице.
+	</p>
+	<p>Значения:</p>
+	<ul>
+		<li><b>absolute</b> - Указывает, что элемент абсолютно позиционирован, при этом другие элементы отображаются на веб-странице словно абсолютно позиционированного элемента и нет. Положение элемента задается свойствами left, top, right и bottom, также на положение влияет значение свойства position родительского элемента.</li>
+		<li><b>fixed</b> - По своему действию это значение близко к absolute, но в отличие от него привязывается к указанной свойствами left, top, right и bottom точке на экране и не меняет своего положения при прокрутке веб-страницы. </li>
+		<li><b>relative</b> - Положение элемента устанавливается относительно его исходного места. Добавление свойств left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения.</li>
+		<li><b>static</b> - Элементы отображаются как обычно. Использование свойств left, top, right и bottom не приводит к каким-либо результатам</li>
+		<li><b>inherit</b> - Наследует значение родителя.</li>
+		
+	</ul>
+
+
+</div>
+
+
+<div>
+	<p><span style="font-size: 1.3em; font-weight: bold;">z-index</span> - Любые позиционированные элементы на веб-странице могут накладываться друг на друга в определенном порядке, имитируя тем самым третье измерение, перпендикулярное экрану. Каждый элемент может находиться как ниже, так и выше других объектов веб-страницы, их размещением по z-оси и управляет z-index. Это свойство работает только для элементов, у которых значение <b>position</b> задано как <b>absolute</b>, <b>fixed</b> или <b>relative</b>.
+	</p>
+	
+</div>
+
+
+<div>
+	<p><span style="font-size: 1.3em; font-weight: bold;">object-fit</span> - Управляет соотношением сторон заменяемых элементов, таких как img и video, когда у них задана ширина или высота, а также способом масштабирования. Свойство object-fit может сохранять исходные пропорции элемента или наоборот, искажать пропорции, в угоду соблюдения размеров.
+		<ul>
+			<li><b>fill</b> - Элемент масштабируется, чтобы соответствовать заданным размерам, при этом пропорции игнорируются.</li>
+			<li><b>contain</b> - Элемент масштабируется, чтобы целиком уместиться в заданные размеры с соблюдением пропорций.</li>
+			<li><b>cover</b> - Элемент увеличивается или уменьшается, чтобы целиком заполнить заданную область с сохранением пропорций.</li>
+			<li><b>none</b> - Сохраняются исходные пропорции элемента, установленные значения ширины или высоты не влияют на содержимое.</li>
+		</ul>
+	</p>
+</div>
+<div>
+	<p><span style="font-size: 1.3em; font-weight: bold;">transform</span> - Трансформирует элемент, в частности, позволяет его масштабировать, вращать, сдвигать, наклонять, а также комбинировать виды трансформаций.
+		<ul>
+			<li><b>rotate</b> - Поворот элемента на заданный угол относительно точки трансформации, задаваемой свойством <b>transform-origin</b>.</li>
+			<li><b>scale</b> - Масштаб элемента по горизонтали и вертикали. transform: scale(sx[, sy]); Значение больше 1 увеличивает масштаб элемента, меньше 1 — уменьшает масштаб</li>
+
+			<li><b>scaleX</b> - Масштабирует элемент по горизонтали. transform: scaleX(sx);</li>
+			<li><b>scaleY</b> - Масштабирует элемент по вертикали. transform: scaleY(sy);</li>
+			<li><b>skewX</b> - Наклоняет элемент на заданный угол по вертикали.</li>
+			<li><b>skewY</b> - Наклоняет элемент на заданный угол по горизонтали.</li>
+			<li><b>translate</b> - Сдвигает элемент на заданное значение по горизонтали и вертикали.</li>
+			<li><b>translateX</b> - Сдвигает элемент по горизонтали на указанное значение. Положительное значение сдвигает вправо, отрицательное влево.</li>
+			<li><b>translateY</b> - Сдвигает элемент по вертикали на указанное значение. Положительное значение сдвигает вниз, отрицательное вверх.</li>
+		</ul>
+
+		если необходимо один элемент подвинуть сразу по двум направлениям то это будет выглядеть так:
+
+		<xmp>transform: translateX(-50%) translateY(-50%);</xmp>
+		
+	</p>
+</div>
+	<div class="examples">
+		<h2>rotate</h2>
+		<div class="examples_rotate">
+			<div class="rotate">
+				<h4>rotateX</h4>
+				<input type="range" id="rotate1" min="0" max="360" value="0" oninput="valChange1()">
+				<label id="rotateValue1" for="rotate">0 градусов</label>
+				<div id="rotateItem1" class="rotateItem">
+					
+				</div>
+			</div>
+			<div class="rotate">
+				<h4>rotateY</h4>
+				<input type="range" id="rotate2" min="0" max="360" value="0" oninput="valChange2()">
+				<label id="rotateValue2" for="rotate">0 градусов</label>
+				<div id="rotateItem2" class="rotateItem">
+					
+				</div>
+			</div>
+
+			<div class="rotate">
+				<h4>rotate</h4>
+				<input type="range" id="rotate3" min="0" max="360" value="0" oninput="valChange3()">
+				<label id="rotateValue3" for="rotate">0 градусов</label>
+				<div id="rotateItem3" class="rotateItem">
+					
+				</div>
+			</div>
+
+
+			<div class="rotate">
+				<h4>rotate + transform-origin: left top;</h4>
+				<input type="range" id="rotate4" min="0" max="360" value="0" oninput="valChange4()">
+				<label id="rotateValue4" for="rotate">0 градусов</label>
+				<div id="rotateItem4" class="rotateItem transform-origin">
+					
+				</div>
+			</div>
+		</div>
+		<h2>scale</h2>
+		<div class="examples_rotate">
+			<div class="rotate">
+				<h4>scale</h4>
+				<input type="range" id="rotate5" min="0" max="3" value="1" oninput="valChange5()">
+				<label id="rotateValue5" for="rotate">1</label>
+				<div id="rotateItem5" class="rotateItem">
+					
+				</div>
+			</div>
+			<div class="rotate">
+				<h4>scaleX</h4>
+				<input type="range" id="rotate6" min="0" max="3" value="1" oninput="valChange6()">
+				<label id="rotateValue6" for="rotate">1</label>
+				<div id="rotateItem6" class="rotateItem">
+					
+				</div>
+			</div>
+
+			<div class="rotate">
+				<h4>scaleY</h4>
+				<input type="range" id="rotate7" min="0" max="3" value="1" oninput="valChange7()">
+				<label id="rotateValue7" for="rotate">1</label>
+				<div id="rotateItem7" class="rotateItem">
+					
+				</div>
+			</div>
+		</div>
+		<h2>skew</h2>
+		<div class="examples_rotate">
+			<div class="rotate">
+				<h4>skewX</h4>
+				<input type="range" id="rotate8" min="0" max="360" value="0" oninput="valChange8()">
+				<label id="rotateValue8" for="rotate">0</label>
+				<div id="rotateItem8" class="rotateItem">
+					
+				</div>
+			</div>
+			<div class="rotate">
+				<h4>skewY</h4>
+				<input type="range" id="rotate9" min="0" max="360" value="0" oninput="valChange9()">
+				<label id="rotateValue9" for="rotate">0</label>
+				<div id="rotateItem9" class="rotateItem">
+					
+				</div>
+			</div>
+		</div>
+		<h2><h2>translate</h2>
+		<div class="examples_rotate">
+			<div class="rotate">
+				<h4>translateX</h4>
+				<input type="range" id="rotate10" min="0" max="100" value="0" oninput="valChange10()">
+				<label id="rotateValue10" for="rotate">0</label>
+				<div id="rotateItem10" class="rotateItem">
+					
+				</div>
+			</div>
+			<div class="rotate">
+				<h4>translateY</h4>
+				<input type="range" id="rotate11" min="0" max="100" value="0" oninput="valChange11()">
+				<label id="rotateValue11" for="rotate">0</label>
+				<div id="rotateItem11" class="rotateItem">
+					
+				</div>
+			</div>
+		</div></h2>
+		
+	</div>
+
+
+	<div>
+		<p><span style="font-size: 1.3em; font-weight: bold;">perspective</span> - CSS свойство perspective определяет на сколько элемент удален от точки обзора. Свойство определяет перспективу обзора элемента, создавая для пользователя иллюзию глубины. Чем больше значение, указанное для перспективы, тем дальше от пользователя расположен элемент.
+
+		<span>Значения:</span>
+		<ul>
+			<li><b>число</b> - Указывает расстояние (в пикселях), на которое элемент удаляется от точки обзора.</li>
+			<li><b>none</b> - Значение перспективы не установлено (аналогично значению 0). Это значение по умолчанию.</li>
+			<li><b>initial</b> - Устанавливает свойство в значение по умолчанию.</li>
+			<li><b>inherit</b> - Указывает, что значение наследуется от родительского элемента.</li>
+		</ul>
+		</p>
+	</div>
+
+
+	<div>
+		<p><span style="font-size: 1.3em; font-weight: bold;">transform-style</span> - Определяет, как дочерние элементы будут отображаться в 3D-пространстве. Это свойство должно использоваться совместно с transform.
+
+		<span>Значения:</span>
+		<ul>
+			<li><b>flat</b> - Дочерние элементы лежат в плоскости экрана.</li>
+			<li><b>preserve-3d</b> - Дочерние элементы будут отображаться в 3D-пространстве.</li>
+
+		</ul>
+		</p>
+	</div>
+	<div>
+		<p><span style="font-size: 1.3em; font-weight: bold;">outline</span> - Контур представляет собой линию, которая рисуется вокруг элементов, за пределами границ, чтобы сделать элемент "выделиться". (часто ставлю значение тщту что бы не появлялась обводка когда перетаскиваешь мышью слайд)</p>
+	</div>
+
+<script src="mail.js"></script>
+</body>
+</html>

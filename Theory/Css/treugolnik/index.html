@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.test{
+			width: 0;
+			height: 0;
+			border: 50px solid transparent; 
+			border-top: 50px solid red; 
+		}
+
+		.test1{
+			width: 0;
+			height: 0;
+			border-top: 50px solid red; 
+			border-left: 50px solid green; 
+			border-bottom: 50px solid blue; 
+			border-right: 50px solid yellow; 
+
+		}
+	</style>
+</head>
+<body>
+	<h1>как нарисовать треугольник с помощью CSS</h1>
+	<h2>Использование border</h2>
+	<p>Хотя границы, создаваемые через свойство border, напрямую не имеют отношения к треугольникам, именно border используется для этого наиболее часто. Если задать нулевую ширину и высоту элемента, а также установить достаточно толстую границу, то мы увидим набор из четырёх треугольников. Для наглядности границы на всех сторонах установлены разного цвета.</p>
+	<br>
+	<br>
+	<img src="prim0.jpg" alt="">
+	<br><br>
+	<p>РЕЗУЛЬТАТ</p>
+	<br><br>
+
+	<div class="test1"></div>
+	<p>с помощью свойства <b>transparent</b> мы можем сделать границу прозрачной, тем самым оставить только один треугольник:</p>
+
+	<br>
+	<img src="prim1.jpg" alt="">
+	<br>
+	<br><br>
+	<p>результат</p>
+	<br><br>
+	<div class="test"></div>
+</body>
+</html>

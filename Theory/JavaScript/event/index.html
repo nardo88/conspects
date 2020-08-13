@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background-color: #fff;
+		}
+		.blue{
+			color: blue;
+			font-weight: 600;
+
+		}
+		.green{
+			color: green;
+		}
+		.yellow{
+			color: #DAA014
+		}
+		.prim{
+			font-size: 19px;
+		}
+		.example1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+			display: flex;
+			justify-content: center;
+			margin-left: 30px;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Event</h1>
+	<p>Объект Event (объект Событие) содержит в себе информацию о произошедшем событии. К примеру, если по элементу был сделан клик, мы можем узнать координаты этого клика, была ли нажата клавиша Ctrl, Alt или Shift в момент клика и так далее.</p>
+	<h3>Как получить объект Event</h3>
+	<p>нужно при объявлении нашей функции func передать в нее параметром любую переменную (например, event - но название может быть любым) и в эту переменную браузер автоматически положит объект Event</p>
+	<p>Пример</p>
+	<p class="prim"><span class="blue">function</span><span class="green"> muFunc  </span>(<span class="yellow">event</span>){};</p>
+	
+
+
+	<h3>Координаты клика</h3>
+	<p>координаты клика относительно <b> окна браузера</b> можно найти так: <b>event.clientX</b> для координаты по горизонтали и <b>event.clientY</b> для координаты по вертикали.</p>
+	<p>Так же можно получать координаты не относительно <b>окна браузера</b>, а относительно <b>самого элемента</b> (блока, картинки и т.д.). За это отвечают методы: <b>offsetX</b> и <b>offsetY</b></p>
+	<p>Рассмотрим пример: привяжем блоку событие onmousemove (срабатывает при движении мышкой по элементу), и будем показывать координаты курсора при движении мыши относительно самого элемента:</p>
+
+	<div class="example1"></div>
+	<p>Код HTML</p>
+	<img src="prim1.jpg" alt="">
+	<p>Код JavaScript</p>
+	<img src="prim2.jpg" alt="">
+
+
+
+
+	<h3>Тип события</h3>
+	<p>Объект Event также содержит в себе тип события, к примеру для события onclick это click, для onmouseover это mouseover и так далее. Доступ к типу события можно получить так - <b>event.type:</b></p>
+	<img src="prim3.jpg" alt="">
+	<br>
+	<img src="prim4.jpg" alt="">
+	<p>Как получит значение id или class элемента по которому кликнули:</p>
+	<img src="prim5.jpg" alt="">
+
+
+	<h2>event.preventDefault()</h2>
+	<p>Если будет вызван данный метод, то действие события по умолчанию не будет выполнено.</p>
+	<p>пример</p>
+	<img src="prim6.jpg" alt="">
+	<p>т.е. теперь при нажатии на объект правой кнопкой мыши не будет вызвано контекстное меню.</p>
+
+
+	
+
+
+
+
+<script>
+
+
+	var example1 = document.querySelector('.example1');
+
+	example1.addEventListener('mousemove', func1);
+
+	function func1(event) {
+
+		this.innerHTML = event.offsetX + ':' + event.offsetY;
+	}
+
+</script>
+</body>
+</html>

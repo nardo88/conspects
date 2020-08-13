@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		body{
+			padding-left: 20px;
+		}
+		.fixed{
+			position: fixed;
+			color: #fff;
+		}
+		.test{
+			width: 100%;
+			/*height: 2200px;*/
+		}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<h1>Фиксированная шапка при скроле страницы</h1>
+		<br>
+		<h3>Что нового</h3>
+		<br>
+		<ul>
+			<li><b>$(window).scrollTop();</b> - возвращает высоту скрола в пикселях</li>
+			<li><b>head_bg.innerHeight();</b> - возвращает высоту объекта head_bg</li>
+			<li><b>'scroll load resize'</b> - события скролла, загрузки страницы и изменения размера экрана соответственно</li>
+		</ul>
+	</header>
+<br>
+<br>
+<br>
+	<p>код javaScript</p>
+	<br><br>
+	<img src="prim1.jpg" alt="">
+	<br><br>
+	<p>Здесь при скроле страницы вниз, как только значение скрола становится больше высоты блока header шапка получает класс с position: fixed;</p>
+	<div class="test"></div>
+
+<br>
+<br>
+<br>
+<h1>Пример 2</h1>
+<br>
+<br>
+<br>
+<p><b>Теперь рассмотрим пример когда в начале страницы лендингпэйджа идет какой то блок с превьюшкой, иными словами меню у нас находится не в самом верху страницы.</b></p>
+<p>В этом случае нам придется получить высоту блока с превью (<b>Скорее всего он не будет фиксированным т.к. его высота может быть задана в vh (процентах от высоты экрана, т.е. на разных устройствах разное)</b>)</p>
+<br>
+<br>
+<img src="prim2.jpg" alt="">
+
+
+
+<script src="jquery.js"></script>
+<script>
+
+
+let header = $('#header');
+let headH = header.innerHeight(); //получаем высоту блока headBG
+let scrollPos = $(window).scrollTop(); // получаем значение скрола
+
+$(window).on('scroll load resize', function () {
+	headH = header.innerHeight();
+	scrollPos = $(this).scrollTop();
+
+	if (scrollPos > headH){
+		header.addClass('fixed');
+	} else {
+		header.removeClass('fixed');
+	}
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p style="font-size: 1.3; font-weight: bold;">Обработка форм</p>
+<p style="font-weight: bold;">Создаем форму</p>
+<div>
+<xmp>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>обработка форм</title>
+</head>
+<body>
+	<form name="test" action="check.php" method="post">
+		<label>Имя:</label><br>
+		<input type="text" name="name"><br>
+		<label>Email:</label><br>
+		<input type="text" name="email"><br>
+		<label>Сообщение</label><br>
+		<textarea name="message" cols="40" rows="10"></textarea><br>
+		<input type="submit" name="done" value="send">
+	</form>
+</body>
+</html>	
+</xmp>	
+</div>
+<p style=" text-decoration: underline; font-weight: bold;">Результат</p>
+<div style="border: 2px solid silver; width: 500px; margin: 5px; padding: 5px;">
+	<form name="test" action="check.php" method="post">
+		<label>Имя:</label><br>
+		<input type="text" name="name"><br>
+		<label>Email:</label><br>
+		<input type="text" name="email"><br>
+		<label>Сообщение</label><br>
+		<textarea name="message" cols="40" rows="10"></textarea><br>
+		<input type="submit" name="done" value="send">
+		<br>
+	</form>
+
+</div>
+<p>Атрибут объекта form <strong>action</strong> указывает где будут обробатываться данные с формы. В нашем случае они будут обрабатываться в файле <strong>check.php</strong>.</p>
+<p>В атрибуте <strong>method</strong> указывается метод отправки данных. Существует два метода:</p>
+<p>
+	<ul>
+		<li>get</li>
+		<li>post</li>
+	</ul>
+
+</p>
+<p>Отличие этих методов в основном в том, что при методе get  часть данных будет отображаться в адресной строке, когда при post ничего отображаться не будет.</p>
+<p>Метод post (так же как и get) создает массив данных, который передала наша форма. Имя этого массива <strong>$_POST</strong>. Обязательно в верхнем регистре. (в случае с get массив будет называться <strong>$_GET</strong>). Так как этот массив ассоциативный, то в качестве индексо ячеек будут использоваться имена объектов.</p>
+<p style=" text-decoration: underline;">Пример массива:</p>
+<p>$_POST["name"]</p>
+<p>$_POST["email"]</p>
+<p>$_POST["message"]</p>
+<p>Если в файле <strong>check.php</strong> записать такой текст:</p>
+<p><xmp>
+	<?php
+		print_r($_POST);
+	?>	
+</xmp></p>
+<p>то после нажатия на кнопку submit <strong>send</strong> загрузится файл check.php и на странице отобразится содержимое массива $_POST</p>
+<p style="font-size: 1.3; font-weight: bold;">Функция isset</p>
+<p>Эта функция используется в тех случаях если нам надо что бы часть кода выполнялся только после нажатия кнопки. Если не использовать эту функцию то код будет выполняться при загрузки страницы</p>
+<p style=" text-decoration: underline;">Пример</p>
+<div>
+<xmp>
+<?php (isset($_POST["done"])){
+	print_r($_POST);
+}
+<html>
+<head>
+	<title>обработка форм</title>
+</head>
+<body>
+	<form name="test" action="check.php" method="post">
+		<label>Имя:</label><br>
+		<input type="text" name="name"><br>
+		<label>Email:</label><br>
+		<input type="text" name="email"><br>
+		<label>Сообщение</label><br>
+		<textarea name="message" cols="40" rows="10"></textarea><br>
+		<input type="submit" name="done" value="send">
+	</form>
+</body>
+</html>	
+</xmp>	
+</div>
+<p style="font-weight: bold;">Обращение к объекту формы</p>
+<p><xmp>$i = $_POST["name"];</xmp></p>
+</body>
+</html>

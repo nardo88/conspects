@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type= "text/css">
+
+#zagolovok {
+	font-size: 150%;
+	text-align: center;
+}
+
+
+#shapka {
+	width: 100%;
+	 
+
+}
+
+#kodcss {
+	border: 1px solid; 
+	width: 30%;
+	float: left;
+	padding: 4px;
+	background-color: #C6F0F0;
+	height: 990px;
+
+}
+
+
+#komentarii {
+border: 1px solid; 
+width: 64%;
+float: left;
+padding: 4px;
+height: 990px;
+}
+
+#nomera_strok {
+border: 1px solid; 
+width: 20px;
+float: left;
+padding: 4px;
+height: 990px;
+}
+
+	</style>
+</head>
+<body>
+
+<p id="zagolovok">Создание всплывающего меню с помощью псевдокласса hover </p>
+	<p style="font-size: 20px" >html код</p>
+
+
+<div id="shapka">
+	
+	<p>
+<xmp>
+<ul>
+ <li> <a href="#">Menu</a>
+  <ul>
+   <li><a href="#">New</a></li>
+   <li><a href="#">Open</a></li>
+   <li><a href="#">Close</a></li>
+  </ul>
+ </li>
+<li> <a href="#"Properties</a>
+  <ul>
+   <li><a href="#">Settings</a></li>
+   <li><a href="#">About</a></li>
+   <li><a href="#">Help</a></li>
+  </ul>
+ </li>
+</ul>
+</xmp>
+	</p>
+
+	<p style="font-size: 20px">Результат</p>
+
+<p>
+	<ul>
+ <li> <a href="#">Menu</a>
+  <ul>
+   <li><a href="#">New</a></li>
+   <li><a href="#">Open</a></li>
+   <li><a href="#">Close</a></li>
+  </ul>
+ </li>
+<li> <a href="#"Properties</a>
+  <ul>
+   <li><a href="#">Settings</a></li>
+   <li><a href="#">About</a></li>
+   <li><a href="#">Help</a></li>
+  </ul>
+ </li>
+</ul>
+</p>
+</div>
+
+<div id="nomera_strok">
+<br><br><br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40
+</div>	
+
+<div id="kodcss">
+	
+<center>Код CSS</center>
+<br>
+<br>
+
+ul li {
+<br>	
+border: 1px solid silver;
+<br>
+display: inline-block;
+<br>
+}
+<br>
+<br>
+ul ul {
+<br>
+display: none;
+<br>
+position: absolute;
+<br>
+padding: 0;
+<br>
+margin: 0;
+<br>
+background-color: #00bfff;
+<br>
+}
+<br>
+<br>
+li:hover ul {
+<br>
+display: block;
+<br>
+}
+<br>
+<br>
+li:hover li {
+<br>
+display: block;
+<br>
+}
+<br>
+a:hover {
+<br>
+color: #00008b;
+<br>
+}
+<br>
+<br>
+a {
+<br>
+font-size: 1.5em;
+<br>
+color: #fff;
+<br>
+text-decoration: none;
+<br>
+}
+<br>
+<br>
+li:hover {
+<br>
+background-color: #fff;
+<br>
+}
+<br>
+<br>
+ul {
+<br>
+display: inline-block;
+<br>
+background-color: #ff7f24;
+<br>
+padding: 0;
+<br>
+margin: 10px;
+<br>
+}
+
+
+
+</div>
+
+<div id="komentarii">
+<center>Комментарии</center>	
+<br>
+<p style="font-size: 1.1em">1 Блок ul li (стр 1-4)</p>
+
+<ul>
+
+<li>В строке 2 мы указываем рамку толщиной 1 пиксель, она сплошная и цвет silver</li>
+
+<li>В строке 3 указываем display для li которые находятся в ul, т.е. слова Menu и Settings выстроятся в линию и станут блоками</li>
+</ul>
+
+<p style="font-size: 1.1em">2 Блок ul ul (стр 6-12)</p>
+<ul>
+
+<li>В строке 7 мы скрываем все ul которые находятся в родительской ul.</li>
+
+<li>В строке 8 дочерние ul принимают позицию absolute</li>
+<li>В строках 9 и 10 мы указываем отступы с внешней и внутренней стороны</li>
+<li>В строке 11 мы указываем фоновый цвет ячеек выпадающего меню (слова Close, New и т.д.)</li>
+</ul>
+<p style="font-size: 1.1em">3 Блок li:hover ul (стр 14-16)</p>
+
+<ul>
+
+<li>В этом блоке мы говорим, что все дочерние ul которые находятся в родительских li будут блоками при наведении мыши. Но в таком случае выпадающие списки будут выстраиваться в линию, а не в столбец. Для того что бы меню выстраивалось в столбец пишем следующий блок</li>
+</ul>
+<p style="font-size: 1.1em">4 Блок li:hover li (стр 18-20)</p>
+
+<ul>
+
+<li>Все дочерние li находящиеся в родительских дш при наведении станут блоко. Т.е. 3 блок позволяет при наведении выпадать дочерний список, а 4 блок выравнивает его в столбец</li>
+
+</ul>
+<p style="font-size: 1.1em">5 Блок a:hover(стр 21-23)</p>
+<ul>
+
+<li>При наведении мышки на ссылку цвет текста будет меняться на #00008B (синий)</li>
+</ul>
+<p style="font-size: 1.1em">6 Блок a (стр 25-29)</p>
+<ul>
+<li>Строка 26 устанавливает размер текста ссылки 1.5em</li>
+<li>Строка 27 устанавливает цвет текста по умолчанию #fff (белый)</li>
+<li>28 строка убирает подчеркивание у ссылки</li>
+</ul>
+<p style="font-size: 1.1em">7 Блок li:hover (стр 31-33)</p>
+<ul>
+<li>В строке 32 указывается, что при наведении на блоки li фоновый цвет будет меняться на белый (#fff)</li>
+</ul>
+<p style="font-size: 1.1em">8 Блок ul (стр 35-40)</p>
+<ul>
+<li>36 строка делает родительские ul блоками</li>
+<li>37 строка устанавливает цвет фона родительским ul</li>
+<li>38 строка устанавливает отступ внутри блока 0px</li>
+<li>39 строка устанавливает внешний отступ 10px</li>
+</ul>
+</div>
+
+
+</body>
+</html>

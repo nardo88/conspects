@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		span{
+			font-size: 1.2em;
+			font-weight: 600;
+		}
+	</style>
+</head>
+<body>
+
+
+<div class="container">
+	<div class="items_wrapper">
+		<div class="item"><img src="images/work_1.jpg" alt=""></div>
+		<div class="item"><img src="images/work_2.jpg" alt=""></div>
+		<div class="item"><img src="images/work_3.jpg" alt=""></div>
+		<div class="item"><img src="images/work_4.jpg" alt=""></div>
+		<div class="item"><img src="images/work_5.jpg" alt=""></div>
+		<div class="item"><img src="images/work_6.jpg" alt=""></div>
+		<div class="item"><img src="images/work_7.jpg" alt=""></div>
+		<div class="item"><img src="images/work_8.jpg" alt=""></div>
+	</div>
+</div>
+
+<div class="razbor">
+	<h2>Разбор</h2>
+	<p>Код HTML</p>
+	<img src="images/prim1.jpg" alt="">
+	<p>Здесь по стандарту. Контейнер в котором задали максимальную ширину. внутри него обертка нашим фотограффиям. И собственно сами блоки внутри которых будут храниться блоки с img</p>
+	<br>
+	<br>
+	<p>Рассмотрим код CSS</p>
+	<br>
+	<img src="images/prim2.jpg" alt=""><br><br>
+	<p><ul> <span>стр 1-5</span> <br><br>
+		<li><b>margin: 0;</b> - обнуляем внешние отступы</li>
+		<li><b>padding: 0;</b> - обнуляем внутренние отступы</li>
+		<li><b>box-sizing: border-box;</b> - устанавливаем алгоритм расчета параметров без учитывания отступов и бордеров</li>
+	</ul></p><br><br>
+	<p><ul><span>стр 7-12 (стилизуем контейнер)</span><br><br>
+		<li><b>width: 100%;</b> - выставляем 100% ширину (это для маленьких экранов)</li>
+		<li><b>max-width: 1270px;</b> - максимальная ширина блока 1270 пикселей (это для больших экранов)</li>
+		<li><b>margin-left: auto;</b> - даем отступы что бы блок выравнивался по центру</li>
+		<li><b>margin-right: auto;</b> - даем отступы что бы блок выравнивался по центру</li>
+	</ul></p><br><br>
+	<p><ul><span>стр 14-17 (стилизуем обертку)</span>
+		<li><b>display: flex;</b> - делаем блок флексом что бы блоки с картинками выравнивались в линию.</li>
+		<li><b>flex-wrap: wrap;</b> - указываем что можно переносить блоки на другие строки</li>
+	</ul></p><br><br>
+	<p><ul><span>стр 19-24 (стилизуем сами блоки внутрь которых будут помещаться изображения)</span>
+		<li><b>width: 25%;</b> - выставляем ширину блока 25% от родительского элемента, т.е на строке будет помещаться только 4 блока. Если бы не свойство <b>box-sizing: border-box;</b> то это бы не получалось</li>
+		<li><b>height: 350px;</b> - фиксированная высота блока</li>
+		<li><b>overflow: hidden;</b> - указываем то что те части которые будут выходить за пределы блока их будем скрывать.</li>
+		<li><b>position: relative;</b> - позиционирование для родительского элемена, что бы абсолютное позиционирование изображения отображалось корректно</li>
+	</ul></p><br><br>
+	<p><ul><span>стр 26-31 (стилизуем сами изображения)</span>
+		<li><b>position: absolute;</b> - абсолятное позиционирование</li>
+		<li><b>top: 50%;</b> - задаем координаты по вертикали.</li>
+		<li><b>left: 50%;</b> - задаем координаты по горизонтали</li>
+		<li><b>z-index: 1;</b> - это здесь не обязательно</li>
+		<li><b>transform: translate3d(-50%, -50%, 0);</b> - передвигаем вдоль осей изображение и получится что картинка будет отображаться ровно по середине блока.</li>
+	</ul></p>
+
+
+
+
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

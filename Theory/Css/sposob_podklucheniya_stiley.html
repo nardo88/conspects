@@ -1,0 +1,127 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.4.6.2 (Linux)"/>
+	<meta name="author" content="Максим Кузнецов"/>
+	<meta name="created" content="2019-06-12T19:10:00"/>
+	<meta name="changedby" content="Максим Кузнецов"/>
+	<meta name="changed" content="2019-06-12T19:37:00"/>
+	<meta name="AppVersion" content="12.0000"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.5in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 120%; text-align: left; orphans: 2; widows: 2 }
+	</style>
+</head>
+<body lang="ru-RU" dir="ltr">
+<p align="center" style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 16pt"><b>Способы
+подключения стилей</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>Способ
+№ 1</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Подключение
+стилей непосредственно в самом теге</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>пример</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;h1
+style=&quot;color: red&quot;&gt; </span></font><font size="3" style="font-size: 12pt">текст</font><font size="3" style="font-size: 12pt"><span lang="en-US">
+&lt;/h1&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Т.е.
+в теге пишем атрибут </font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>style</b></span></font><font size="3" style="font-size: 12pt">
+и указываем в кавычках необходимые
+стили.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>Способ
+№ 2</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Подключаем
+стиль в разделе &lt;</font><font size="3" style="font-size: 12pt"><span lang="en-US">head</span></font><font size="3" style="font-size: 12pt">&gt;</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>пример</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;head&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;style
+type=</span></font><span lang="en-US"> </span><font size="3" style="font-size: 12pt"><span lang="en-US">&quot;text/css&quot;&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">    <font size="3" style="font-size: 12pt"><span lang="en-US">Body
+{</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">       
+<font size="3" style="font-size: 12pt"><span lang="en-US">background-color:
+#000000;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">    <font size="3" style="font-size: 12pt"><span lang="en-US">}</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/style&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;head&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">В
+теге </font><font size="3" style="font-size: 12pt"><span lang="en-US">style</span></font><font size="3" style="font-size: 12pt">
+мы указываем тип - </font> <font size="3" style="font-size: 12pt">&quot;</font><font size="3" style="font-size: 12pt"><span lang="en-US">text</span></font><font size="3" style="font-size: 12pt">/</font><font size="3" style="font-size: 12pt"><span lang="en-US">css</span></font><font size="3" style="font-size: 12pt">&quot;.
+Далее внутри тега указываем, для какого
+тега будет применяться эти стили. В
+нашем случае это тег &lt;</font><font size="3" style="font-size: 12pt"><span lang="en-US">body</span></font><font size="3" style="font-size: 12pt">&gt;.
+В фигурных скобках указываем  атрибуты
+нашего тега, к которому применится стиль
+и через двоеточие указываем значение
+атрибута. В нашем случае в стиле записано,
+что для тега &lt;</font><font size="3" style="font-size: 12pt"><span lang="en-US">body</span></font><font size="3" style="font-size: 12pt">&gt;
+будет применяться стиль, в котором
+значение атрибута </font><font size="3" style="font-size: 12pt"><span lang="en-US">background</span></font><font size="3" style="font-size: 12pt">-</font><font size="3" style="font-size: 12pt"><span lang="en-US">color</span></font><font size="3" style="font-size: 12pt">
+ (цвет фона) будет иметь значение #000000.</font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>Способ
+№ </b></font><font size="4" style="font-size: 14pt"><span lang="en-US"><b>3</b></span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Третий
+способ заключается в создании отдельного
+</font><font size="3" style="font-size: 12pt"><span lang="en-US">CSS</span></font><font size="3" style="font-size: 12pt">
+файла, в котором будут прописаны стили
+для тегов. Для того что бы </font><font size="3" style="font-size: 12pt"><span lang="en-US">html</span></font><font size="3" style="font-size: 12pt">
+файл видел наш </font><font size="3" style="font-size: 12pt"><span lang="en-US">CSS</span></font><font size="3" style="font-size: 12pt">
+файл, необходимо в разделе &lt;</font><font size="3" style="font-size: 12pt"><span lang="en-US">head</span></font><font size="3" style="font-size: 12pt">&gt;
+помощью тега &lt;</font><font size="3" style="font-size: 12pt"><span lang="en-US">link</span></font><font size="3" style="font-size: 12pt">&gt;
+указать пусть до нашего фала </font><font size="3" style="font-size: 12pt"><span lang="en-US">CSS</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>пример</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;head&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;link
+rel=&quot;stylesheet&quot; type=&quot;text/css&quot;
+href=&quot;style.css&quot;&gt;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">&lt;/head&gt;</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>атрибуты</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">rel</span></font><font size="3" style="font-size: 12pt">
+– отношение между текущим документом
+и файлом </font><font size="3" style="font-size: 12pt"><span lang="en-US">CSS</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">type
+– </span></font><font size="3" style="font-size: 12pt">тип
+данных (</font><font size="3" style="font-size: 12pt"><span lang="en-US">CSS</span></font><font size="3" style="font-size: 12pt">)</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">href
+– </span></font><font size="3" style="font-size: 12pt">путь к
+файлу </font><font size="3" style="font-size: 12pt"><span lang="en-US">CSS</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>пример
+содержимого файл </u></font><font size="3" style="font-size: 12pt"><span lang="en-US"><u>CSS</u></span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">body</span></font><font size="3" style="font-size: 12pt">
+{</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">   
+<font size="3" style="font-size: 12pt"><span lang="en-US">background-color:
+ #000000;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">}</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">h1{</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">    <font size="3" style="font-size: 12pt"><span lang="en-US">color:
+red;</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">}</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+</body>
+</html>

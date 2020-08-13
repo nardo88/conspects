@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="font-family: Arial;">
+	<h2 style="text-align: center;">Аккордеон</h2>
+
+<ul class="accordion">
+	<li>
+		<div class="accordion-header">HTML</div>
+		<div  class="accordion-body">
+			<img src="prim1.jpg" alt="">
+			<p>Здесь мы испозьзуем список <b>ul</b>. Каждая строка списка будет содержать два блока. Первый - это заголовок а второй - это содержание. При нажатии на заголовок мы будем отображать или скрывать блок с содержанием при помощи функции JQuery slideUp или slideDown</p>
+
+		</div>
+	</li>
+	<li>
+		<div class="accordion-header">CSS</div>
+		<div class="accordion-body">
+			<img src="prim2.jpg" alt="">
+			<p><b>.accordion</b> - задаем стили списку
+
+				<ul>
+					<li><b>list-style-type: none;</b> - убираем кружки</li>
+					<li><b>border-top: 1px solid #ddd;</b> - стилизуем верхнюю границу рамки</li>
+					<li><b>border-left: 1px solid #ddd;</b> - стилизуем левую границу рамки</li>
+					<li><b>border-right: 1px solid #ddd;</b> - стилизуем правую границу рамки</li>
+					<li><b>margin: 0 auto;</b> - выравниваем наш список по центру</li>
+					<li><b>padding-left: 0;</b> - внутренний отступ слева - 0</li>
+					<li><b>width: 95%;</b> - ширина списка 95% от ширины экрана</li>
+				</ul></p>
+
+			<p><b>.accordion-header</b> - стилизуем блок который содержит заголовок
+
+				<ul>
+					<li><b>background-color: #fff;</b> - выставляем цвет фона</li>
+					<li><b>border-bottom: 1px solid #ddd;</b> - стилизуем рамку</li>
+					<li><b>cursor: pointer;</b> - меняем курсор при наведении</li>
+					<li><b>min-height: 3rem;</b> - минимальная высота блока</li>
+					<li><b>line-height: 3rem;</b> - высота строки</li>
+					<li><b>padding: 0 1rem;</b> - внутренние отступы сверху снизу - по бокам 1rem</li>
+				</ul></p>
+
+			<p><b>.accordion-header:after</b> - здесь мы применяем к блоку с заголовком псевдокласс after. Этот псевдокласс добавляет после содержимого элемента необходимый текст. передаваемый текст помещается в свойство <b>content</b>. Так же в этом разделе CSS мы стилизуем именно этот текст который будет добавлен.
+				<ul>
+					<li><b>content: '\02795';</b> - \02795 - это код крестика</li>
+					<li><b>font-size: 0.6rem;</b> - выставляем размер крестику</li>
+					<li><b>color: #777;</b> - выставляем цвет креста</li>
+					<li><b>float: right;</b> - и говорим что выравнивает его следует по правой стороне</li>
+				</ul>
+			</p>
+
+			<p><b>.accordion-header.active:after</b> - эта строка читается так: элементу с классом .accordion-header.active применяется эффект псевдокласса after. т.е. с помощью JQuery мы будем элементу с классом .accordion-header добавлять дополнительный класс и тогда элементу будут применяться те стили которые мы указали в этом разделе
+
+				<ul>
+					<li><b>content: '\02796';</b> - \02796 - это код минуса.</li>
+				</ul>
+			</p>
+			<p><b>.accordion-body</b> - стилизуем блок с содержимым статьи
+				<ul>
+					<li><b>display: none;</b> - отключаем блок</li>
+					<li><b>padding: 1rem;</b> - внутренний отступ</li>
+					<li><b>border-bottom: 1px solid #777;</b> - стилизуем нижнюю часть рамки</li>
+				</ul></p>
+			
+		</div>
+	</li>
+	<li>
+		<div class="accordion-header">JavaScript</div>
+		<div class="accordion-body">
+			<img src="prim3.jpg" alt="">
+			<p>Использую JQuery мы обращаемся к элементу с классом accordion-header и обрабатываем на нем собитые click. Клик будет вызывать функцию, которая применяет к элементу с классом accordion-header метод toggleClass (этот метод добавляет в случае отсутствия класса active у элемента или убирает в случае наличия класса active).</p>
+			<p>На следующей строке мы так же обращаемся к элементу с классом accordion-header и применяем ему метод next (этот метод применяет последующее действие к элементу который идет следом,в нашем случае это блок с содержанием) и затем к этому блоку применяем тот же метод добавления класса active.</p>
+			<p>После этого так же мы применяем к следующему элементу (это элемент - блок с содержанием) метод slideUp. В нашем случае slideUp будет скрывать блок с содержанием</p>
+			<p>В конце кода мы используем оператор <b>if</b>. Если существует элемент с классом '.accordion-body.active', то к этому элементу применяем метод slideDown, тоесть отображать его</p>
+
+
+
+
+
+
+		</div>
+	</li>
+</ul>
+
+
+
+
+
+
+	
+
+<script src="jquery.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

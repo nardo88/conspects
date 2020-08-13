@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="section">
+	
+	<div class="our_team">
+
+		<div class="our_team_item">
+			<div class="team_item_img">
+				<img src="images/team_item_1.jpg" alt="">
+			</div>
+			<div class="team_item_name">Ruth Woods</div>
+			<div class="team_item_profession">Founder, CEO</div>
+			<div class="team_item_descr">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.</div>
+			<div class="team_item_social">
+				<div class="social_item">
+					<a href="#!"><img src="images/facebook.jpg" alt=""></a>
+				</div>
+				<div class="social_item">
+					<a href="#!"><img src="images/twitter.jpg" alt=""></a>
+				</div>
+				<div class="social_item">
+					<a href="#!"><img src="images/in.jpg" alt=""></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="our_team_item">
+			<div class="team_item_img">
+				<img src="images/team_item_2.jpg" alt="">
+			</div>
+			<div class="team_item_name">Timothy Reed</div>
+			<div class="team_item_profession">Co-Founder, Developer</div>
+			<div class="team_item_descr">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.</div>
+			<div class="team_item_social">
+				<div class="social_item">
+					<a href="#!"><img src="images/facebook.jpg" alt=""></a>
+				</div>
+				<div class="social_item">
+					<a href="#!"><img src="images/twitter.jpg" alt=""></a>
+				</div>
+				<div class="social_item">
+					<a href="#!"><img src="images/in.jpg" alt=""></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="our_team_item">
+			<div class="team_item_img">
+				<img src="images/team_item_3.jpg" alt="">
+			</div>
+			<div class="team_item_name">Victoria Valdez</div>
+			<div class="team_item_profession">UI Designer</div>
+			<div class="team_item_descr">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.</div>
+			<div class="team_item_social">
+				<div class="social_item">
+					<a href="#!"><img src="images/facebook.jpg" alt=""></a>
+				</div>
+				<div class="social_item">
+					<a href="#!"><img src="images/twitter.jpg" alt=""></a>
+				</div>
+				<div class="social_item">
+					<a href="#!"><img src="images/in.jpg" alt=""></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="our_team_item">
+			<div class="team_item_img">
+				<img src="images/team_item_4.jpg" alt="">
+			</div>
+			<div class="team_item_name">Beverly Little</div>
+			<div class="team_item_profession">Data Scientist</div>
+			<div class="team_item_descr">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.</div>
+			<div class="team_item_social">
+				<div class="social_item">
+					<a href="#!"><img src="images/facebook.jpg" alt=""></a>
+				</div>
+				<div class="social_item">
+					<a href="#!"><img src="images/twitter.jpg" alt=""></a>
+				</div>
+				<div class="social_item">
+					<a href="#!"><img src="images/in.jpg" alt=""></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+<br>
+<br>
+<br>
+<p>Здесь запишу только про отрицательные внешние отступы у родительского элемента <b>our_team</b>. Для чего было так сделано. Дело в том что расстояние между блоками с информацией о членах команды должно составлять 30 пикселей. Но блоки и так содержат 25% от ширины родительского элемента. Итого в строчку поместится только 4 элемента и они будут впритык по отношению друг к другу.</p><br>
+<p>Поэтому блокам с информацией о членах команты были даны внутренние отступы в 15 пикселей, и того между видимыми границами ровно 30 пикселей. но в этом случае у границ по бокам родительского блока выравнивание картинок будет не по сетке. Вот для этого и задается отрицательные внешние отступы у родительского блока на 15 пикселей, вдобавок ширину родительского блока увеличиваем на 30 пикселей. и в итоге фотографии выравнены по сетке и отступы между ними по 30 пикселей</p>
+<br>
+<br>
+<br>
+<p>Еще обращу внимание на стили для фотографии <br><br>
+<ul>
+	<li><b>display: block;</b> - делаем зображение блоком </li>
+	<li><b>max-width: 100%;</b> - максимальное значение ширины изображение это 100% от оригинала, т.е она не будет растягивать (увеличиваться)</li>
+	<li><b>height: auto;</b> - в зависимости от ширины высота будет выщитываться автоматически</li>
+</ul></p>
+<img src="images/prim1.jpg" alt="">
+<img src="images/prim2.jpg" alt="">
+<img src="images/prim3.jpg" alt="">
+
+
+
+
+
+	
+
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

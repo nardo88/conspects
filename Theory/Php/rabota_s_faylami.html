@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.4.6.2 (Linux)"/>
+	<meta name="author" content="Nardo"/>
+	<meta name="created" content="2019-06-15T13:24:00"/>
+	<meta name="changedby" content="Nardo"/>
+	<meta name="changed" content="2019-06-15T14:10:00"/>
+	<meta name="AppVersion" content="12.0000"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 120%; text-align: left; orphans: 2; widows: 2 }
+	</style>
+</head>
+<body lang="ru-RU" dir="ltr">
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="4" style="font-size: 14pt"><b>Работа
+с файлами</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Открытие</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Для
+открытия файла используется функция
+</font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>fopen</b></span></font><font size="3" style="font-size: 12pt">.
+У этой функции два входных параметра. </font>
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">-
+путь к файлу</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">-
+режим открытия файла</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>Режимы
+открытия файла</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'r'
+</b></font><font size="3" style="font-size: 12pt">- Открывает
+файл только для чтения; помещает указатель
+в начало файла.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'r+'</b></font><font size="3" style="font-size: 12pt">
+- Открывает файл для чтения и записи;
+помещает указатель в начало файла.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'w'</b></font><font size="3" style="font-size: 12pt">
+- Открывает файл только для записи;
+помещает указатель в начало файла и
+обрезает файл до нулевой длины. Если
+файл не существует - пробует его создать.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'w+'</b></font><font size="3" style="font-size: 12pt">
+- Открывает файл для чтения и записи;
+помещает указатель в начало файла и
+обрезает файл до нулевой длины. Если
+файл не существует - пытается его создать.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'a'</b></font><font size="3" style="font-size: 12pt">
+- Открывает файл только для записи;
+помещает указатель в конец файла. Если
+файл не существует - пытается его создать.
+В данном режиме функция fseek() не применима,
+записи всегда добавляются в конец.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'a+'</b></font><font size="3" style="font-size: 12pt">
+- Открывает файл для чтения и записи;
+помещает указатель в конец файла. Если
+файл не существует - пытается его создать.
+В данном режиме функция fseek() влияет
+только на позицию чтения, записи всегда
+добавляются в конец.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'x'
+</b></font><font size="3" style="font-size: 12pt">- Создаёт и
+открывает только для записи; помещает
+указатель в начало файла. Если файл уже
+существует, вызов fopen() закончится
+неудачей, вернёт FALSE и выдаст ошибку
+уровня E_WARNING. Если файл не существует,
+попытается его создать. Это эквивалентно
+указанию флагов O_EXCL|O_CREAT для внутреннего
+системного вызова open(2).</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'x+'</b></font><font size="3" style="font-size: 12pt">
+- Создаёт и открывает для чтения и записи;
+в остальном имеет то же поведение, что
+и'x'.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'c'</b></font><font size="3" style="font-size: 12pt">
+- Открывает файл только для записи. Если
+файл не существует, то он создается.
+Если же файл существует, то он не
+обрезается (в отличие от 'w'), и вызов к
+этой функции не вызывает ошибку (также
+как и в случае с 'x'). Указатель на файл
+будет установлен на начало файла. Это
+может быть полезно при желании
+заблокировать файл (см. flock()) перед
+изменением, так как использование 'w'
+может обрезать файл еще до того как была
+получена блокировка (если вы желаете
+обрезать файл, можно использовать
+функцию ftruncate() после запроса на
+блокировку).</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>'c+'</b></font><font size="3" style="font-size: 12pt">
+- Открывает файл для чтения и записи; в
+остальном имеет то же поведение, что и
+'c'.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Данную
+функцию лучше помещать в переменную</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>Пример</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">$file
+= fopen(“a.txt”, “a+”);</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Считывание</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">fread</span></font><font size="3" style="font-size: 12pt">($</font><font size="3" style="font-size: 12pt"><span lang="en-US">file</span></font><font size="3" style="font-size: 12pt">,
+1);</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">$</font><font size="3" style="font-size: 12pt"><span lang="en-US">file</span></font><font size="3" style="font-size: 12pt">
+– путь к файлу</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">1
+– сколько считывать символов</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Перемещение
+курсора</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">fseek</span></font><font size="3" style="font-size: 12pt">($</font><font size="3" style="font-size: 12pt"><span lang="en-US">file</span></font><font size="3" style="font-size: 12pt">,
+0);</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">$</font><font size="3" style="font-size: 12pt"><span lang="en-US">file</span></font><font size="3" style="font-size: 12pt">
+– путь к файлу</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">0</span></font><font size="3" style="font-size: 12pt">
+– на какой символ перемещаем курсор</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Запись</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">fwrite(</span></font><font size="3" style="font-size: 12pt">$</font><font size="3" style="font-size: 12pt"><span lang="en-US">file,
+“</span></font><font size="3" style="font-size: 12pt">Текст</font><font size="3" style="font-size: 12pt"><span lang="en-US">”);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">$</font><font size="3" style="font-size: 12pt"><span lang="en-US">file</span></font><font size="3" style="font-size: 12pt">
+– переменная, которая содержит информацию
+об открытом файле</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">“<font size="3" style="font-size: 12pt">Текст”
+– текст который будет записан в файл</font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Закрытие</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">fclose</span></font><font size="3" style="font-size: 12pt">($</font><font size="3" style="font-size: 12pt"><span lang="en-US">file</span></font><font size="3" style="font-size: 12pt">);</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">$</font><font size="3" style="font-size: 12pt"><span lang="en-US">file</span></font><font size="3" style="font-size: 12pt">
+– переменная, которая содержит информацию
+о закрываемом файле</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><b>Простые
+функции для работы с файлами</b></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>file</b></span></font><font size="3" style="font-size: 12pt"><b>_</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>put</b></span></font><font size="3" style="font-size: 12pt"><b>_</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>content</b></span></font><font size="3" style="font-size: 12pt"><b>
+</b></font><font size="3" style="font-size: 12pt">– эта функция
+открывает файл и помещает в него текст</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">пример</font><font size="3" style="font-size: 12pt"><span lang="en-US">:</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">file_put_content(“a.txt”,
+“</span></font><font size="3" style="font-size: 12pt">текст</font><font size="3" style="font-size: 12pt"><span lang="en-US">”);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>file</b></span></font><font size="3" style="font-size: 12pt"><b>_</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>get</b></span></font><font size="3" style="font-size: 12pt"><b>_</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>content</b></span></font><font size="3" style="font-size: 12pt">
+– эта функция выводит содержимое файла.</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">Пример</font><font size="3" style="font-size: 12pt"><span lang="en-US">:</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">$a
+= file_get_content(“c.txt”);</span></font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>file</b></span></font><font size="3" style="font-size: 12pt"><b>_</b></font><font size="3" style="font-size: 12pt"><span lang="en-US"><b>exists</b></span></font><font size="3" style="font-size: 12pt">
+– Эта функция проверяет существует ли
+файл. Входной параметр – имя файла,
+наличие которого проверяем</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>пример</u></font><font size="3" style="font-size: 12pt"><span lang="en-US"><u>:</u></span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">file_exists(“a.txt”);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt">выходной
+параметр </font><font size="3" style="font-size: 12pt"><span lang="en-US">bool</span></font><font size="3" style="font-size: 12pt">
+значение (</font><font size="3" style="font-size: 12pt"><span lang="en-US">false</span></font><font size="3" style="font-size: 12pt">,
+</font><font size="3" style="font-size: 12pt"><span lang="en-US">true</span></font><font size="3" style="font-size: 12pt">)</font></p>
+<p lang="en-US" style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>filesize</b></span></font><font size="3" style="font-size: 12pt"><b>
+</b></font><font size="3" style="font-size: 12pt">– эта функция
+проверяет размер файла в байтах</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>пример</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">echo
+filesize(“a.txt”);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>rename</b></span></font><font size="3" style="font-size: 12pt"><b>
+</b></font><font size="3" style="font-size: 12pt">– эта функция
+</font><font size="3" style="font-size: 12pt"><span lang="en-US">g</span></font><font size="3" style="font-size: 12pt">переименовывает
+файл</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>пример</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">rename(“a.txt”,
+“b.txt”);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">“<font size="3" style="font-size: 12pt"><span lang="en-US">a</span></font><font size="3" style="font-size: 12pt">.</font><font size="3" style="font-size: 12pt"><span lang="en-US">txt</span></font><font size="3" style="font-size: 12pt">”
+– старое имя</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%">“<font size="3" style="font-size: 12pt"><span lang="en-US">b</span></font><font size="3" style="font-size: 12pt">.</font><font size="3" style="font-size: 12pt"><span lang="en-US">txt</span></font><font size="3" style="font-size: 12pt">”
+– новое имя</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US"><b>unlink</b></span></font><font size="3" style="font-size: 12pt"><b>
+</b></font><font size="3" style="font-size: 12pt">– эта функция
+удаляет файл</font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><u>пример</u></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><font size="3" style="font-size: 12pt"><span lang="en-US">unlink(“a.txt”);</span></font></p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><br/>
+<br/>
+
+</p>
+</body>
+</html>

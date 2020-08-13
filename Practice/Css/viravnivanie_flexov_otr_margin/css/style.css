@@ -1,0 +1,73 @@
+﻿*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.section{
+	width: 100%;
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.our_team{
+	display: flex;
+	margin: 101px -15px 0;
+	flex-wrap: wrap;
+}
+
+.our_team_item{
+	width: 25%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 101px;
+}
+
+.our_team_item img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.team_item_name{
+	margin-top: 30px;
+	color: #2d3033;
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.team_item_profession{
+	margin-top: 11px;
+	color: #e84545;
+	font-family: 'Raleway', sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.team_item_descr{
+	margin-top: 30px;
+	color: #6c7279;
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
+	margin-bottom: 31px;
+
+}
+
+.team_item_social{
+	display: flex;
+}
+
+.social_item{
+	width: 40px;
+	height: 40px;
+	margin-right: 4px;
+	border: 1px solid #e8ecee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
