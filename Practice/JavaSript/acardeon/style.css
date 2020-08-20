@@ -26,3 +26,15 @@
     padding: 10px 20px;
     font-family: sans-serif;
 }
+
+.img_js {
+    width: 700px;
+    margin: 0 auto;
+    display: block;
+}
+
+.img_all{
+    width: 500px;
+    margin: 0 auto;
+    display: block;
+}
