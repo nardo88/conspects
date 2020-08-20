@@ -1,0 +1,28 @@
+.section{
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.acardeon__wrapper{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.acerdeon__header{
+    padding: 10px 0;
+    text-align: center;
+    background: #616060;
+    font-family: sans-serif;
+    border: 1px solid black;
+    color: #fff;
+    cursor: pointer;
+}
+
+.acardeon__body{
+    background: #d4d3d3;
+}
+
+.acardeon__content{
+    padding: 10px 20px;
+    font-family: sans-serif;
+}
