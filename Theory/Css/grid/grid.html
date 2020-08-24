@@ -11,7 +11,7 @@
     <h1>GRID</h1>
     <p>Рассмотрим вот такой пример</p>
     <img src="./prim1.jpg" alt="">
-    <h3>Свойства для <b>wrapper</b></h3>
+    <h2>Свойства для <b>wrapper</b></h2>
     <div class="button__wrapper">
         <input type="button" class="example" value="grid">
         <input type="button" class="example" value="inline-grid">
@@ -20,6 +20,53 @@
         <div class="grid-item">1</div>
         <div class="grid-item">2</div>
     </div>
-
+    <h2>Свойства grid-template-rows и grid-template-columns</h2>
+    
+    <div class="button__wrapper">
+        <img class="img_btn" src="./prim2.jpg" alt="">
+        <img class="img_btn" src="./prim3.jpg" alt="">
+        <img class="img_btn" src="./prim4.jpg" alt="">
+        <img class="img_btn" src="./prim5.jpg" alt="">
+        <img class="img_btn" src="./prim6.jpg" alt="">
+        <img class="img_btn" src="./prim7.jpg" alt="">
+    </div>
+    <div class="wrapper example2">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    <p><b>1fr</b> - распределает ширины колонок таким образом что бы они равномерно заполнили все пространство грида</p>
+    <p><b>minmax(150px, 1fr)</b> - при изменении экрана минимальная ширина колонки будет 150px максимальная 1fr. 1fr не может фигурировать в качестве минимальной единицы</p>
+    <p><b>repeat(3, 1fr)</b> - эта запись говорит о том, что будет 3 колонки и у каждой будет ширина 1fr</p>
+    <h2>Имена областей</h2>
+    <div class="wrapper example3">
+        <div class="grid-item header">Шапка</div>
+        <div class="grid-item side">Сайдбар</div>
+        <div class="grid-item content">Контент
+            <img src="./prim8.jpg" alt="">
+        </div>
+    </div>
+    <h2>Свойства для дочерних элементов</h2>
+    <div class="button__wrapper">
+        <img class="img_btn" src="./prim9.jpg" alt="">
+        <img class="img_btn" src="./prim10.jpg" alt="">
+        <img class="img_btn" src="./prim11.jpg" alt="">
+        <img class="img_btn" src="./prim12.jpg" alt="">
+        
+    </div>
+    <div class="wrapper example4">
+        <div class="grid-item grid-item4">1</div>
+        <div class="grid-item grid-item4">2</div>
+        <div class="grid-item grid-item4">3</div>
+        <div class="grid-item grid-item4">4</div>
+        <div class="grid-item grid-item4">5</div>
+        <div class="grid-item grid-item4">6</div>
+        <div class="grid-item grid-item4">7</div>
+        <div class="grid-item grid-item4">8</div>
+        <div class="grid-item grid-item4">9</div>
+    </div>
 </body>
 </html>
