@@ -68,5 +68,63 @@
         <div class="grid-item grid-item4">8</div>
         <div class="grid-item grid-item4">9</div>
     </div>
+    <p>Если использовать только свойства <b>grid-row-start</b> и <b>grid-column-start</b> то можно настроить своего рода порядок вывода нужного элемента сетки.</p>
+    <h2>Порядок вывода с помощью свойства order</h2>
+    <div class="button__wrapper">
+        <img class="img_btn" src="./prim13.jpg" alt="">
+        <img class="img_btn" src="./prim14.jpg" alt="">
+        <img class="img_btn" src="./prim15.jpg" alt="">
+        
+        
+    </div>
+    <div class="wrapper example5">
+        <div class="grid-item grid-item5_1">1</div>
+        <div class="grid-item grid-item5_2">2</div>
+        <div class="grid-item grid-item5_3">3</div>
+        <div class="grid-item grid-item5_4">4</div>
+        <div class="grid-item grid-item5_5">5</div>
+        <div class="grid-item grid-item5_6">6</div>
+    </div>
+    <p>Так же для определения порадка вывода элемента сетки можно с помощью свойства <b>order</b>. Это свойство необходимо задавать кадому элементу сетки</p>
+    <h2>Выравнивание элементов сетки</h2>
+    <p><b>justify-items</b> - выравнивает элементы по ширине (это свойтсво задается родителю)</p>
+    <p><b>align-items</b> - выравнивает элементы по высоте (это свойтсво задается родителю)</p>
+    <p>Значения для этих свойств:</p>
+    <p><b>stretch</b> - растягиает элемент</p>
+    <p><b>start</b> - прижимает элемент к началу сетки (либо по вертикали либо по горизонтали)</p>
+    <p><b>end</b> - прижимает элемент к концу сетки (либо по вертикали либо по горизонтали)</p>
+    <p>Отдельно выравнивание можно переназначить каждому элементу сетки, для этого элементу необходимо задать свойство <b>align-self</b> и <b>justify-self</b></p>
+    <p>Что бы расположить элемент по середине ячейки сетки необходимо элементу установить свойство <b>margin: auto;</b></p>
+    <div class="button__wrapper">
+        <img class="img_btn" src="./prim16.jpg" alt="">
+        <img class="img_btn" src="./prim17.jpg" alt="">
+        <img class="img_btn" src="./prim18.jpg" alt="">
+        <img class="img_btn" src="./prim19.jpg" alt="">
+        <img class="img_btn" src="./prim20.jpg" alt="">
+    </div>
+    <div class="wrapper example6">
+        <div class="grid-item grid-item6_1">1</div>
+        <div class="grid-item grid-item6_2">2</div>
+        <div class="grid-item grid-item6_3">3</div>
+        <div class="grid-item grid-item6_4">4</div>
+        <div class="grid-item grid-item6_5">5</div>
+        <div class="grid-item grid-item6_6">6</div>
+    </div>
+
+    <h2>Промежутки между элементами сетки</h2>
+    <p>Для того что бы задать промежутки между элементами сетки используются такие свойства как <b>row-gap</b> и <b>column-gap</b></p>
+    <div class="button__wrapper">
+        <img class="img_btn" src="./prim21.jpg" alt="">
+        <img class="img_btn" src="./prim22.jpg" alt="">
+        <img class="img_btn" src="./prim23.jpg" alt="">
+    </div>
+    <div class="wrapper example7">
+        <div class="grid-item grid-item7_1">1</div>
+        <div class="grid-item grid-item7_2">2</div>
+        <div class="grid-item grid-item7_3">3</div>
+        <div class="grid-item grid-item7_4">4</div>
+        <div class="grid-item grid-item7_5">5</div>
+        <div class="grid-item grid-item7_6">6</div>
+    </div>
 </body>
 </html>
