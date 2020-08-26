@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireBase</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="nav__logo">
+                <img src="./logo/logo.png" alt="logo">
+            </div>
+            <div class="nav__item">
+                <a data-scroll = "#hosting" href="#!" class="nav__links">Hosting</a>
+                <a data-scroll = "#realtime_database" href="#!" class="nav__links">Realtime Database</a>
+                <a data-scroll = "" href="#!" class="nav__links">Storage</a>
+            </div>
+        </nav>
+        <div class="hosting">
+            <div id="hosting" class="hosting__title">Hosting</div>
+            <h2 class="step">Шаг 1. Создание проекта</h2>
+            <p class="hosting__text">Для того что бы создать новый поект, заходм в консоль <b>FireBase</b> и жмем кнопку <b>Create a New Project</b>. Вводим имя нашего проекта и жмем продолжить. После этого откроется страница с настройками GOOGLE Аналитика. Ставим CheckBox "Отключить" и жмем кнопку "Создать проект"</p>
+            <p class="hosting__text">После того как проект создастся, мы увидим боковую панель</p>
+            <img src="./images/img1.jpg" alt="">
+            <p class="hosting__text">В боковой панели выбираем элемент <b>Hosting</b> и справа в центральной части окна жмем кнопку <b>Начать</b>. Откроется инструкция с описанием того, что нужно сделать что бы создать репозиторий на локальном компьютере для работы с хостингом.</p>
+            <h2 class="step">Шаг 2. Создание локального репозитория</h2>
+            <p class="hosting__text">Создаем папку с произвольным именем, в ней создаем папку с именем <b>public</b>, затем в этой папке создаем еще одну и так же называем ее <b>public</b>. В итоге получится вот такая картина</p>
+            <img src="./images/img2.jpg" alt="">
+            <p class="hosting__text">После этого запускам <b>VS Code</b> из этой директории и открываем консоль. Первое что нам надо сделать, это установить FireBase. Для этого в консоли вводим команду:</p>
+            <p class="hosting__text code">npm install -g firebase-tools</p>
+            <p class="hosting__text">Теперь необходимо авторизоваться. Для этого в той же консоли вводим команду:</p>
+            <p class="hosting__text code">firebase login</p>
+            <p class="hosting__text">Откроется браузер со страницей выбора учетной записи Google, выбираем учетку и жмем кнопку "Разрешить". После получаем уведомление о том, что все прошло успешно.</p>
+            <p class="hosting__text">Теперь необходимо проинициализировать проект, для этого в терминале вводим команду:</p>
+            <p class="hosting__text code">firebase init</p>
+            <p class="hosting__text">Откроется приветственное сообщение <b>FireBase</b> с вопросом "Are you ready to proceed?", вводим Y и жмем Enter. Далее откроется вот такой текст:</p>
+            <img src="./images/img3.jpg" alt="">
+            <p class="hosting__text">Здесь необходимо выбрать роли нашего проекта, пока нам нужен только ХОСТИНГ, поэтому клавишей "стрелкой" перемещаемся в низ до элемента <b>hosting</b> и для того что бы выбрать роль жмем "spase", после чего жмем ENTER</p>
+            <p class="hosting__text">Следующим этапом нам необходимо указать, что это за проект.</p>
+            <img src="./images/img4.jpg" alt="">
+            <p class="hosting__text">Выбираем <b> Use an existing project</b> т.к. в <b>FireBase</b> мы уже создали проект. Жмем Enter и видим что система предложила выбрать проект который уже находится у нас в FireBase</p>
+            <img src="./images/img5.jpg" alt="">
+            <p class="hosting__text">Выбираем его и жмем Enter</p>
+            <p class="hosting__text">Далее система спросит у нас хотим ли мы использовать нашу директорию в качестве public, жмем Enter. После этого система спросит нужно ли генерировать файл index.html? Жмем N и ENTER. После этого появится сообщение о том что инициализация выполнена успешно.</p>
+            <h2 class="step">Шаг 3. Загрузка файлов на хостинг</h2>
+            <p class="hosting__text">Посе того как проект был проинициализировал, в папке с проектом создаем все необходимы файлы после чего в консоле вводим команду</p>
+            <p class="hosting__text code">firebase deploy</p>
+            <p class="hosting__text">Каждый раз когда понадобится запушить данные на сайт вводим эту команду.</p>
+            <h2 class="step">Шаг 4. Ссылка</h2>
+            <p class="hosting__text">Для того что бы посмотреть какой теперь у нас адрес нашего хостинга, заходим в консоль проекта и так же жмем <b>Hosting</b>. В разделе мы увидим вот такую картину:</p>
+            <img src="./images/img6.jpg" alt="">
+            <p class="hosting__text">Иными словами fireBase нам предоставляет аж две ссылки на наш сайт. Так же мы можем привязать к нашему хостингу пользовательский домен, т.е. можно сделать красивую ссылку.</p>
+        </div>
+        <div class="realtime_database">
+            <div id="realtime_database" class="hosting__title">Realtime Database</div>
+
+
+
+            <p class="hosting__text"></p>
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>
