@@ -8,7 +8,7 @@
 }
 
 body{
-    padding-bottom: 1000px;
+
 }
 
 .container{
@@ -110,3 +110,9 @@ img {
     padding: 15px;
 }
 
+.inline{
+    display: inline;
+    margin: 0;
+    border: none;
+    margin-bottom: -10px;
+}
