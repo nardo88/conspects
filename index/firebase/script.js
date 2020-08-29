@@ -6,7 +6,9 @@ navLinks.forEach(item => {
     item.addEventListener('click', event => {
         event.preventDefault()
         let data = item.dataset.scroll
+        console.log(data);
         scrollHeight = document.querySelector(data).offsetTop
+        console.log(scrollHeight);
         window.scrollTo({ top: scrollHeight , behavior: 'smooth' })
     })
 })
