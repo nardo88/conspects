@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
     <script defer src="./script.js"></script>
 </head>
 <body>
@@ -19,6 +20,7 @@
                 <a data-scroll = "#hosting" href="#!" class="nav__links">Hosting</a>
                 <a data-scroll = "#realtime_database" href="#!" class="nav__links">Realtime Database</a>
                 <a data-scroll = "#storage" href="#!" class="nav__links">Storage</a>
+                <a data-scroll = "#primer" href="#!" class="nav__links">Пример</a>
             </div>
         </nav>
         <div class="hosting">
@@ -110,20 +112,6 @@
             <p class="hosting__text">Далее мы обращаемся к <b>ref</b> и вызываем у него слушатель события <b>on</b>. Что это за слушатель? Уникальность этого слушателя заключается в том, что слушатель теперь будет реагировать на любые изменения в БД. Причем не важно обновим мы страницу или нет, слушатель будет создавать снимок нашей БД каждый раз когда в БД будут происходить какие-либо изменения. Даже если эти изменения делаем не мы. К примеру: другой пользователь внес запись в нашу БД, после этого данные которые мы получили до этого так же будут моментально обновлены.</p>
             <p class="hosting__text">У метода <b>on</b> есть два входных параметра: Первое это на какие изменения ему реагировать (в нашем случае - на изменение значений value). Второй параметр - это callback функция, которая будет выполняться каждый раз при регистрации события. Входным параметром этой callback функции является объект - <b>snapshot</b> - снимок данных. У этогообъекта есть метод <b>val()</b> который возвращает снимок данных.</p>
             <p class="hosting__text">Таким образом мы обращаемся к нашему пустому массиву и с помощью метода <b>concat</b> дописываем в него данные которые получили из БД</p>
-            <p class="hosting__text"><b>Пример моей функции</b></p>
-            <section class="wrapper">
-     
-            </section>
-            
-            <div class="add">
-                <input class="name_item input_value" type="text" placeholder="имя">
-                <input class="age_item input_value" type="text" placeholder="возраст">
-                <input class="job_item input_value" type="text" placeholder="профессия">
-                <button class="add_data">ADD</button>
-            </div>
-
-            <p class="hosting__text">Код JavaScript</p>
-            <img class="min_img" src="./code/code.png" alt="">
             <h3 class="step_min">Метод once()</h3>
             <p class="hosting__text">В некоторых случаях нам может потребоваться моментальный снимок наших данных без отслеживания изменений, например, при инициализации элемента пользовательского интерфейса, который вы не ожидаете изменить. Вы можете использовать метод once() чтобы упростить этот сценарий: он срабатывает один раз и больше не запускается.</p>
             <h2 class="step">Шаг 7. Редактирование данных</h2>
@@ -157,12 +145,69 @@
             <img src="./images/img27.jpg" alt="">
             <p class="hosting__text">Создаем переменную, куда помещаем значение поля input (sum_items). Далее проверяем что бы число введенное в это поле было положительным. После этого перезаписываем переменную <b>ref</b> с использованием метода <b>limitToFirst()</b>, которому на вход даем значение введенного в поле input. После этого обновляем заполнение верстки вызывая функцию <b>fillTable</b></p>
 
-
-
-
-
-
-
+        </div>
+        <div class="storage">
+            <div id="storage" class="hosting__title">Storage</div>
+            <p class="hosting__text">Облачное хранилище для Firebase позволяет загружать и делиться пользовательским контентом, таким как изображения и видео, что позволяет встраивать мультимедийный контент в ваши приложения.</p>
+            <h2 class="step">Шаг 1. Создание хранилища по умолчанию</h2>
+            <p class="hosting__text">На панели навигации консоли Firebase выберите <b>«Хранилище»</b>, затем нажмите <b>«Начать»</b>. После этого система запросит выбрать место хранения для наших данных. Выбираем Европу. Жмем <b>готово</b>.</p>
+            <h2 class="step">Шаг 2. Настройка публичного доступа</h2>
+            <p class="hosting__text">Долгое время потратил на исправления одной ошибки, данные не хотели записываться, выдавало ошибку "недостаточно прав". Оказывается, что если не настроить публичный доступ, то без аутентификации добавлять файлы в хранилище нельзя.</p>
+            <p class="hosting__text">После того, как хранилище создастся, мы увидим вот такую картину:</p>
+            <img src="./images/img28.jpg" alt="">
+            <p class="hosting__text">На вкладке <b>Files</b> будут отображаться все загруженные файлы. А вот на вкладке <b>Rules</b> находится конфигурация публичного доступа. По умолчанию конфигурация выглядит так:</p>
+            <img src="./images/img29.jpg" alt="">
+            <p class="hosting__text">При такой конфигурции, вносить изменения могут только авторизованные пользователи, т.е request.auth не должен быть пустым. Для того что бы разрешить всем пользователям вносить изменения, мы должны поправить строчку вот так:</p>
+            <img src="./images/img30.jpg" alt="">
+            <h2 class="step">Шаг 3. Добавление URL своего контейнера в приложение</h2>
+            <p class="hosting__text">Для того что бы инициализировать свое приложение мы создавали переменную <b>firebaseConfig</b>: </p>
+            <img src="./images/img31.jpg" alt="">
+            <p class="hosting__text">После чего с помощью этой переменной мы инициализировали наше приложение:</p>
+            <img src="./images/img32.jpg" alt="">
+            <p class="hosting__text">После того как мы создали хранилище, мы получили новый адрес этого хранилища, сам адрес берем вот от сюда:</p>
+            <img src="./images/img33.jpg" alt="">
+            <p class="hosting__text">Копируем этот адрес и вставляем в переменную (объект) <b>firebaseConfig</b> в раздел <b>storageBucket</b>:</p>
+            <img src="./images/img34.jpg" alt="">
+            <h2 class="step">Шаг 4. Создание ссылки на хранилище</h2>
+            <p class="hosting__text">Для создания ссылки на наше хранилище мы создаем переменную в которую помещаем результат функции <b>firebase.storage()</b>. Заодно мы можем применить метод <b>ref()</b> что бы указать конечный путь для сохранения файлов.</p>
+            <img src="./images/img35.jpg" alt="">
+            <p class="hosting__text"><b>ref()</b> - функция с пустым входным параметром говорит о том что храниться фалы будут в корневом каталоге хранилища. Вообще это плохая практика хранить файлы в корне. Гораздо практичнее создавать папки в хранилище и хранить файлы уже там.</p>
+            <h2 class="step">Шаг 5. Загрузка файлов и получение на них ссылки</h2>
+            <p class="hosting__text">Загрузка файлов в корень хранилища запрещена, поэтому необходимо у корневого хранилища создавать дочерние хранилища и уже потом туда загружать файлы. Как это выглядит на практике?</p>
+            <p class="hosting__text"><b>Во-первых</b> нам необходимо определить что мы будем загружать. Для этого мы будем использовать класс <b>File</b> через тег <b>input</b> с типом <b>file</b></p>
+            <img src="./images/img36.jpg" alt="">
+            <p class="hosting__text">Получаем ссылку на этот элемент</p>
+            <img src="./images/img37.jpg" alt="">
+            <p class="hosting__text">После чего создаем слушатель события к этому элементу. Слушать будем событие <b>change</b></p>
+            <img src="./images/img38.jpg" alt="">
+            <p class="hosting__text">теперь создадим переменную <b>fileChoise</b> куда мы будем помещать выбранный файл</p>
+            <img src="./images/img39.jpg" alt="">
+            <p class="hosting__text">Свойство <b>files</b> возвращает массив выбранных файлов, нам нужен только первый выбранный файл. Каждый элемент этого массива имеет, рад свойств. Пока нам понадобится только свойство <b>name</b>.</p>
+            <p class="hosting__text"><b>Во-вторых</b> нам необходимо определить куда мы будем сохранять файл и как его потом назовем. Для этого нужно создать переменную <b>mountainsRef</b> куда мы поместим путь для сохранения файла с помощью метода <b>child()</b>.</p>
+            <img src="./images/img40.jpg" alt="">
+            <p class="hosting__text">Эту строчку можно прочитать так:</p>
+            <p class="hosting__text">Мы обращаемся к корневому хранилищу и с помощью метода <b>child()</b> создаем там дочернее хранилище (папку) <b>images</b>, а сам файл назовем так же как сам файл назывался (обращаемся к fileChoise и получаем значение свойства name)</p>
+            <p class="hosting__text">Для того что ы выполнить загрузку файла нам необходимо к <b>mountainsRef</b> применить метод <b>put()</b>. Входным параметром этого метода должен быть файл который мы загружаем, напомню что он теперь записан в переменной <b>fileChoise</b></p>
+            <img src="./images/img41.jpg" alt="">
+            <p class="hosting__text">метод <b>put()</b> возвращает нам <b>Promise</b>, поэтому для получения ссылки мы можем применить метод <b>then()</b>. Для того что бы получить <b>url</b> нашего загруженного файла используется метод <b>getDownloadURL()</b>.</p>
+            <p class="hosting__text">Рассмотрим следующий код:</p>
+            <img src="./images/img42.jpg" alt="">
+            <p class="hosting__text">После того как мы применили метод <b>put()</b>, наш файл загрузился в хранилище. После этого мы вызываем метод <b>then()</b> внутри которого мы обращаемся к переменной <b>mountainsRef</b> b применяем к ней метод <b>getDownloadURL()</b>, который так же является промисом и который после успешного выполнения промиса возвращает url ссылку файла. Поэтому мы применяем мотедо then с callback функцией, которая принимает параметр data (куда поместилась ссылка на файл) и присваиваем значение data глобальной переменной <b>urlImg</b>. Эта переменная используется для записи данных о картинке в БД firebase</p>
+            <img src="./images/img43.jpg" alt="">
+            <p class="hosting__text">Теперь ссылки загруженных файлов в хранилище firebase хранятся в базе реального времени firebase b наша база теперь выглядит вот так:</p>
+            <img src="./images/img44.jpg" alt="">
+            <h2 class="step">Шаг 6. Удаление файлов</h2>
+            <p class="hosting__text">Чтобы удалить файл, сначала создаем ссылку на этот файл. Затем вызываем метод delete() для этой ссылки, который возвращает Promise</p>
+            <img src="./images/img45.jpg" alt="">
+            <h2 class="step">Шаг 7. Получение списка файлов</h2>
+            <p class="hosting__text">Для того что бы получить список файлов нужно:</p>
+            <p class="hosting__text">Указать путь кдиректории где лежат файлы</p>
+            <img src="./images/img46.jpg" alt="">
+            <p class="hosting__text">После этого к переменной <b>imageList</b> мы применяем метод <b>listAll()</b></p>
+            <img src="./images/img47.jpg" alt="">
+            <p class="hosting__text">Метод <b>listAll()</b> возвращает промис, который в свою очеред возвращает объект. У этого объекта есть свойство <b>items</b> который возвращает массив, элементами которого являются файлы в директории. Если вывести в консоль сам элемент массива <b>item</b>, то мы увидим его свойства:</p>
+            <img src="./images/img48.jpg" alt="">
+            <p class="hosting__text">Как видно, здесь вся информация о файле.</p>
 
 
 
@@ -171,12 +216,56 @@
 
 
             <p class="hosting__text"></p>
-        </div>
-        <div class="storage">
-            <div id="storage" class="hosting__title">Storage</div>
 
         </div>
 
+        <div class="container">
+            <div class="primer">
+                <div id="primer" class="hosting__title">Realtime Database</div>
+                <section class="wrapper">
+         
+                </section>
+                
+                <div class="add">
+                    <div class="add_item">
+                        <div class="title">Добавление записи</div>
+                        <div class="contenet">
+                            <div class="input">
+                                <input class="name_item input_value" type="text" placeholder="имя">
+                                <input class="age_item input_value" type="text" placeholder="возраст">
+                                <input class="job_item input_value" type="text" placeholder="профессия">
+                                <input id="file" type="file">
+                            </div>
+                            <div class="buttons">
+                                <button class="add_data">Добавить через массив</button>
+                                <button class="add_last">Добавить через update</button>
+                                <button class="change_last">CHANGE LAST</button>
+                            </div>
+                        </div>
+                       
+                        
+    
+                    </div>
+                    <div class="filter_item">
+                        <div class="title">Фильтр записей</div>
+
+                        <input class="sum_items input_value" type="text" placeholder="количество элементов">
+                        <button class="show_first_3">Фильтрация по количеству</button>
+                        <button class="new_filter">Фильтрация по имени</button>
+                    </div>
+                    <div class="title">Удаление последней записи</div>
+
+                    <div class="delete_item">
+                        <button class="remove_last">REMOVE LAST</button>
+                    </div>
+            
+                    
+            
+                    
+                </div>
+            </div>
+        </div>
+        
 
 
     </div>

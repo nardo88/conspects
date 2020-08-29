@@ -26,12 +26,12 @@ body{
     left: 0;
     right: 0;
     background: rgb(233, 232, 232);
-    padding: 10px 30px;
+    padding: 5px 30px;
  
 }
 
 .nav__logo{
-    width: 200px;
+    width: 100px;
     
 }
 
@@ -79,11 +79,10 @@ body{
 }
 
 .hosting{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .hosting__title{
     font-size: 30px;
-    /* padding: 10px; */
     color: #333;
     background: rgb(209, 209, 209);
 
@@ -128,6 +127,8 @@ img {
     border-radius: 0;
 }
 
+/*  СТИЛИ ПРИМЕРА */
+
 .wrapper{
     width: 1024px;
     margin: 0 auto;
@@ -135,8 +136,6 @@ img {
     display: flex;
     flex-wrap: wrap;
 }
-
-
 
 .container__item{
     border: 1px solid #000;
@@ -150,7 +149,6 @@ img {
 .add{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 30px;
 }
 
@@ -159,24 +157,41 @@ img {
     height: 30px;
     margin-bottom: 20px;
     padding: 0 10px;
+    display: block;
 }
 
-.add_data{
+.add_data, .remove_last, .change_last, .add_last, .show_first_3, .new_filter {
     width: 300px;
     height: 30px;
     cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+
 }
 
-.min_img{
-    width: 600px;
+.avatar{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
-.to_out{
-    font-size: 18px;
+.title{
+    font-size: 20px;
     font-weight: bold;
 }
 
-.to_out:hover{
-    background: #333;
-    color: #fff;
+.contenet{
+    display: flex;
+    width: 700px;
+}
+
+.input, .buttons{
+    width: 45%;
+}
+.filter_item{
+    margin-top: 30px;
+}
+
+.filter_item{
+
 }
