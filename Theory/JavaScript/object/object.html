@@ -1,10 +1,13 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Объекты</h1>
+	<h1>Объекты</h1>
 <p>Для объявления объекта можно использовать два синтаксиса:</p>
 <img src="book1.jpg">
 <p>Второй способ называется <b>Литерным</b>. В этом случае мы сразу можем задать свойства для объекта</p>
@@ -45,10 +48,13 @@
 <script>
 	
 	const user = {
-		name: 'Maxim'
+		name: 'Maxim',
+		age: 32,
+		job: 'frontend',
+		
 	}
 
-	user[name] = 'Maxim'
+	user.name1 = 'Olga'
 
 	console.log(user.propertyIsEnumerable(name));
 	
@@ -61,6 +67,28 @@
 	console.log(max)
 
 
+	console.log(max)
+
+	console.log(Object.getOwnPropertyDescriptor(user, 'name'));
+
+	Object.defineProperty(user, 'name', {
+		writable:false,
+		configurable:false,
+		enumerable: false
+
+	})
+
+	console.log(Object.getOwnPropertyDescriptor(user, 'name'));
+
+	for (key in user){
+		console.log(key);
+	}
+
+	console.log(Object.isExtensible(user));
+
+	Object.preventExtensions(user)
+
+	console.log(Object.isExtensible(user));
 
 </script>
 
@@ -89,11 +117,34 @@
 <p>В примере свойство которое мы задали нашему объекту <b>person</b> - это его имя (name). Это свойство может иметь собственные свойства (дескрипторы):</p>
 <ul>
 	<li><b>value</b> - значение</li>
-	<li><b>enumirable</b> - перечисляемость (по умолчанию значение false, т.е. это свойство не будет виднодля итерации, цикла for...in? мы же указываем значение true)</li>
-	<li><b>writeble</b> - это свойство отвечает за то, можем ли мы редактировать наше свойство. по умолчанию этот ключ имеет значение false</li>
-	<li><b>configurable</b> - это свойство отвечает за то, можем ли мы далить свойство. по умолчанию так же стоит false</li>
+	<li><b>enumirable</b> - перечисляемость (по умолчанию значение true, т.е. это свойство будет видно для итерации, цикла for...in</li>
+	<li><b>writeble</b> - это свойство отвечает за то, можем ли мы редактировать наше свойство. по умолчанию этот ключ имеет значение true</li>
+	<li><b>configurable</b> - это свойство отвечает за то, можем ли мы далить свойство. по умолчанию так же стоит true</li>
 </ul>
-
+<p>Что бы <b>получить</b> дескрипторы свойств нужно воспользоваться методом глобального объекта <b>Object</b> - <b>getOwnPropertyDescriptor()</b>. У этого метода два входных параметра:</p>
+<p><b>1 - </b>объект</p>
+<p><b>2 - </b>свойство объекта у которого нужно посмотреть дескрипторы</p>
+<img src="book2.4.jpg">
+<p>Что бы <b>изменить</b> дескрипторы используется метод <b>defineProperty</b></p>
+<p>Этому методу мы передаем уже три входных параметра:</p>
+<p><b>1 - </b>объект</p>
+<p><b>2 - </b>свойство объекта у которого нужно поменять дескрипторы</p>
+<p><b>3 - </b>объект с дескрипторами свойства</p>
+<img src="book2.5.jpg">
+<h2>Артибуты объектов</h2>
+<p><span class="atr">prototype</span> - определяет объект от которого наследуются свойства</p>
+<p>Как посмотреть прототип объекта:</p>
+<img src="book2.6.jpg">
+<p>Еще один способ</p>
+<img src="book2.7.jpg">
+<p><span class="atr">class</span> - содержит строку с информацией о типе объекта</p>
+<p><span class="atr">extensible</span> - определяет допускается ли добавлять в объект новые свойства т.е. является ли объект расширяемым.</p>
+<p>Что бы проверить этот атрибут используется метод глобального объекта:</p>
+<img src="book2.8.jpg">
+<p>Возвращает булевое значение.</p>
+<p>Что бы сделать объект не срасширяемым используется метод <b>preventExtensions</b></p>
+<img src="book2.9.jpg">
+<p>После того как мы сделали объект не расширяемым, его нельзя будет сделать обратно расширяемым</p>
 <h2>getters, setters</h2>
 <p>Рассмотрим пример</p>
 <img src="prim9.jpg">
@@ -104,11 +155,6 @@
 <p>Но если мы обратимся к person.age и зададим какой-нибудь параметр, то сработает метод <b>set</b> </p>
 <img src="prim11.jpg">
 <p>В итоге, свойству объекта мы можем задать метод get - который будет что то возвращать, или метод get - который будет что то получать и обрабатывать это</p>
-
-
-
-
-
 
 </body>
 </html>
