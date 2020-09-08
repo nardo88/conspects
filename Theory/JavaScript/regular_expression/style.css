@@ -1,0 +1,29 @@
+*{
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    padding: 10px;
+    background: #d1d0d0;
+    font-size: 16px;
+}
+
+b{
+    margin: 0;
+    padding: 5px;
+    font-size: 18px;
+    background: rgb(248, 248, 248);
+ 
+}
+p{
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+strong{
+    margin: 0;
+    padding: 0;
+}
