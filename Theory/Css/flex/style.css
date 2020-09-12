@@ -1,0 +1,130 @@
+
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+}
+.child3{
+    width: 30%;
+    min-height: 2.5rem;
+    background-color: #60AAF5;
+    Border: 2px solid white;
+    color: red;
+}
+
+.child2{
+    width: 30%;
+    height: 15%;
+    background-color: #60AAF5;
+    Border: 2px solid white;
+    color: red;
+}
+
+.child1{
+    background-color: #60AAF5;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    Border: 2px solid white;
+    color: red;
+
+}
+
+.parent1{
+    margin-top: 20px;
+    background-color: #EDD9D9;
+    width: 350px;
+    height: 250px;
+    padding: 5px;
+    Border: 2px solid #A63131;
+    display: flex;
+}
+.buttons{
+    min-width: 100px;
+    margin: 5px;
+    border: none;
+    outline: none;
+    background-color: #49AC41;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 15px 10px;
+}
+
+.order__btn{
+    width: 100px;
+    margin: 5px;
+    border: none;
+    outline: none;
+    background-color: #49AC41;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 15px 5px;
+}
+
+.order__flex-container{
+    background-color: #EDD9D9;
+    width: 350px;
+    height: 250px;
+    padding: 5px;
+    Border: 2px solid #A63131;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order__flex-element{
+    width: 24%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #60AAF5;
+    Border: 2px solid white;
+
+}
+
+.order__item{
+    background: #1f5d9c;
+}
+
+.grow__flex-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #60AAF5;
+    Border: 2px solid white;
+    padding: 0 20px;
+}
+
+.grow__item{
+    background: #1f5d9c;
+
+}
+
+.shrink__flex-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #60AAF5;
+    Border: 2px solid white;
+    padding: 0 20px;
+    width: 50%;
+}
+
+.shrink__item{
+    background: #1f5d9c;
+
+}
+
+.basis__flex-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #60AAF5;
+    Border: 2px solid white;
+    padding: 0 20px;
+    width: 10%;
+}
+
+.basis__item{
+    background: #1f5d9c;
+}

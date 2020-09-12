@@ -3,56 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style>
-		
-		.child3{
-			width: 30%;
-			min-height: 2.5rem;
-			background-color: #60AAF5;
-			Border: 2px solid white;
-			color: red;
-			margin 10px;
-		}
-
-		.child2{
-			width: 30%;
-			height: 15%;
-			background-color: #60AAF5;
-			Border: 2px solid white;
-			color: red;
-			margin 10px;
-		}
-
-		.child1{
-			background-color: #60AAF5;
-			min-width: 2.5rem;
-			min-height: 2.5rem;
-			Border: 2px solid white;
-			color: red;
-			margin 10px;
-
-		}
-
-		.parent1{
-			background-color: #EDD9D9;
-			width: 350px;
-			height: 250px;
-			padding: 5px;
-			Border: 2px solid #A63131;
-			display: flex;
-		}
-		.buttons{
-			width: 100px;
-			margin: 5px;
-			border: none;
-			outline: none;
-			background-color: #49AC41;
-			color: #fff;
-			cursor: pointer;
-			border-radius: 10px;
-			padding: 15px 5px;
-		}
-	</style>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<h1>Шпаргалка по Flexbox CSS</h1>
@@ -249,244 +200,69 @@ center</li>
 		</div>
 	</div>
 
-	
-
-	<script>
-		
-		// ПРИМЕР 1 - flex-direction - начало
-
-		function fun1_1() {
-
-			var elem = document.getElementById('parent1');
-			
-			elem.style.flexDirection = 'row';
-			
-		}
-		function fun1_2() {
-
-			var elem = document.getElementById('parent1');
-			
-			elem.style.flexDirection = 'row-reverse';
-		}
-		
-		function fun1_3() {
-			var elem = document.getElementById('parent1');
-			
-			elem.style.flexDirection = 'column';
-		}
-		function fun1_4() {
-			var elem = document.getElementById('parent1');
-			
-			elem.style.flexDirection = 'column-reverse';
-		}
-
-		// ПРИМЕР 1 - flex-direction - конец
-
-		// ПРИМЕР 1 - flex-wrap - начало
-
-
-		function fun2_1() {
-
-			var elem = document.getElementById('parent2');
-			
-			elem.style.flexWrap = 'nowrap';
-		}
-
-		function fun2_2() {
-
-			var elem = document.getElementById('parent2');
-			
-			elem.style.flexWrap = 'wrap';
-		}
-
-		function fun2_3() {
-
-			var elem = document.getElementById('parent2');
-			
-			elem.style.flexWrap = 'wrap-reverse';
-		}
-		// ПРИМЕР 2 - flex-wrap - конец
-
-
-		//ПРИМЕР 3 - justify-content - начало
-
-		function fun3_1() {
-
-			var elem = document.getElementById('parent3');
-			
-			elem.style.justifyContent = 'flex-start';
-		}
-
-		function fun3_2() {
-
-			var elem = document.getElementById('parent3');
-			
-			elem.style.justifyContent = 'flex-end';
-		}
-
-		function fun3_3() {
-
-			var elem = document.getElementById('parent3');
-			
-			elem.style.justifyContent = 'center';
-		}
-
-		function fun3_4() {
-
-			var elem = document.getElementById('parent3');
-			
-			elem.style.justifyContent = 'space-between';
-		}
-
-		function fun3_5() {
-
-			var elem = document.getElementById('parent3');
-			
-			elem.style.justifyContent = 'space-around';
-		}
-
-		function fun3_6() {
-
-			var elem = document.getElementById('parent3');
-			
-			elem.style.justifyContent = 'space-evenly';
-		}
-
-		//ПРИМЕР 3 - justify-content - начало
-
-
-
-		//ПРИМЕР 4 align-items - НАЧАЛО
-
-		function fun4_1() {
-
-			var elem = document.getElementById('parent4');
-			
-			elem.style.alignItems = 'flex-start';
-		}
-
-		function fun4_2() {
-
-			var elem = document.getElementById('parent4');
-			
-			elem.style.alignItems = 'flex-end';
-		}
-
-		function fun4_3() {
-
-			var elem = document.getElementById('parent4');
-			
-			elem.style.alignItems = 'center';
-		}
-
-		function fun4_4() {
-
-			var elem = document.getElementById('parent4');
-			
-			elem.style.alignItems = 'baseline';
-		}
-
-		function fun4_5() {
-
-			var elem = document.getElementById('parent4');
-			
-			elem.style.alignItems = 'Stretch';
-		}
-
-
-		//ПРИМЕР 4 align-items - КОНЕЦ
-
-
-		//ПРИМЕР 5 align-self - НАЧАЛО
-
-
-		function fun5_1() {
-
-			var elem = document.getElementById('child4');
-			
-			elem.style.alignSelf = 'flex-start';
-		}
-
-		function fun5_2() {
-
-			var elem = document.getElementById('child4');
-			
-			elem.style.alignSelf = 'flex-end';
-		}
-
-		function fun5_3() {
-
-			var elem = document.getElementById('child4');
-			
-			elem.style.alignSelf = 'center';
-		}
-
-		function fun5_4() {
-
-			var elem = document.getElementById('child4');
-			
-			elem.style.alignSelf = 'baseline';
-		}
-
-		function fun5_5() {
-
-			var elem = document.getElementById('child4');
-			
-			elem.style.alignSelf = 'Stretch';
-		}
-
-
-		//ПРИМЕР 5 align-self - конец
-
-
-		//ПРИМЕР 6 align-content - начало
-
-		function fun6_1() {
-
-			var elem = document.getElementById('parent5');
-			
-			elem.style.alignContent = 'flex-start';
-		}
-		function fun6_2() {
-
-			var elem = document.getElementById('parent5');
-			
-			elem.style.alignContent = 'flex-end';
-		}
-		function fun6_3() {
-
-			var elem = document.getElementById('parent5');
-			
-			elem.style.alignContent = 'center';
-		}
-		function fun6_4() {
-
-			var elem = document.getElementById('parent5');
-			
-			elem.style.alignContent = 'space-between';
-		}
-		function fun6_5() {
-
-			var elem = document.getElementById('parent5');
-			
-			elem.style.alignContent = 'space-around';
-		}
-		function fun6_6() {
-
-			var elem = document.getElementById('parent5');
-			
-			elem.style.alignContent = 'space-evenly';
-		}
-		function fun6_7() {
-
-			var elem = document.getElementById('parent5');
-			
-			elem.style.alignContent = 'stretch';
-		}
-
-
-
-		//ПРИМЕР 6 align-content - начало
-	</script>
+	<h2>order</h2>
+	<p>Свойство order определяет порядок вывода флексов внутри флекс-контейнера. Элементы располагаются согласно значениям свойства order от меньшего к большему. При равных значениях order элементы выводятся в том порядке, в каком они появляются в исходном коде</p>
+	<p><b>Значение по умолчанию: </b>0</p>
+	<div class="container__order order">
+		<div class="order__buttons">
+			<button class="order__btn order__-1">-1</button>
+			<button class="order__btn order__0">0</button>
+			<button class="order__btn order__1">1</button>
+		</div>
+		<div class="order__flex-container">
+			<div class="order__flex-element">1</div>
+			<div class="order__flex-element">2</div>
+			<div class="order__flex-element order__item">3</div>
+			<div class="order__flex-element">4</div>
+		</div>	
+	</div>
+
+	<h2>flex-grow</h2>
+	<p>Свойство flex-grow задает коэффициент роста flex для заданного числа. По умолчанию значение 0. Если поставить 1 то флекс элемент будет занимать все свободное пространство, если у родителя оно имеется.</p>
+
+	<div class="grow">
+		<div class="grow__buttons">
+			<button class="grow__btn buttons">0</button>
+			<button class="grow__btn buttons">1</button>
+		</div>
+		<div class="grow__flex-container parent1">
+			<div class="grow__flex-element">1</div>
+			<div class="grow__flex-element">2</div>
+			<div class="grow__flex-element grow__item">3</div>
+			<div class="grow__flex-element">4</div>
+		</div>
+	</div>
+
+	<h2>flex-shrink</h2>
+	<p>Свойство flex-shrink задает коэффициент сжатия flex с заданным числом. Отрицательное значение не валидно. Иными словами flex контейнер, если его флех элементы не помещаются внутри него с теми размерами какие указаны у флекс элементов, то контейнер их сожмет. flex-shrink задает коефициент, готов ли элемент сжиматься. если указать значение 0, то элемент не будет сжиматься, а те элементы у которых будет значение по умолчанию (1)  они сожмуться еще сильнее. (В примере ширина flex-элементов 50%)</p>
+	<div class="shrink">
+		<div class="shrink__buttons">
+			<button class="shrink__btn buttons">0</button>
+			<button class="shrink__btn buttons">1</button>
+		</div>
+		<div class="shrink__flex-container parent1">
+			<div class="shrink__flex-element">1</div>
+			<div class="shrink__flex-element">2</div>
+			<div class="shrink__flex-element shrink__item">3</div>
+			<div class="shrink__flex-element">4</div>
+		</div>
+	</div>
+
+	<h2>flex-basis</h2>
+	<p>Свойство flex-basis определяет основу флекса, которая является начальным размером элемента. Похоже на свойства width и height, к которым добавляется содержимое элемента. (ширина по умолчанию элементов задано - 10%)</p>
+	<div class="basis">
+		<div class="basis__buttons">
+			<button class="basis__btn buttons">30%</button>
+			<button class="basis__btn buttons">50%</button>
+			<button class="basis__btn buttons">auto</button>
+		</div>
+		<div class="basis__flex-container parent1">
+			<div class="basis__flex-element">1</div>
+			<div class="basis__flex-element">2</div>
+			<div class="basis__flex-element basis__item">3</div>
+			<div class="basis__flex-element">4</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
 </body>
 </html>
