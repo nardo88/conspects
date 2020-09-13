@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>requestAnimationFrame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>requestAnimationFrame()</h1>
+    <p><b>window.requestAnimationFrame</b> указывает браузеру на то, что вы хотите произвести анимацию, и просит его запланировать перерисовку на следующем кадре анимации. В качестве параметра метод получает функцию, которая будет вызвана перед перерисовкой.</p>
+    <p><b>ВАЖНО!</b> Ваш callback метод сам должен вызвать requestAnimationFrame() иначе анимация остановится.</p>
+    <p><b>Синтаксис</b></p>
+    <img src="prim1.jpg" alt="">
+    <p><b>callback</b> - Функция, которая будет вызвана, когда придёт время обновить вашу анимацию на следующей перерисовке</p>
+    <p><b>element </b> - Необязательный параметр (не используется в Firefox или IE), определяющий элемент, который визуально содержит всю анимацию. </p>
+    <h2>Возвращаемое значение</h2>
+    <p><b>requestID</b> — длинное целое, являющееся уникальным идентификатором для записи, содержащей callback. Оно не равно нулю, но других предположений о его значении делать не следует. Вы можете передать его в window.cancelAnimationFrame() для отмены вызова.</p>
+    <h2>Пример</h2>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+    <div class="road">
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img src="code.png" alt="">
+
+    <script src="main.js"></script>
+</body>
+</html>

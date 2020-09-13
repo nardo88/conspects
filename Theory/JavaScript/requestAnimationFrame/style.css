@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+}
+
+body{
+    background: rgb(197, 197, 197);
+}
+
+.road{
+    width: 400px;
+    height: 500px;
+    background: #0f0f0f;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.line{
+    width: 10px;
+    height: 50px;
+    background: #FFF;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+img{
+    width: 600px;
+}
