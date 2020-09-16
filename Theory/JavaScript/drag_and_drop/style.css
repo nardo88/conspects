@@ -14,8 +14,75 @@
     border-radius: 50%;
     background: url(./ball.png) center / cover no-repeat;
     cursor: pointer;
+    position: absolute;
+    z-index: 1000;
 }
 .code{
     max-width: 800px;
 }
 
+.left{
+    position: absolute;
+    border: 8px solid #fff;
+    border-left: transparent;
+    left: 0;
+    width: 200px;
+    height: 300px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left:before{
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    border: 8px solid #fff;
+    border-left: transparent;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.center{
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    left: 50%;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+.center:before{
+    content: '';
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    transform: translate(-50%, -50%);
+
+}
+
+.right{
+    position: absolute;
+    border: 8px solid #fff;
+    border-right: transparent;
+    right: 0;
+    width: 200px;
+    height: 300px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.right:before{
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    border: 8px solid #fff;
+    border-right: transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
