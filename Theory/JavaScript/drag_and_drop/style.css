@@ -1,0 +1,21 @@
+.parent {
+    max-width: 1204px;
+    margin: auto;
+    height: 400px;
+    background: #03882b;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.child{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: url(./ball.png) center / cover no-repeat;
+    cursor: pointer;
+}
+.code{
+    max-width: 800px;
+}
+
