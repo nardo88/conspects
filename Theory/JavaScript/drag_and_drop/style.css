@@ -86,3 +86,40 @@
     transform: translateY(-50%);
     right: 0;
 }
+
+.container{
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    background: #eeecec;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.tasks__list{
+    list-style-type: none;
+    max-width: 400px;
+}
+
+.tasks__item{
+    background: #b1b0b0;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #fff;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    cursor: move;
+}
+
+.tasks__item:hover{
+    opacity: .8;
+}
+
+.selected{
+    opacity: .4;
+    background: red;
+}
+
+
