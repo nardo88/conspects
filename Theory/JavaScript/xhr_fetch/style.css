@@ -60,3 +60,19 @@ body{
     text-transform: uppercase;
 
 }
+
+.grid{
+    max-width: 700px;
+    background: #000;
+    display: grid;
+    grid-template-columns: 250px 150px 1fr;
+}
+
+.grid__item{
+    border: 1px solid #000;
+    padding: 15px 0;
+    text-align: center;
+    margin: 2px;
+    background: rgb(221, 219, 219);
+    font-size: 18px;
+}
