@@ -3,13 +3,10 @@ const example = document.querySelectorAll('.example')
 const example2btn = document.querySelectorAll('.img_btn')
 const example2 = document.querySelector('.example2')
 const gridItem4 = document.querySelectorAll('.grid-item4')
-<<<<<<< HEAD
-=======
 const gridItem5 = document.querySelectorAll('.example5 .grid-item')
 const example6 = document.querySelector('.example6')
 const gridItem6_3 = document.querySelector('.grid-item6_3')
 const example7 = document.querySelector('.example7')
->>>>>>> f110013887fb8b543a3f18f9aa2953f2e063665d
 
 example.forEach((item, i) => {
     item.addEventListener('click', () => {
@@ -40,14 +37,14 @@ example2btn.forEach((item, i) => {
         if (i == 4) {
             example2.style.gridTemplateColumns = '1fr minmax(150px, 1fr) 1fr'
         }
-<<<<<<< HEAD
         if (i == 6) {
-=======
+            console.log(1);
+        }
         if (i == 5){
             example2.style.gridTemplateColumns = 'repeat(3, 1fr)'
         }
         if (i == 6){
->>>>>>> f110013887fb8b543a3f18f9aa2953f2e063665d
+
             gridItem4.forEach((item) => {
                 item.style.margin = '20px'
             })

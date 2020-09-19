@@ -3,10 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 	<h1>XHR, Fetch</h1>
+	<ul class="nav">
+		<li><a class="nav__link" href="#xhr_vlad">XHR Владилен</a></li>
+		<li><a class="nav__link" href="#fetch_vlad">Fetch Владилен</a></li>
+		<li><a class="nav__link" href="#xhr_book">XHR Учебник</a></li>
+	</ul>
+	<h1  id="xhr_vlad">XHR Владилен</h1>
 	<p>С помощью методов <b>Fetch</b> и <b>Fetch</b> мы можем взаимодействовать с сервером через ассинхронные запросы. Для лучшего понимания как все это работает, рассмотрим сначала метод <b>XHR</b></p>
 	<h2>Подготовка URL</h2>
 	<p>Перед тем как мы начнем, первое что нужно сделать, это подготовить URL адрес, по которому мы сможем делать ассинхронные запросы.</p>
@@ -88,7 +96,7 @@
 	<p>А вызов функции с методом 'POST' Выглядит так:</p>
 	<img src="prim18.jpg" alt="">
 	<br><br>
-	<h2>Fetch 'GET'</h2>
+	<h2 id="fetch_vlad">Fetch 'GET'</h2>
 	<p>Как будет выглядеть наша функция <b>sendRequest</b> но уже с применением метода <b>fetch</b>? Тут все еще проще и лаконичнее</p>
 	<p>Метод fetch нам сразу будет возвращать promise. Метод принимает в себя два параметра. Первым параметром идет url. Вот как это выглядит:</p>
 	<img src="prim19.jpg" alt="">
@@ -110,7 +118,7 @@
 	<p>Теперь если обновить страницу, то в консоли мы увидим уже знакомый нам массив объектов</p>
 	<img src="prim25.jpg" alt="">
 	<br>
-	<h2>Fetch 'POST'</h2>
+	<h2 >Fetch 'POST'</h2>
 	<p>Теперь разберемся с методом 'POST'. Как было сказано выше, метод Fetch принимает в себя два параметра, первый это url, а второй - это объект</p>
 	<p>Этот объект должен иметь три ключа:</p>
 	<ul>
@@ -125,51 +133,74 @@
 	<h2>Как обрабатывать ошибки?</h2>
 	<p>Просто добавляем if</p>
 	<img src="prim27.jpg" alt="">
+	<h1 id="xhr_book">XMLHttpRequest (из учебника JavaScript. Подробное руководство, 6-е издание)</h1>
+	<h2><span class="number">1</span> Создание экземпляра класса XMLHttpRequest</h2>
+
+	<p class="code">const xhr = new XMLHttpRequest()</p>
+
+	<p>Запрос состоит из 4-ех частей:</p>
+	<ol>
+		<li>Метод</li>
+		<li>URL адрес</li>
+		<li>Заголовок запроса (необязательный параметр)</li>
+		<li> Тело запроса (необязательный параметр)</li>
+	</ol>
+	<p>Ответ состоит из 3-ех частей:</p>
+	<ol>
+		<li>Код состояния запроса</li>
+		<li>Набор заголовков ответа</li>
+		<li>Тело ответа</li>
+	</ol>
+	<h2><span class="number">2</span> Выполнение запроса</h2>
+	<p>После того как объект <b>XHR</b> был создан, следующий этап - это определение параметров запроса. Осуществляется это методом <b>open()</b> e которого есть два обязательных аргумента:</p>
+	<ol>
+		<li>Метод</li>
+		<li>URL адрес</li>
+	</ol>
+	<p class="code">xhr.open("GET", "data.php")</p>
+	<ul>Методы:
+		<li><b>GET</b> - используются для обычных запросов</li>
+		<li><b>POST</b> - Обычно используются для отправки данных с HTML-форм</li>
+	</ul>
+	<p>Второй аргумент - это URL адрес</p>
+	<p>При выполнении запроса к ресурсу защищенному паролем, можно передать методу open 4-ым и 5-ым аргументом логин и пароль</p>
+	<h2><span class="number">3</span> Установка заголовка</h2>
+	<p>Запрос <b>POST</b> требует наличие заголовка (пробовал без него все работает)</p>
+	<p>Заголовок создается с помощью метода <b>setRequestHeader()</b></p>
+	<p>В качетсве аргументов принимается:</p>
+	<ol>
+		<li>Имя заголовка</li>
+		<li>Тип данных</li>
+	</ol>
+	<p class="code">xhr.setRequestHeader('Content-Type', 'text/plan')</p>
+	<p>Нельзя придумывать свои заголовки</p>
+	<h2><span class="number">4</span> Передача тела запроса</h2>
+	<p>Последний этап в запросе - передача необязательного теля и отправка его серверу. Делается это с помощью метода <b>send()</b></p>
+	<p class="code">xhr.send()</p>
+	<p>GET запрос не имеет тела, в этом случае можно передать null или вообще опустить аргумент</p>
+	<p class="attention">метод setRequestHeader() должен вызываться после метода open() и перед методом send()</p>
+	<h2><span class="number">5</span> Получение ответа</h2>
+	<p>Полный ответ содержит:</p>
+	<ol>
+		<li>Код состояния</li>
+		<li>Заголовок</li>
+		<li>Тело ответа</li>
+	</ol>
+	<p>Все это доступно в виде свойств и методов объекта XMLHttpRequest</p>
+	<ul>
+		<li>свойство <b>status</b> и <b>statusText</b> возвращают код состояния в числовом виде и в текстовом виде</li>
+		<li>Заголовки можно получить с помощью метода <b>getResponseHeader()</b></li>
+		<li>Тело ответа доступно через свойства <b>responseText</b>, <b>responseXML</b> или просто <b>response</b> (последний самый удобный он не зависит от типа данных)</li>
+	</ul>
+	<h2><span class="number">5</span> Свойство readyState</h2>
+	<p>Это целочисленное значение, определяющее код состояние. Его возможные значения:</p>
+	
 
 
 
 
 
 
-
-	<script>
-		
-		const body = {
-			name: 'Vladilen',
-			age: 26
-		}
-
-
-		const requestURL = 'https://jsonplaceholder.typicode.com/users'
-
-		function sendRequest(method, url, body) {
-			const headers = {
-				'Content-Type': 'application/json'
-			}
-			return fetch(url, {
-				method: method,
-				body: JSON.stringify(body),
-				headers: headers
-			}).then(response =>{
-				if (response.ok){
-					return response.json()
-				} else {
-					return response.json().then(error => {
-						console.log(error)
-					})
-				}
-			})
-		}
-
-
-		sendRequest('POST', requestURL, body)
-			.then(data =>console.log(data))
-			.catch(err => console.error(err))
-
-		// sendRequest('GET', requestURL)
-		// 	.then(data =>console.log(data))
-		// 	.catch(err => console.error(err))
-
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>
