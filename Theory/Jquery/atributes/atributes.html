@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Чтение и запись значений HTML атрибутов</h1>
+    <h2>Метод attr()</h2>
+    <p>Этот метод чтения и записи значений атрибутов</p>
+    <img src="prim1.jpg" alt="">
+    <p>что бы задать атрибут:</p>
+    <img src="prim2.jpg" alt="">
+    <p>что бы удалить атрибут</p>
+    <img src="prim3.jpg" alt="">
+    <h2>Чтение и запись data атрибутов</h2>
+    <p>Метод <b>data()</b> - читает или устанавливает данные связанные с любым элементом документа. Методу <b>data()</b> передается два аргумента: имя и значение</p>
+    <img src="prim4.jpg" alt="">
+    <p>Если передать методу data() объект, то свойства этого объекта заменят все ранее связанные данные</p>
+    <img src="prim5.jpg" alt="">
+
+    <p>При вызове метода без аргументов он вернет объект с уже имеющимися данными.</p>
+    <img src="prim6.jpg" alt="">
+
+    <p>Для удаления данных используется метод <b>removeData() в качестве аргумента передается строка с именем данных. Если вызвать буз аргументов то будут удалены все данные.</b></p>
+
+
+    <script src="../jquery.js"></script>
+
+
+    <a href="www.yandex.ru" class="link" data-scrol="#footer"></a>
+
+    <script>
+
+        const dataAtr = {
+            name: 'Max',
+            job: 'frontend'
+        }
+
+        $('.link').data(dataAtr)
+
+        $('.link').removeData('job')
+
+
+        console.log($('.link').data());
+        
+
+    </script>
+</body>
+</html>
