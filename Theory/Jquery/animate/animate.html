@@ -15,7 +15,7 @@
 	<img src="prim1.jpg" alt="">
 	<div class="example">
 		<div class="example__top">
-			<div class="example__block"></div>
+			<div class="example__fade"></div>
 		</div>
 		<div class="example__bottom">
 			<button class="fadeIn btn">fadeIn()</button>
@@ -26,19 +26,112 @@
 			</div>
 		</div>
 	</div>
+	<h2></h2>
+	<p><b>show()</b> - показывает элемент (управление свойствами width, height и затем display) в качестве аргумента можно передать скорость анимации в милисекундах</p>
+	<p><b>hide()</b> - скрывает элемент (управление свойствами width, height и затем display) в качестве аргумента можно передать скорость анимации в милисекундах</p>
+	<p><b>toggle()</b> - скрывает если виден и показывает если скрыт (управление свойствами width, height и затем display) в качестве аргумента можно передать скорость анимации в милисекундах</p>
+	<img src="prim2.jpg" alt="">
+	<div class="example">
+		<div class="example__top">
+			<div class="example__show"></div>
+		</div>
+		<div class="example__bottom">
+			<button class="show btn">show()</button>
+			<button class="hide btn">hide()</button>
+			<button class="toggle btn">toggle()</button>
+		</div>
+	</div>
+	<h2></h2>
+	<p><b>slideUp()</b> - скрывает выбранный элемент уменьшая его высоту до 0 и затем устанавливает свойство display: none;</p>
+	<p><b>slideDown()</b> - отображает элемент - противоположен методу slideUp()</p>
+	<p><b>slideToggle()</b> - отображает если скрыт и скрывает если отображен</p>
+	<img src="prim3.jpg" alt="">
+
+	<div class="example">
+		<div class="example__top">
+			<div class="example__slide"></div>
+		</div>
+		<div class="example__bottom">
+			<button class="slideUp btn">slideUp()</button>
+			<button class="slideDown btn">slideDown()</button>
+			<button class="slideToggle btn">slideToggle()</button>
+		</div>
+	</div>
+	<h2>Реализация совственных эффектов</h2>
+	<p>Метод <b>animate()</b> позволяет воспроизводить более сложные анимации. В качестве первого аргумента передается объект со значениями CSS их конечных значений. Во втором (необязательном) аргументе можно передать объект с параметрами эффекта:</p>
+	<ul>
+		<li><b>duration</b> - продолжительность анимации в милисекундах</li>
+		<li><b>complete</b> - в это свойство можно поместить функцию, которая будет выполнена после окончания анимации</li>
+	</ul>
+	<p>Что бы остановить анимацию нужно применить метод <b>stop()</b></p>
+	<img src="prim4.jpg" alt="">
+
+	<div class="example">
+		<div class="top">
+			<div class="child"></div>
+		</div>
+		<div class="bottom">
+			<button class="start btn">start</button>
+			<button class="stop btn">stop</button>
+		</div>
+	</div>
 
 	<script src="../jquery.js"></script>
 	<script>
 
+		$('.start').bind('click', animate)
+		
+
+		function animate() {
+			$('.child').css({
+				top: '10px',
+				left: '10px'
+			})
+			$('.child').animate({
+			top: '290px',
+			left: '390px'
+				}, {
+					duration: 1000,
+					complete: animate
+					})
+		}
+		
+		$('.stop').bind('click', () => {
+			$('.child').stop()
+		})
+
+
+		$('.slideUp').click(() => {
+			$('.example__slide').slideUp(500)
+		})
+
+		$('.slideDown').click(() => {
+			$('.example__slide').slideDown(500)
+		})
+
+		$('.slideToggle').click(() => {
+			$('.example__slide').slideToggle(500)
+		})
+
+		// ==============================================
+
+		$('.show').click(() => {
+			$('.example__show').show(1000)
+		})
+
+		$('.toggle').click(() => {
+			$('.example__show').toggle(1000)
+		})
+
 		$('.fadeOut').click(() => {
-			$('.example__block').fadeOut()
+			$('.example__fade').fadeOut()
 		})
 
 		$('.fadeIn').click(() => {
-			$('.example__block').fadeIn()
+			$('.example__fade').fadeIn()
 		})
 		$('.fadeTo').click(() => {
-			$('.example__block').fadeTo(1000, `${$('.opaciti').val()}`)
+			$('.example__fade').fadeTo(1000, `${$('.opaciti').val()}`)
 		})
 
 	</script>

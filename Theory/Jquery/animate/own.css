@@ -6,7 +6,7 @@
     height: 120px;
 
 }
-.example__block {
+.example__fade, .example__show, .example__slide {
     width: 200px;
     height: 100px;
     background: #000;
@@ -32,4 +32,26 @@
     width: 200px;
     height: 30px;
     padding-left: 20px;
+}
+
+li{
+    margin-bottom: 15px;
+}
+
+.top{
+    width: 500px;
+    height: 400px;
+    background-color: skyblue;
+    padding: 10px;
+    position: relative;
+}
+.bottom{
+    margin-top: 20px;
+}
+
+.child{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
 }
