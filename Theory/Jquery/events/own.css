@@ -1,0 +1,7 @@
+.for-click{
+    display: block;
+    padding: 10px 20px;
+    background: #f8a9a9;
+    cursor: pointer;
+    max-width: 300px;
+}

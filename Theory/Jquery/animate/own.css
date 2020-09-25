@@ -1,0 +1,35 @@
+.example {
+
+}
+.example__top{
+    padding: 10px;
+    height: 120px;
+
+}
+.example__block {
+    width: 200px;
+    height: 100px;
+    background: #000;
+    border-radius: 5px;
+
+}
+.example__bottom {
+    margin-top: 20px;
+
+}
+
+.btn{
+    width: 100px;
+    height: 30px;
+    display: block;
+    margin-top: 15px;
+}
+
+.fadeTo{
+    display: inline-block;
+}
+.opaciti{
+    width: 200px;
+    height: 30px;
+    padding-left: 20px;
+}

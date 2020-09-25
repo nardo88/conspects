@@ -3,10 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="own.css">
 </head>
 <body>
-	<h2>Функция animate()</h2>
-	<p>Функция animate работает со всеми свойствами CSS, т.е. изменение этих свойств идет в виде анимации</p>
+	<h1>Анимационные эффекты</h1>
+	<h2>Простые эффекты</h2>
+	<p><b>fadeIn()</b> - элемент появляется (управление свойством opaciti)</p>
+	<p><b>fadeOut()</b> - элемент исчезает (управление свойством opaciti)</p>
+	<p><b>fadeTo()</b> - определяет конечное значение прозрачности и плавно изменяет текущее значение. принимает в себя несколько аргументов (1 - скорость анимациив  милисекундах, 2 - значение opaciti)</p>
 	<img src="prim1.jpg" alt="">
+	<div class="example">
+		<div class="example__top">
+			<div class="example__block"></div>
+		</div>
+		<div class="example__bottom">
+			<button class="fadeIn btn">fadeIn()</button>
+			<button class="fadeOut btn">fadeOut()</button>
+			<div>
+				<input type="search" class="opaciti" placeholder="введите значение opaciti">
+				<button class="fadeTo btn">fadeOut()</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="../jquery.js"></script>
+	<script>
+
+		$('.fadeOut').click(() => {
+			$('.example__block').fadeOut()
+		})
+
+		$('.fadeIn').click(() => {
+			$('.example__block').fadeIn()
+		})
+		$('.fadeTo').click(() => {
+			$('.example__block').fadeTo(1000, `${$('.opaciti').val()}`)
+		})
+
+	</script>
 </body>
 </html>
