@@ -116,3 +116,28 @@ example2btn.forEach((item, i) => {
         }
     })
 })
+
+
+const gridItem8_3 = document.querySelector('.grid-item8_3')
+const gridItem8_6 = document.querySelector('.grid-item8_6')
+
+gridItem8_3.textContent = gridItem8_3.offsetWidth + 'px';
+gridItem8_6.contentEditable = true
+
+gridItem8_6.addEventListener('keypress', () => {
+    gridItem8_3.textContent = gridItem8_3.offsetWidth + 'px';
+
+})
+
+
+const row = document.querySelector('.row')
+const column = document.querySelector('.column')
+const example9 = document.querySelector('.example9')
+
+
+row.addEventListener('click', () => {
+    example9.style.gridAutoFlow = 'row'
+})
+column.addEventListener('click', () => {
+    example9.style.gridAutoFlow = 'column'
+})

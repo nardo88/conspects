@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
 </head>
@@ -41,7 +42,10 @@
     <p><b>1fr</b> - распределает ширины колонок таким образом что бы они равномерно заполнили все пространство грида</p>
     <p><b>minmax(150px, 1fr)</b> - при изменении экрана минимальная ширина колонки будет 150px максимальная 1fr. 1fr не может фигурировать в качестве минимальной единицы</p>
     <p><b>repeat(3, 1fr)</b> - эта запись говорит о том, что будет 3 колонки и у каждой будет ширина 1fr</p>
-    <h2>Имена областей</h2>
+    <p>есть еще вариант сокращенной записи.</p>
+    <img src="./prim24.jpg" alt="">
+
+    <h2>Имена областей grid-area</h2>
     <div class="wrapper example3">
         <div class="grid-item header">Шапка</div>
         <div class="grid-item side">Сайдбар</div>
@@ -69,6 +73,10 @@
         <div class="grid-item grid-item4">9</div>
     </div>
     <p>Если использовать только свойства <b>grid-row-start</b> и <b>grid-column-start</b> то можно настроить своего рода порядок вывода нужного элемента сетки.</p>
+    <h3>span</h3>
+    <img src="prim26.jpg" alt="">
+
+
     <h2>Порядок вывода с помощью свойства order</h2>
     <div class="button__wrapper">
         <img class="img_btn" src="./prim13.jpg" alt="">
@@ -126,5 +134,33 @@
         <div class="grid-item grid-item7_5">5</div>
         <div class="grid-item grid-item7_6">6</div>
     </div>
+    <h2>fit-content</h2>
+    <p><b>fit-content</b> - обрезает столбец под контент ячейки.</p>
+    <div class="example8 wrapper1">
+        <div class="grid-item grid-item8_1"></div>
+        <div class="grid-item grid-item8_2"></div>
+        <div class="grid-item grid-item8_3">Какой-то текст</div>
+        <div class="grid-item grid-item8_4"></div>
+        <div class="grid-item grid-item8_5"></div>
+        <div class="grid-item grid-item8_6"></div>
+    </div>
+    <img src="prim25.jpg" alt="">
+    <p>fit-content(300px) - говорит о том, что колонка будет обрезаться под контент ячейки, но как только ширина ячейки достигнет 300px рост ячейки остановится. То же самое применимо к строкам, хотя это не лучший вариант для строк.</p>
+    <h2>grid-auto-flow</h2>
+    <p>Определяет заполнение grid контейнера элементами. по умолчанию стоит значение row (заполнение строкой). Можно указать значение column и тогда заполнение будет в колонку.</p>
+    <div class="example9 wrapper1">
+        <div class=" grid-item grid-item9_1">1</div>
+        <div class=" grid-item grid-item9_2">2</div>
+        <div class=" grid-item grid-item9_3">3</div>
+        <div class=" grid-item grid-item9_4">4</div>
+        <div class=" grid-item grid-item9_5">5</div>
+        <div class=" grid-item grid-item9_6">6</div>
+    </div>
+    <div class="buttons">
+        <button class="row btn">row</button>
+        <button class="column btn">column</button>
+    </div>
+
+    
 </body>
 </html>
