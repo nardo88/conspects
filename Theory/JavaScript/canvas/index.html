@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="own.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Canvas</h1>
+    <p>Элемент <b>&lt;canvas&gt;</b> не имеет собственного визуального представления, но он создает поверхность для рисования внутри документаю Большая часть прикладного интерфейса Canvas определена не в элементе &lt;canvas&gt;, а в объекте "Контекста рисования", который можно получить методом <b>getContext()</b> элемента играющего роль холста. Вызов метода getContext() с аргументом <b>2d</b> возвращает объект <b>CanvasRenderingContext2D</b>, который можно использовать для рисования двухмерной графики</p>
+    <p>Пример</p>
+    <img src="prim1.jpg" alt="">
+    <p>результат</p>
+    <canvas id="square" width="50" height="50"></canvas>
+    <script>
+        const canvas = document.getElementById('square')
+        const context = canvas.getContext('2d')
+        context.fillStyle = '#F00'
+        context.fillRect(0,0,50,50)
+    </script>
+    <h2>Рисование линий и заливка многоугольников</h2>
+    <img src="prim2.jpg" alt="">
+    <p>результат</p>
+    <canvas id="triangle" ></canvas>
+    <script>
+        const triangle = document.getElementById('triangle')
+        const c1 = triangle.getContext('2d')
+        c1.height = 100;
+        c1.width  = 100;
+        c1.beginPath() // создаем контур
+        c1.moveTo(0, 0) // Новый фрагмент контура с начальной точкой (100, 100)
+        c1.lineTo(0, 100) // добавить линию соединяющую точки (100, 100) и (200, 200)
+        c1.lineTo(100, 0) // добавить линию соединяющую точки (100, 200) и (200, 200)
+        c1.closePath() // завершить контур
+        c1.fillStyle = '#009b1a' // задать цвет заливки
+        c1.fill() // залить цветом
+        c1.stroke() // нарисовать 
+    </script>
+
+    <h2>Графические атрибуты</h2>
+    <img src="prim3.jpg" alt="">
+    <h2>Рисование и заливка кривых</h2>
+
+    <canvas id="circle" ></canvas>
+    <script>
+        const circle = document.getElementById('circle')
+        // const c2 = circle.getContext('2d') 
+        // c2.height = 100;
+        // c2.width  = 100;
+        // c2.beginPath() // создаем контур
+        // c2.arc(50, 50, 50, 0, 360, false)
+        // c2.fillStyle = '#009b1a' // задать цвет заливки
+        // c2.closePath() // завершить контур
+        // // c2.fill() // залить цветом
+        // c2.stroke() // нарисовать 
+        const c3 = circle.getContext('2d') 
+        
+        c3.beginPath() // создаем контур
+        c3.moveTo(50, 50) // Новый фрагмент контура с начальной точкой (100, 100)
+        c3.lineTo(50, 0)
+        c3.arcTo(75, 10, 85, 20, 50)
+        c3.lineTo(100, 50)
+        c3.closePath() // завершить контур
+        c3.fillStyle = '#c40000' // задать цвет заливки
+        c3.fill()
+        c3.stroke() // нарисовать 
+
+
+    </script>
+</body>
+</html>
