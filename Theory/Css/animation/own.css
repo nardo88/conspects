@@ -16,7 +16,7 @@
         transform: translateX(0);
     }
     50%{
-        transform: translateX(400px) rotate(360deg);
+        transform: translateX(360px) rotate(360deg);
     }
     100% {
         transform: translateX(0px) rotate(0);
