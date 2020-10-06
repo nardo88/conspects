@@ -27,3 +27,12 @@ h2{
 button{
     cursor: pointer;
 }
+p{
+    line-height: 1.4;
+}
+
+li{
+    margin-bottom: 10px;
+    line-height: 1.4;
+
+}
