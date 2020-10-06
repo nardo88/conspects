@@ -28,14 +28,24 @@
 	<img src="prim3.jpg" alt="">
 	<p>Если значение переменной <b>null</b> то вернутся false, если значение переменной задано, то вернется true</p>
 	<h2>Методы у примитивов</h2>
+	
+	<p><b>num.toFixed(n)</b> - округляет переменную num до n знаков после запятой</p>
+	<h2>Свойства и методы string</h2>
 	<p><b>str.toUpperCase</b> - возвращает строку в верхнем регистре (str - переменная типа string)</p>
 	<p><b>str.toLowerCase</b> - переводит в нижний регистр</p>
-	<p><b>num.toFixed(n)</b> - округляет переменную num до n знаков после запятой</p>
-	
+	<p><b>метод slice</b> - возвращает фрагмент строки</p>
+	<img src="prim5.jpg" alt="">
+	<p><b>метод trim</b> - этот метод удаляет пробельные символы в начале и конце строке (а так же символы переноса строки и табуляции)</p>
+	<img src="prim4.jpg" alt="">
+	<p><b>split()</b> - разделяет строку на части массива в местах где встречаются заданные фрагменты</p>
+	<img src="prim6.jpg" alt="">
+
 	<script>
 		
-		let value = '123'
-		value = Boolean(value)
+		let str = 'some text for example'
+		const arr = str.split(' ')
+		console.log(arr);
+		
 
 
 	</script>
