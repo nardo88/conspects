@@ -16,7 +16,8 @@ const animal = new Animal({
 	hasTail: true
 })
 
-
+console.log(animal instanceof Animal);
+// Вернет true
 
 class Cat extends Animal{
 	constructor(options){
