@@ -1,0 +1,44 @@
+.primer{
+    width: 500px;
+    text-align: justify;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.primer1{
+    width: 500px;
+    text-align: justify;
+    max-height: 200px;
+    overflow: auto;
+    background: rgb(12, 0, 124); 
+    color: #fff;
+    padding: 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.primer1::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color:  rgb(26, 8, 187);
+}
+
+.primer1::-webkit-scrollbar{
+    width: 5px;
+    background: rgb(12, 0, 124);
+}
+.primer1::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(9, 2, 65);
+    background-color:rgb(9, 2, 65);
+}
+
+.wrapper{
+    width: 550px;
+    height: 250px;
+    background: rgb(12, 0, 124);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

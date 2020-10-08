@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: #ffffff;
+    font-size: 18px;
+
+}
+
+b{
+    background: rgb(65, 64, 64);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+h2{
+    background: rgb(65, 64, 64);
+    color: #fff;
+    padding: 5px 10px;
+}
+
+button{
+    cursor: pointer;
+}
+p{
+    line-height: 1.4;
+}
+
+li{
+    margin-bottom: 10px;
+    line-height: 1.4;
+
+}
