@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="own.css">
+</head>
+<body>
+    <h1>Валидация формы</h1>
+    <p>Допустим у нас есть форма:</p>
+    <div class="container">
+        <form action="#" class="form">
+            <div class="form__wrapper">
+                <input name="name" type="text" class="form__input" placeholder="введите ваше имя" minlength="3" maxlength="10" required>
+            </div>
+            <div class="form__wrapper">
+                <input name="email" type="email" class="form__input" placeholder="введите ваш Email" required>
+            </div>
+            <div class="form__wrapper">
+                <input name="phone" type="tel" class="form__input" placeholder="введите ваш номер телефона" required>
+            </div>
+            <div class="form__wrapper">
+                <textarea name="message" class="form__message" placeholder="введите ваше сообщение" required></textarea>
+            </div>
+
+            <button type="submit" class="form__button">SUBMIT</button>
+        </form>
+    </div>
+    <p>для того что бы сделать поле обязательным, элементу формы необходимо добавить атрибут <b>required</b>. Теперь если попытаться отправить форму мы получим всплывашку с просьбой заполнить обязательное поле.</p>
+    <p>Есть еще параметры которые мы можем настроить внутри поля - это <b>minlength</b> и <b>maxlength</b>. Эти параметры задают минимальный и максимальный размер вводимого значения</p>
+    <img src="prim1.jpg" alt="">
+    <p>Существует плагин - <a href="https://jqueryvalidation.org/">jQuery Validate</a>, который может помоч кастомизировать валидацию. Как это работает?</p>
+    <p>Для начала <a href="jquery-validation-1.19.2.zip">скачиваем</a> плагин/ Открываем архив, там нам нужна папка <b>dist</b>, внутри котрой ищем файл <b>jquery.validate.min.js</b></p>
+    <p>Подключаем этот файл к нашему проекту (не забываем про Jquery)</p>
+    <p>Теперь открываем наш файл JS и пишем там такой код:</p>
+    <img src="prim2.jpg" alt="">
+    <p>Теперь при попытке отправки формы, появится подсказка которую создает плагин. Эту подсказку мы можем кастомизировать как хотим</p>
+    <h2>Настройки</h2>
+    <p>Подробное описание настроек плагина можно начти пройдя по <a href="https://jqueryvalidation.org/validate/">ссылке</a></p>
+    <p>Как управлять содержимым сообщений. Рассмотрим код:</p>
+    <img src="prim3.jpg" alt="">
+    <p>В качестве аргумента методу <b>validate</b> мы даем объет, у которого есть свойство message, которое в свою очередь является объектом. Свойствами этого объекта являются элементы формы (к элементам мы обращаемся с помощью атрибута <b>name</b>)</p>
+    <h3>Стилизация сообщений</h3>
+    <p>Если посмотреть в DevTools что делает этот плагин, то мы увидим что он просто добавляет <b>label</b> c классом <b>error</b>. Как мы можем поменять этот класс? нам просто надо объекту добавить еще одно свойство:</p>
+    <img src="prim4.jpg" alt="">
+    <p>Теперь мы можем в CSS добавлять стили этому классу и тем самым стилизовать сообщение. Вот пример как это можно сделать. В этом примере важно обернуть наши элементы формы в обертку, задать обертке position: relative;</p>
+    <img style="width: 400px;" src="code.png" alt="">
+
+    <script src="../jquery.js"></script>
+    <script src="jquery.validate.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
