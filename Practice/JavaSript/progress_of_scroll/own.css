@@ -1,0 +1,13 @@
+.progress{
+    width: 0;
+    position: fixed;
+    border: 2px solid skyblue;
+    top: 0;
+    left: 0;
+    height: 10px;
+    background: skyblue;
+  }
+
+  body{
+      height: 3000px;
+  }
