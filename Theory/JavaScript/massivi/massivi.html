@@ -134,11 +134,17 @@
 <p>Метод <b>some()</b> похож на метод every() по синтаксису, но отличается тем что возвращает true если хотя бы один элемент массива отвечает условию</p>
 <img src="prim26.jpg" alt="">
 
+<h2>includes()</h2>
+<p> определяет, содержит ли массив определённый элемент, возвращая в зависимости от этого true или false.</p>
+<img src="prim27.jpg" alt="">
+
+
 	<script>
 
 		const arr = [1,2,3,4,5]
 		
-		console.log(arr.some(x => x%2 === 0));
+		console.log(arr.includes(3));
+		// -> true
 
 	</script>
 </body>
