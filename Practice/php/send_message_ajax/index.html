@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="own.css">
+</head>
+<body>
+    <h1>Отправка формы с помощью AJAX</h1>
+    <p>Допустим у нас есть форма. Сначала рассмотрим код JS</p>
+    <img src="code_js.png" alt="">
+    <h2>Используемые элементы</h2>
+    <p><b>FormData()</b> - Конструктор FormData() создает новые объект FormData, если проще - HTML-форму. В качестве аргумента передается существующая HTML-форма, на основе которой будет создана новая. Если ничего не указано, будет создана пустая форма.</p>
+    <strong>Методы:</strong>
+    <p><b>Добавление нового текстового поля в форму:</b></p>
+    <img src="prim1.jpg" alt="" srcset="">
+    <p><b>Удаление элемента формы:</b></p>
+    <img src="prim2.jpg" alt="" srcset="">
+    <p><b>Получение значения элемента формы:</b></p>
+    <img src="prim3.jpg" alt="" srcset="">
+    <p><b>Проверка на наличие определенного элемента формы:</b></p>
+    <img src="prim4.jpg" alt="" srcset="">
+    <p><b>Изменение существующего элемента:</b></p>
+    <img src="prim5.jpg" alt="" srcset="">
+    <h2>Код PHP</h2>
+    <p>Для начала разберем откуда брать phpmailer и что надо добавлять, так как подключение AJAX (почему-то) отличается от обчного подключения</p>
+    <p>Сами файлы <b>phpmailer</b> качаем с официальной странице на <a target="_blank" href="https://github.com/PHPMailer/PHPMailer">GitHub</a></p>
+    <img src="prim6.jpg" alt="" srcset="">
+    <p>В папке с проекто создаем папку <b>PHPMailer</b> и в нее помещаем ВСЕ что было в архиве phpMailer</p>
+    <p>Далее создаем файл <b>sendmail.php</b> и в него помещаем вот такой код.</p>
+    <img src="code_php.png" alt="">
+    <p style="background-color: red; padding: 20px 20px;"><b>ВАЖНО!!!!!!!!!!!!!!!!!!!</b> - в папке с проектом надо создать папку <b>files</b>, иначе файлы не будут приходить на почту</p>
+</body>
+</html>
