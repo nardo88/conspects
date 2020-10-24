@@ -6,9 +6,7 @@ navLinks.forEach(item => {
     item.addEventListener('click', event => {
         event.preventDefault()
         let data = item.dataset.scroll
-        console.log(data);
         scrollHeight = document.querySelector(data).offsetTop
-        console.log(scrollHeight);
         window.scrollTo({ top: scrollHeight , behavior: 'smooth' })
     })
 })
@@ -28,7 +26,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
-
 let bd = [];
 let snap = 0
 
@@ -59,7 +56,7 @@ add_data.addEventListener('click', () => {
         img: urlImg
     })
    
-    console.log(bd);
+    // console.log(bd);
     firebase.database().ref('users/1').set(bd)
    
 })
@@ -113,7 +110,7 @@ change_last.addEventListener('click', () => {
         name: name_item.value,
     })
     .then(() => {
-        console.log(bd);
+        // console.log(bd);
     })
 })
 
@@ -197,12 +194,12 @@ let imageList = storageRef.child('images/')
 imageList.listAll().then(data => {
     let arr = data.items;
     arr.forEach(item => {
-        console.log(item.bucket);
-        console.log(item.name);
-        console.log(item.fullPath);
-        console.log(item);
+        // console.log(item.bucket);
+        // console.log(item.name);
+        // console.log(item.fullPath);
+        // console.log(item);
 
-        console.log('');
+        // console.log('');
 
     })
 })
