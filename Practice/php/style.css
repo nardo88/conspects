@@ -36,3 +36,12 @@ li{
     line-height: 1.4;
 
 }
+
+
+img{
+    border: 2px solid #676565;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+}
