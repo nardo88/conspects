@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Reducer</h1>
+    <p><b>reducer</b> - это чистая функция, которая принимает state и action, если нужно она применяет action к state и возвращает измененный(если пришлось) state. State она принимает не весь, а только тот участок (ветку) за который отвечает</p>
+    <h2>Создание reducer</h2>
+    <p>Как правило один reducer находится в одном отдельном файле. т.к. reducer - это обыкновенная функция, то мы просто создаем тело обыкновенной функции, с двумя аргументами: <b>state</b> и <b>action</b></p>
+    <img src="prim1.jpg" alt="">
+    <p>Эта функция может обрабатывать разные action, в зависимости от значения свойства <b>type</b> объекта <b>action</b>. Поэтому здесь мы будем использовать не связку <strong>if else if</strong>, а <strong>switch</strong></p>
+    <img src="prim2.jpg" alt="">
+    <p>Здесь же не збываем объявить необходимые константы</p>
+    <img src="prim3.jpg" alt="">
+    <p>Функции которые генерируют объект action так же помещаем в этот же файл:</p>
+    <img src="prim4.jpg" alt="">
+    <h2>Вызов reducer в dispatch</h2>
+    <img src="prim5.jpg" alt="">
+
+</body>
+</html>
