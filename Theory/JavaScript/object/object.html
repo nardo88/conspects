@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 	<h1>Объекты</h1>
@@ -39,85 +39,14 @@
 <img src="prim12.jpg">
 
 <h2>Создание объекта с помощью функции-конструктора (оператор new)</h2>
-<p>D функциях конструктора есть два правила:</p>
+<p>В функциях конструктора есть два правила:</p>
 <ul>
 	<li>1. Имя функции должно называться с заглавной буквы (иначе ошибка)</li>
 	<li>2. Функция-конструктор должна вызываться при помощи оператора <b>new</b></li>
 </ul>
 <p>Создадим функцию которая нам будет создавать объект</p>
 <img src="book7.jpg" alt="">
-
-
-<script>
-	
-	const user = {
-		name: 'Maxim',
-		age: 32,
-		job: 'frontend',
-		
-	}
-
-	for (key in user){
-		console.log(user[key]);
-	}
-
-		user.['name'] = 'Olga'
-
-	console.log(user.propertyIsEnumerable(name));
-	
-	function Obj(name) {
-		this.name = name
-		this.isAdm = false
-	}
-
-	let max = new Obj('Max')
-	console.log(max)
-
-
-	console.log(max)
-
-	console.log(Object.getOwnPropertyDescriptor(user, 'name'));
-
-	Object.defineProperty(user, 'name', {
-		writable:false,
-		configurable:false,
-		enumerable: false
-
-	})
-
-	console.log(Object.getOwnPropertyDescriptor(user, 'name'));
-
-	for (key in user){
-		console.log(key);
-	}
-
-	console.log(Object.isExtensible(user));
-
-	Object.preventExtensions(user)
-
-	console.log(Object.isExtensible(user));
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<h1>Создание объектов с помощью Object.create. (getters, setters)</h1>
+<h2>Создание объектов с помощью Object.create. (getters, setters)</h2>
 <p>Пример</p>
 <img src="prim8.jpg">
 <p>Метод <b>create</b> получает на вход два параметра, которые оба являются объектами. Первый параметр может содержать объект который станет прототипом для нового объекта. Во втором мы указываем ключи объекта (свойства) и так же можем указать методы объекта.</p>
@@ -162,6 +91,22 @@
 <p>Но если мы обратимся к person.age и зададим какой-нибудь параметр, то сработает метод <b>set</b> </p>
 <img src="prim11.jpg">
 <p>В итоге, свойству объекта мы можем задать метод get - который будет что то возвращать, или метод get - который будет что то получать и обрабатывать это</p>
+<h2>Копирование объектов</h2>
+<p>Допустим у нас есть объект</p>
+<img src="prim13.jpg">
+<p>В данном примере переменная <b>person</b> не содержит внутри себя объект, а лишь хранить в себе ссылку до этого объекта. Если мыс оздадим вторую переменную и поместим в нее первую</p>
+<img src="prim14.jpg">
+<p>То это совершенно не значит что у нас теперь два объекта, у нас две переменные, которые ссылаются на один и тот же объект. Теперь если мы обратимся ко второй переменной и изменим у объекта значение свойства country </p>
+<img src="prim15.jpg">
+<p>То мы поменяем значение у объекта, а не у переменной. Т.е. если вывести в консоль значение ключа <b>country</b> у person, то получим вот такой результат</p>
+<img src="prim16.jpg">
+<p>Мы не имеем два объекта, мы имеем лишь две ссылки до одного и того же объекта.</p>
+<p>Но что нам делать если нам нужно именно сделать копию объекта? Для этого нам нужно использовать оператор <b>spread</b>. Вот как это будет выглядеть:</p>
+<img src="prim17.jpg">
+<p>Теперь если обратиться к person2 и поменять значение примитивного ключа country, то оно поменяется только у person2. Но! Это касается только примитивных значений (строка, число или булевое значение). Если в качестве ключа у нас имеется объект или массив (не примитивный тип), то что бы получить копию этого свойства (а не ссылку), нужно будет каждое такое свойство копировать с помощью spread</p>
+<img src="prim18.jpg">
+
+
 
 </body>
 </html>

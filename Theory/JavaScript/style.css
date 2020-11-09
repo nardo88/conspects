@@ -17,6 +17,11 @@ b{
     font-size: 15px;
     font-weight: 550;
 }
+h1{
+    background: rgb(65, 64, 64);
+    color: #fff;
+    padding: 10px;
+}
 
 h2{
     background: rgb(65, 64, 64);
