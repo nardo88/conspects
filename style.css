@@ -1,4 +1,7 @@
-﻿ul li {
+﻿*{
+	box-sizing: border-box;
+}
+ul li {
 	border: 1px solid silver;
 	display: inline-block;
 	
@@ -49,6 +52,7 @@ ul {
 #shapka {
 	background-color: #C7EDFC;
 	margin: 5px;
+	height: 60px;
 
 	
 }
@@ -58,8 +62,9 @@ ul {
 	float: left;
 	width: calc(20% - 10px);
 	margin: 5px;
-	height: 2100px;
+	height: calc(100vh - 85px);
 	padding-bottom: 50px;
+	overflow-y: auto;
 	
 	
 }
@@ -69,8 +74,7 @@ ul {
 	float: left;
 	width: calc(80% - 10px);
 	margin: 5px;
-	height: 2100px;
-	padding-bottom: 50px;
+	height: calc(100vh - 85px);
 }
 
 #htmlteor {
