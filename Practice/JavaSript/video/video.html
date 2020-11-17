@@ -99,7 +99,9 @@
 	<h2>FULL SCREEN</h2>
 	<p>Что бы развернуть видео на весь экран, тут все просто, на кнопку вешаем слушатель события click и по клику обращаемся к нашему плееру и применяем к нему метод - <b>requestFullscreen</b></p>
 	<img src="./code15.png" alt="" class="code">
-
+	<h2>Изменение скорости воспроизведения</h2>
+	<p>Для изменения скорости воспроизведения используется свойство <b>playbackRate</b></p>
+	<img src="prim1.jpg" alt="">
 
 
 <script>
@@ -112,6 +114,7 @@
 	const videoVolume = document.querySelector('.video-volume')
 	const faVolumeDown = document.querySelector('.fa-volume-down')
 	const faExternalLink = document.querySelector('.fa-external-link')
+
 
 	const toggleIcon = () => {
 		if (videoPlayer.paused){
