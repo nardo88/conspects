@@ -17,11 +17,26 @@
     <p>По сути <b>store</b> не умеет диспатчить функции. В dispatch приходят action (объект). Если просто задиспатчить функцию, то store отругается. Но мы же в dispatch будем закидывать thunk - а это функция. Здесь нам на помощь придет <b>midle ware</b></p>
     <p><b>Midle ware</b> - это промежуточный слой (функция) которая будет проверять, что идет в dispatch. Если придет action то MW передаст его в dispatch, если придет thunk, то MW запустит thunk, получит результат, если результат окажется action то передаст его в dispatch, если окажется что вернулась еще один thunk то он повторит операцию.</p>
     <img src="prim2.jpg" alt="">
-
-
-
-
-
+    <h2>Практика</h2>
+    <h3>Создание thunk</h3>
+    <p>Открываем <b>reducer</b> и создаем там функцию</p>
+    <img src="prim3.jpg" alt="">
+    <p>Теперь что бы наша <b>thunk</b> получала данные, применим замыкание, т.е. оборачиваем thunk в функцию которая вернет нам thunk</p>
+    <img src="prim4.jpg" alt="">
+    <h3>Создание middleware</h3>
+    <p>Переходим в Redux где мы создавали store и функции <b>createStore</b> передаем второй параметр <b>applyMiddleware()</b></p>
+    <img src="prim5.jpg" alt="">
+    <p>Перед этим обязательно импортируем эту функцию из <b>redux</b></p>
+    <img src="prim6.jpg" alt="">
+    <p>В applyMiddleware мы должны передать middleware который нужно проинсталировать</p>
+    <span class="code">npm install redux-thunk --save</span>
+    <p>После того как инсталяция закончилась импортируем функцию</p>
+    <img src="prim7.jpg" alt="">
+    <p>thunkMiddleware - название произвольное, но именно эту функцию мы передаем applyMiddleware</p>
+    <img src="prim8.jpg" alt="">
+    <h3>Пробрасываем thunk через пропсы</h3>
+    <p>Пробрасываем thunk через пропсы и вызываем его передавая нужные параметры.</p>
+    <img src="prim9.jpg" alt="">
 
 </body>
 </html>
