@@ -1,0 +1,10 @@
+{
+	"base": [
+        {"words": "feel", "translate": "чувствовать"},
+        {"words": "also", "translate": "также" },
+        {"words": "that", "translate": "тот"},
+        {"words": "look", "translate": "выглядеть"},
+        {"words": "seem", "translate": "казаться"},
+        {"words": "happen", "translate": "случается"}
+    ]
+}
