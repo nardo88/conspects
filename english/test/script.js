@@ -1,5 +1,6 @@
 const list = document.querySelector('.list')
 const tryAgain = document.querySelector('.tryAgain')
+
 let words = []
 
 const checkValue = (arrayWords) => {
@@ -25,6 +26,12 @@ const checkValue = (arrayWords) => {
             item.classList.remove('fail')
         })
     })
+
+    list.addEventListener('click', (event) => {
+        const target = event.target.closest('.translate')
+        let w = arrayWords[target.id]
+        target.textContent = w.words
+    })
 }
 
 
@@ -34,12 +41,11 @@ fetch('base.json').then(response => {
     return response.json()
 }).then(data =>{
     words = [...data.base]
-    console.log(words);
 
-    words.forEach(item => {
+    words.forEach((item, i) => {
         list.insertAdjacentHTML('beforeend', `
         <li class="item">
-            <span class="translate">${item.translate}</span>
+            <span id=${i} class="translate">${item.translate}</span>
             <input type="text" class="word">
         </li>
         
@@ -51,7 +57,3 @@ fetch('base.json').then(response => {
 
 })
 
-
-let str = 'КЕН'
-str.toLowerCase()
-console.log(str);

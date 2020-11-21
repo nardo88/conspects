@@ -1,13 +1,26 @@
+body{
+    background: rgb(201, 201, 201);
+}
+h1{
+    text-align: center;
+}
 .list{
     list-style-type: none;
     padding: 0;
     margin-top: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(92, 91, 91);
+    padding: 20px;
+    background: rgb(158, 158, 158);
 }
 .item{
-    max-width: 350px;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+.translate{
+    display: inline-block;
+    width: 30%;
 }
 
 .success{
@@ -21,6 +34,10 @@
 .word{
     padding-left: 10px;
     outline: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 400px;
+    
 }
 
 .word:focus{
@@ -36,6 +53,8 @@
     color: #fff;
     background: #0ea800;
     transition: .3s;
+    margin: 30px auto ;
+    display: block;
 }
 
 .tryAgain:hover{
@@ -43,3 +62,28 @@
     background: #fff;
 }
 
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 900px){
+    h1{
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 720px){
+    .item{
+        flex-direction: column;
+    }
+    .translate{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .word{
+        width: 100%;
+    }
+}
