@@ -25,6 +25,11 @@ const checkValue = (arrayWords) => {
             item.classList.remove('success')
             item.classList.remove('fail')
         })
+        document.querySelectorAll('.translate').forEach((item, i) => {
+            let w = arrayWords[i]
+            item.textContent = w.translate
+        })
+
     })
 
     list.addEventListener('click', (event) => {

@@ -80,8 +80,8 @@ h1{
         flex-direction: column;
     }
     .translate{
+        display: inline;
         margin-bottom: 20px;
-        width: 100%;
     }
     .word{
         width: 100%;
