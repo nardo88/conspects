@@ -8,7 +8,7 @@ const checkValue = (arrayWords) => {
     inputs.forEach((item, i) => {
         item.addEventListener('blur',  () => {
             let w = arrayWords[i]
-            if ( item.value === w.words ){
+            if ( item.value.toLowerCase() === w.words ){
                 item.classList.add('success')
                 item.classList.remove('fail')
             } else {
@@ -50,3 +50,8 @@ fetch('base.json').then(response => {
     
 
 })
+
+
+let str = 'КЕН'
+str.toLowerCase()
+console.log(str);
