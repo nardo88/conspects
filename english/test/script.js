@@ -34,8 +34,11 @@ const checkValue = (arrayWords) => {
 
     list.addEventListener('click', (event) => {
         const target = event.target.closest('.translate')
-        let w = arrayWords[target.id]
-        target.textContent = w.words
+        if (target){
+            let w = arrayWords[target.id]
+            target.textContent = w.words
+        }
+        
     })
 }
 
