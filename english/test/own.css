@@ -59,10 +59,7 @@ h1{
     display: block;
 }
 
-.tryAgain:hover{
-    color: #0ea800;
-    background: #fff;
-}
+
 
 .container{
     max-width: 1024px;
@@ -88,5 +85,13 @@ h1{
     .word{
         width: 100%;
         height: 40px;
+    }
+}
+
+/* Hover эффекты */
+@media (min-width: 720px){
+    .tryAgain:hover{
+        color: #0ea800;
+        background: #fff;
     }
 }
