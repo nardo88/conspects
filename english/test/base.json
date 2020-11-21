@@ -6,5 +6,6 @@
         {"words": "look", "translate": "выглядеть"},
         {"words": "seem", "translate": "казаться"},
         {"words": "happen", "translate": "случается"}
+        {"words": "often", "translate": "часто"}
     ]
 }
