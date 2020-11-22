@@ -6,8 +6,6 @@
         {"words": "look", "translate": "выглядеть"},
         {"words": "seem", "translate": "казаться"},
         {"words": "happen", "translate": "случается"},
-        {"words": "often", "translate": "часто"},
-        {"words": "offer", "translate": "предложение"},
-        {"words": "on time", "translate": "вовремя"}
+        {"words": "often", "translate": "часто"}
     ]
 }
