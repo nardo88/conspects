@@ -1,7 +1,9 @@
 const list = document.querySelector('.list')
 const tryAgain = document.querySelector('.tryAgain')
 
+
 let words = []
+
 
 const checkValue = (arrayWords) => {
     const inputs = list.querySelectorAll('.word')
@@ -64,4 +66,6 @@ fetch('base.json').then(response => {
     
 
 })
+
+
 

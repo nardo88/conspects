@@ -20,7 +20,7 @@
         input.forEach((item, i) => {
             item.addEventListener('blur', () => {
                 let val = data.base[i]
-                if (item.value.toLowerCase() === val.words){
+                if (item.value.toLowerCase() === val.words.toLowerCase()){
                     item.classList.add('answerSuccess')
                     item.classList.remove('answerFail')
 
@@ -57,5 +57,3 @@
     })
  }
 
-
- export default testEnglish
