@@ -1,0 +1,17 @@
+{
+	"base": [
+        {"words": "she watches tv", "translate": "Она смотрит телевизор"},
+        {"words": "she has a cat", "translate": "У нее есть кот" },
+        {"words": "She always does it on time", "translate": "Она всегда делает это вовремя"},
+        {"words": "She goes to school", "translate": "Она ходит в школу"},
+        {"words": "He does it every day", "translate": "Он делает это каждый день"},
+        {"words": "He misses you", "translate": "Он скучает по тебе"},
+        {"words": "She sometimes goes to the cinema", "translate": "Она иногда ходит в кино"},
+        {"words": "He sometimes plays computer games", "translate": "Он иногда играет в компьютерные игры"},
+        {"words": "She feels so happy", "translate": "Она чувствует себя такой счастливой"},
+        {"words": "She has an interesting idea", "translate": "У нее есть интересная идея"},
+        {"words": "He sometimes wants to do it", "translate": "Он иногда хочет сделать это"},
+        {"words": "He tries to do it", "translate": "Он пытается сделать это"},
+        {"words": "He has an offer", "translate": "У него есть предложение"}
+    ]
+}

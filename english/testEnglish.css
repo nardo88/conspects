@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+.testEnglishBtn{
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #009e00;
+    background : #009e00;
+    color : #fff;
+    cursor : pointer;
+    outline: none;
+}
+
+.testEnglishWrapper{
+    margin-top: 30px;
+    border: 1px solid #5e5d5d;
+    padding: 20px;
+    background: rgb(231, 230, 230);
+    
+}
+
+.testEnglishItem{
+    display: flex;
+    flex-direction: column;
+}
+
+.word{
+    margin-bottom: 20px;
+    display: inline;
+    align-self: start;
+    color: #5e5d5d;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.input{
+    margin-bottom: 25px;
+    padding: 5px 10px;
+    height: 35px;
+    outline: none;
+    border: none;
+
+}
+
+.input:focus{
+    box-shadow: 0 0 5px 5px #30c4ff;
+}
+.answerSuccess{
+    box-shadow: 0 0 5px 5px #01c00b;
+}
+.answerFail{
+    box-shadow: 0 0 5px 5px #e60202;
+}
+
