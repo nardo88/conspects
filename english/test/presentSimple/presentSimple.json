@@ -18,6 +18,8 @@
         {"words": "My teacher usually comes to work on time", "translate": "Мой учитель обычно приходит на работу вовремя"},
         {"words": "My father usually comes home late", "translate": "Мой отец обычно приходит домой поздно"},
         {"words": "Her brother often says it", "translate": "Ее брат часто говорит это"},
-        {"words": "My parents want to do it", "translate": "Мои родители хотят сделать это"}
+        {"words": "My parents want to do it", "translate": "Мои родители хотят сделать это"},
+        {"words": "My sister studies there", "translate": "Моя сестра учится там"},
+        {"words": "Their offer seems really strange", "translate": "Их предложение реально кажется странным"}
     ]
 }
