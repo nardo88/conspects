@@ -11,6 +11,7 @@
         {"words": "on time", "translate": "вовремя"},
         {"words": "useful", "translate": "полезный"},
         {"words": "those", "translate": "тех"},
-        {"words": "early", "translate": "рано"}
+        {"words": "early", "translate": "рано"},
+        {"words": "improve", "translate": "улучшать"}
     ]
 }
