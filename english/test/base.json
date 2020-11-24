@@ -9,6 +9,7 @@
         {"words": "often", "translate": "часто"},
         {"words": "offer", "translate": "предложение"},
         {"words": "on time", "translate": "вовремя"},
-        {"words": "useful", "translate": "полезный"}
+        {"words": "useful", "translate": "полезный"},
+        {"words": "those", "translate": "тех"}
     ]
 }
