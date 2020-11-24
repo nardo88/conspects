@@ -12,6 +12,7 @@
         {"words": "useful", "translate": "полезный"},
         {"words": "those", "translate": "тех"},
         {"words": "early", "translate": "рано"},
-        {"words": "improve", "translate": "улучшать"}
+        {"words": "improve", "translate": "улучшать"},
+        {"words": "fluently", "translate": "свободно"}
     ]
 }
