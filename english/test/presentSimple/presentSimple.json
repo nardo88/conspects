@@ -12,6 +12,12 @@
         {"words": "She has an interesting idea", "translate": "У нее есть интересная идея"},
         {"words": "He sometimes wants to do it", "translate": "Он иногда хочет сделать это"},
         {"words": "He tries to do it", "translate": "Он пытается сделать это"},
-        {"words": "He has an offer", "translate": "У него есть предложение"}
+        {"words": "Our mather thinks the same", "translate": "Наша мама думает так же"},
+        {"words": "Their ideas seem so interesting", "translate": "Их идеи кажутся такими интересными"},
+        {"words": "My friend supports me", "translate": "Мой друг поддерживает меня"},
+        {"words": "My teacher usually comes to work on time", "translate": "Мой учитель обычно приходит на работу вовремя"},
+        {"words": "My father usually comes home late", "translate": "Мой отец обычно приходит домой поздно"},
+        {"words": "Her brother often says it", "translate": "Ее брат часто говорит это"},
+        {"words": "My parents want to do it", "translate": "Мои родители хотят сделать это"}
     ]
 }

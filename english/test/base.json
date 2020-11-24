@@ -8,6 +8,7 @@
         {"words": "happen", "translate": "случается"},
         {"words": "often", "translate": "часто"},
         {"words": "offer", "translate": "предложение"},
-        {"words": "on time", "translate": "вовремя"}
+        {"words": "on time", "translate": "вовремя"},
+        {"words": "useful", "translate": "полезный"}
     ]
 }
