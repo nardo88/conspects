@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>redux-form</h1>
+    <p><b>redux-form</b> - это библиотека, которая добавляет в <b>store</b> reducer и flux круговорот с элементами формы уже происходит с этим участком state который был создан reducer библиотеки redux-form</p>
+    <p>Для инсталяции библиотеки <b>redux-form</b> в терминале вводим команду</p>
+    <span class="code">npm install redux-form --save</span>
+    <p><b>redux-form</b> предоставляет нам специальный хок, который вернет нам контейнерную компоненту, которая в свою очередь и будет общаться с тем участком state который был создан redux-form</p>
+    <h2>Как использовать</h2>
+    <p>Заходим в файл где создается store c помощью redux и импортируем библиотеку <b>redux-form</b></p>
+    <img src="prim1.jpg" alt="">
+    <p>После чего в <b>combineReducers</b> добавляем новый reducer</p>
+    <img src="prim2.jpg" alt="">
+    <p><span class="red">ВАЖНО</span> имя ключа задать как <b>form</b></p>
+    <p>Теперь нам нужно нашу форму (а вернее компоненту которая отрисовывает нашу форму) обернуть в ХОК - <b>reduxForm</b>. </p>
+    <img src="prim3.jpg" alt="">
+    <p>Перед этим не забываем импортировать ХОК</p>
+    <img src="prim4.jpg" alt="">
+    <p>Хок reduxForm принимает в качестве аргумента объект, который созержит свойство - <strong>form</strong> где необходимо указать уникальное имя формы. по этому имени redux-form будет обращатся к форме</p>
+    <p>Для того что бы не создавать обработчики событий для полей input (для flux круговорота) мы вместо input будем использовать <b>Field</b>, перед использованием не забываем импортировать их</p>
+    <img src="prim5.jpg" alt="">
+    <p>Филдам обязательно задаем атрибут <strong>name</strong>, на значения этих атрибутов будет реагировать redux-form. Так же в атрибуте <strong>component</strong> указываем тип филда</p>
+    <img src="prim6.jpg" alt="">
+    <h2>Как получать данные полей формы?</h2>
+    <p>Хок reduxForm прокидывает кучу callback в нашу компоненту. Среди них есть функция которая называется <b>handleSubmit</b>. Для получения данных полей формы вешаем событие на форму <b>onSubmit</b> и передаем туда через пропсы <b>handleSubmit</b></p>
+    <img src="prim7.jpg" alt="">
+    <p>redux-form после выполнения submit добавить все данные с элементов формы в объект и этот объект передаст callBack - <strong>onSubmit</strong>, т.е. нужно у контейнерной компоненты которые вернул нам Хок reduxForm прокинуть через пропсы callback который должен называться <b>onSubmit</b></p>
+    <img src="prim8.jpg" alt="">
+    <p>Вот как в целом будет выглядить компонента которая отрисовывает контейнерную компоненту компоненты которая отрисовывает форму (УЖАС!!!)</p>
+    <img src="prim9.jpg" alt="">
+
+
+
+
+
+</body>
+</html>
