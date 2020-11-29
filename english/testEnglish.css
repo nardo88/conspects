@@ -18,8 +18,26 @@
     border: 1px solid #5e5d5d;
     padding: 20px;
     background: rgb(231, 230, 230);
+    position: relative;
     
 }
+
+.quantity{
+    width: 200px;
+    margin-top: 50px;
+    padding: 10px;
+    position: relative;
+}
+
+.quantity:before{
+    content: 'Выберите количество слов';
+    position: absolute;
+    left: 0;
+    top: -30px;
+    display: block;
+    width: 100%;
+}
+
 
 .testEnglishItem{
     display: flex;

@@ -1,17 +1,24 @@
+'use strict'
+
+// обертка для списка
 const list = document.querySelector('.list')
+// кнопка попробовать снова
 const tryAgain = document.querySelector('.tryAgain')
 
-
+// массив слов
 let words = []
 
-
+// функция проверки слова
 const checkValue = (arrayWords) => {
+    // получаем все инпуты на странице
     const inputs = list.querySelectorAll('.word')
-    
+
+    // перебираем все инпуты и вешаем обработчик события blur
     inputs.forEach((item, i) => {
-        item.addEventListener('blur',  () => {
+        item.addEventListener('blur', () => {
+
             let w = arrayWords[i]
-            if ( item.value.toLowerCase() === w.words ){
+            if (item.value.toLowerCase() === w.words) {
                 item.classList.add('success')
                 item.classList.remove('fail')
             } else {
@@ -21,6 +28,7 @@ const checkValue = (arrayWords) => {
         })
     })
 
+    // обрабочик события клика по кнопке
     tryAgain.addEventListener('click', () => {
         inputs.forEach(item => {
             item.value = ''
@@ -32,27 +40,51 @@ const checkValue = (arrayWords) => {
             item.textContent = w.translate
         })
 
-    })
+        const data = getRandomWords(words)
 
+        renderData(data)
+        // запускаем проверку полей ввода
+        checkValue(data)
+    })
+    // клик по вразе что бы получить перевод
     list.addEventListener('click', (event) => {
         const target = event.target.closest('.translate')
-        if (target){
+        if (target) {
             let w = arrayWords[target.id]
             target.textContent = w.words
         }
-        
+
+
+
     })
 }
 
 
+// функция получения рандомных слов
+const getRandomWords = (words) => {
+    const dataSet = new Set()
+    // при помощи цикла получаем 10 рандомных чисел и помещаем их в коллекцию
+    while (dataSet.size < 10) {
+        let index = Math.ceil(Math.random() * 100)
+        // важно то что число не больше блины массива со словами
+        if (index < words.length) {
+            dataSet.add(index)
+        }
+    }
 
-fetch('base.json').then(response => {
-    
-    return response.json()
-}).then(data =>{
-    words = [...data.base]
+    const wordsCollection = []
 
-    words.forEach((item, i) => {
+    for (let key of dataSet) {
+        wordsCollection.push(words[key])
+    }
+
+    return wordsCollection
+
+}
+
+const renderData = (array) => {
+    list.innerHTML = ''
+    array.forEach((item, i) => {
         list.insertAdjacentHTML('beforeend', `
         <li class="item">
             <span id=${i} class="translate">${item.translate}</span>
@@ -61,11 +93,16 @@ fetch('base.json').then(response => {
         
         `)
     })
+}
 
-    checkValue(words)
-    
-
+// обращаемся к базе
+fetch('base.json').then(response => response.json()).then(data => {
+    // получаем массив слов из базы
+    words = [...data.base]
+    // получаем рандомные слова
+    const wordsCollection = getRandomWords(words)
+    // рендерим данные на странице
+    renderData(wordsCollection)
+    // запускаем проверку полей ввода
+    checkValue(wordsCollection)
 })
-
-
-
