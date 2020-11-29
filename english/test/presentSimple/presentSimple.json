@@ -21,6 +21,15 @@
         {"words": "My parents want to do it", "translate": "Мои родители хотят сделать это"},
         {"words": "My sister studies there", "translate": "Моя сестра учится там"},
         {"words": "Their offer seems really strange", "translate": "Их предложение реально кажется странным"},
-        {"words": "My parents want to live in another place", "translate": "Мои родителя хотят жить в другом месте"}
+        {"words": "My parents want to live in another place", "translate": "Мои родителя хотят жить в другом месте"},
+        {"words": "I'd like to drink a cap of tea", "translate": "Я хотел бы выпить чашку чая"},
+        {"words": "She'd like to become a teacher", "translate": "Ей хотелось бы стать учителем"},
+        {"words": "She likes this place", "translate": "Ей нарвится это место"},
+        {"words": "I also like this channel", "translate": "Мне тоже нравится этот канал"},
+        {"words": "He'd like to read this book", "translate": "Ему хотелось бы прочитать эту книгу"},
+        {"words": "I really like these lessons", "translate": "Мне действительно нравятся эти уроки"},
+        {"words": "She'd like to go to another place", "translate": "Ей хотелось бы поехать в другое место"},
+        {"words": "I don't want to tell you about this problem", "translate": "Я не хочу говорить с вами об этой проблеме"},
+        {"words": "It doesn't help me", "translate": "Это не помогает мне"}
     ]
 }

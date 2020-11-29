@@ -87,6 +87,7 @@ img{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    
 
 }
 .plus span{
@@ -96,8 +97,11 @@ img{
     background: green;
     border-radius: 50%;
     position: relative;
+    margin-right: 20px;
     
 } 
+
+
 
 .plus span:before{
     content: '';
@@ -117,6 +121,33 @@ img{
     background: #fff;
     top: 50%;
     transform: translate(5%, -50%) rotate(90deg);
+}
+
+.minus{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.minus span{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: green;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 20px;
+}
+
+.minus span:before{
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 4px;
+    background: #fff;
+    top: 50%;
+    transform: translate(5%, -50%);
 }
 
 @media (max-width: 720px){

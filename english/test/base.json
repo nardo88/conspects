@@ -15,6 +15,8 @@
         {"words": "improve", "translate": "улучшать"},
         {"words": "fluently", "translate": "свободно"},
         {"words": "correctly", "translate": "правильно"},
-        {"words": "abroad", "translate": "за границей"}
+        {"words": "abroad", "translate": "за границей"},
+        {"words": "discuss", "translate": "обсуждать"},
+        {"words": "agree", "translate": "соглашаться"}
     ]
 }
