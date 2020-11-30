@@ -30,6 +30,12 @@
         {"words": "I really like these lessons", "translate": "Мне действительно нравятся эти уроки"},
         {"words": "She'd like to go to another place", "translate": "Ей хотелось бы поехать в другое место"},
         {"words": "I don't want to tell you about this problem", "translate": "Я не хочу говорить с вами об этой проблеме"},
-        {"words": "It doesn't help me", "translate": "Это не помогает мне"}
+        {"words": "It doesn't help me", "translate": "Это не помогает мне"},
+        {"words": "My brother doesn't want to think about his future", "translate": "Мой брат не хочет думать о своем будущем"},
+        {"words": "His son doesn't want to become a doctor", "translate": "Его сын не хочет становится врачем"},
+        {"words": "This person doesn't try to change his life", "translate": "Этот человек не пытается изменить свою жизнь"},
+        {"words": "My friend and I don't call them", "translate": "Я со своим другом не звоним им"},
+        {"words": "Our teacher doesn't believe us", "translate": "Наш учитель нам не верит"},
+        {"words": "He thinks money doesn't bring poeple happyiness", "translate": "Он думает, деньги не приносят людям счастья"}
     ]
 }

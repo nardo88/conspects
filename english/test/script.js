@@ -64,7 +64,7 @@ const checkValue = (arrayWords) => {
 const getRandomWords = (words) => {
     const dataSet = new Set()
     // при помощи цикла получаем 10 рандомных чисел и помещаем их в коллекцию
-    while (dataSet.size < 10) {
+    while (dataSet.size < 30) {
         let index = Math.ceil(Math.random() * 100)
         // важно то что число не больше блины массива со словами
         if (index < words.length) {
