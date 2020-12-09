@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <h1>Классы в JavaScript</h1>
@@ -54,16 +55,36 @@
 
 <h3>Результат</h3>
 <div class="box1"></div>
+<h2>Static</h2>
+<p>С помощью ключевого слова <b>statis</b> мы можем обеспечивать инкапсуляцию. Методы объявленные с помощью слова static будут скрыты для внешнего мира, их область видимости будет только внутри класса, т.е нельзя будет к такому методу обратиться из вне</p>
 
 
 
 
 
+<script>
+
+	class Person {
+		constructor(name ){
+			this.name = name
+		}
+		static showName(){
+			console.log(this);
+		}
+
+		whoAmI(){
+			let a = Person.showName()
+			console.log(a);
+		}
+	}
+
+	const max = new Person('max')
+	max.whoAmI()
 
 
+
+</script>
 	
 
-<script src="js/jquery.js"></script>
-<script src="js/script.js"></script>
 </body>
 </html>
