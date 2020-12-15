@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Deploy на GitHub</h1>
+    <p><span class="num">1</span> что нужно сделать это установить глобально <b>gh-pages</b>. gh-pages это пакет программ который создает в нашем проекте ветку gh-pages и ее устанавливает в качестве главной в github pages. Что бы ее установить вводим команду в терминале</p>
+    <span class="code">npm install gh-pages --save-dev</span>
+    <p>Обязательно указываем ключ <b>--save-dev</b>. После инсталяции в файле <b>package.json</b> должна появиться запись <span class="red">Обязательно в разделе devDependencies</span></p>
+    <img src="prim1.jpg" alt="">
+    <p>Далее в файл <b>package.json</b> добавляем вот такую запись:</p>
+    <img src="prim2.jpg" alt="">
+    <p>т.е. указываем URL своего репозитория (этот тот репозиторий который мы использовали во время разработки туда комитили код)</p>
+    <p>Далее в раздел <b>script</b> файла <b>package.json</b> добавляем вот такой код</p>
+    <img src="prim3.jpg" alt="">
+    <p>Теперь что бы запушить проект на GitHub Pages d терминале вводим команду </p>
+    <span class="code">npm run deploy</span>
+    <h2>Особенности</h2>
+    <p>Что бы Router корректно работал необходимо наше приложение оборачивать не <b>BrowserRouter</b>, а <b>HashRouter</b></p>
+    <img src="prim4.jpg" alt="">
+    <p>Перед этим не забываем импортировать HashRouter</p>
+    <img src="prim5.jpg" alt="">
+
+</body>
+</html>
