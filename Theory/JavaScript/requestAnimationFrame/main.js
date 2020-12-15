@@ -43,3 +43,4 @@ start.addEventListener('click', () => {
 stop.addEventListener('click', () => {
     startMove = false
 })
+

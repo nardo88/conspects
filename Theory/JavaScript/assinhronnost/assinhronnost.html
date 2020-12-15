@@ -3,33 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style>
-		*{
-			font-family: sans-serif;
-			margin: 0;
-			padding: 0;
-
-		}
-
-		p{
-			margin: 10px;
-			font-size: 16px;
-			font-weight: 520;
-
-		}
-		h1,h2{
-			margin-left: 40px;
-		}
-		h3,h4{
-			margin-left: 10px;
-		}
-		img{
-			margin-left: 10px;
-		}
-		ul{
-			margin-left: 25px;
-		}
-	</style>
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 	<h1>Асинхронность</h1>
@@ -40,25 +14,26 @@
 	<p>Т.е. обе команды выполнились сонхронно с загрузкой документа, по очереди, той, как они указаны в коде.</p>
 	<p>Но что если нам необходимо, что бы код выполнялся не сразу, а через некоторое время. В этом нам поможет метод <b>setTimeout</b></p>
 	<br><br>
-	<h3>setTimeout</h3>
-	<p>Этот метод принимает два параметра:
+	<h2>setTimeout</h2>
+	<p>Этот метод принимает три параметра:
 		<ul>
 			<li>имя функции которую надо выполнить</li>
 			<li>и количество милисекунд, через сколько надо выполнить фунцию</li>
+			<li>Входной параметр для функции которая будет вызвана (не обязательный)</li>
 		</ul>
 	</p>
 	<p>Пример:</p>
 	<img src="prim3.jpg">
 	<p>Т.е. функция выполнится чреез две секунды и выведет в консоль - third</p>
 	<br><br>
-	<h3>setTimeout 0</h3>
+	<h2>setTimeout 0</h2>
 	<p>Метод setTimeout может принимать и значение - 0. Как это выглядит:</p>
 	<img src="prim4.jpg">
 	<p>В результате в консоли мы увидим:</p>
 	<img src="prim5.jpg" alt="">
 	<p>Т.е. функция из setTimeout 0 - выполнится только после того как выполнился весь код документа.</p>
 	<br><br>
-	<h3>Event Loop</h3>
+	<h2>Event Loop</h2>
 	<p>Примером асинхронного кода так же может служить модеть событийного цикла <b>Event Loop</b>. К Event Loop относятся такие методы как:</p>
 	<ul>
 		<li><b>on</b> - в jQuery (obl.on('click', function))</li>
