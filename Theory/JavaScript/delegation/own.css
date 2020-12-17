@@ -36,3 +36,44 @@
     width: 200px;
     padding: 20px;
 }
+
+.wrapper{
+    width: 30%;
+    height: 250px;
+    background-color: rgb(155, 248, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.txt{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    display: inline-block;
+    font-size: 20px;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.btn_tagName{
+    padding: 10px 20px;
+}
+
+.wrapper2{
+    width: 30%;
+    background-color: rgb(155, 248, 255);
+    padding: 20px;
+
+}
+.list2{
+    list-style-type: none;
+    padding: 0;
+}
+.item2{
+    margin: 20px;
+    background: rgb(145, 144, 144);
+
+}
