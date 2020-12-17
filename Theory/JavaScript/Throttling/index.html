@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <h1>Debounce и Throttling</h1>
+    <p><b>Debounce функции</b> - означает, что все вызовы будут игнорироваться до тех пор, пока они не прекратятся на
+        определённый период времени. Только после этого функция будет вызвана. Например, если мы установим таймер на 2
+        секунды, а функция вызывается 10 раз с интервалом в одну секунду, то фактический вызов произойдёт только спустя
+        2 секунды после крайнего (десятого) обращения к функции.</p>
+    <p><b>пример</b></p>
+    <input type="text" class="input" placeholder="введите текст">
+    <p class="text"></p>
+    <img src="prim1.jpg" alt="">
+
+    <p><b>разьяснение</b></p>
+    <p>Что здесь произошло? Идем сверху вниз. Функция debounce нам вернула функцию, допустим мы ее вызвали (начали вводить текст в поле input), создалась переменная <b>timeOut</b>, затем создалась функция <b>fnCall</b>, после этого очистится clearTimeout (clearTimeout от undefined вернет нам ничего, т.е. ничего страшного) после этого в нашу замкнутую timeOut запишется setTimeout который запустит нашу функцию через какое-то количество времени. Что происходит далее. Мы продолжжаем вводить текст и наша функция фызовется еще раз и здесь так же читаем сверху вниз. Сначала создастся функция fnCall, затем очистится clearTimeout (timeOut у нас в замыкании а это значит что обращение быдет к той же переменной). Значит тот timeOut = setTimeout(fnCall, ms) который мы определили в предыдущий раз не успеет выполниться, вместо него будет создан новый и он так же будет вызван только если пользователь прекратит вводить текст, иначе каждый раз setTimeout(fnCall, ms) будет очищаться до того как будет вызван.</p>
+    
+
+
+
+
+
+
+
+    <script>
+
+        const input = document.querySelector('.input');
+        const text = document.querySelector('.text');
+
+        // функция которая вернет нам функцию
+        const debounce = (fn, ms) => {
+            // замыкаем локальную переменную
+            let timeOut;
+            // возвращаем функцию
+            return function () {
+                // которая внутри себя создает функцию у которой привяззан контекст
+                const fnCall = () => fn.apply(null, arguments);
+                // сначала мы очищаем setTimeout
+                clearTimeout(timeOut);
+                // а затем создаем его
+                timeOut = setTimeout(fnCall, ms)
+            };
+        }
+        // это наша функция которую мы будем дебонсить
+        function onChange(e) {
+            text.textContent = e.target.value
+        }
+        // переопределяем ее с учетом debounce
+        onChange = debounce(onChange, 200)
+        // и отдаем слушателю события input
+        input.addEventListener('input', onChange)
+
+    </script>
+</body>
+
+</html>
