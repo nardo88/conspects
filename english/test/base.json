@@ -24,6 +24,7 @@
         {"words": "solve a problem", "translate": "решать проблему"},
         {"words": "at all", "translate": "вовсе, совсем"},
         {"words": "advice", "translate": "совет"},
-        {"words": "less", "translate": "меньше"}
+        {"words": "less", "translate": "меньше"},
+        {"words": "explain", "translate": "объяснять"}
     ]
 }

@@ -5,7 +5,6 @@
 
 let text = 'javascript is the best language'
 
-let pattern = /java/
-console.log(pattern.test(text))
+text.replace(/best/, (match) => match.toUpperCase())
 
 

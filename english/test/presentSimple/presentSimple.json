@@ -42,6 +42,7 @@
         {"words": "You need to remember this rule", "translate": "Тебе нужно запомнить это правило"},
         {"words": "I need to speak English without any mistakes at all", "translate": "Мне нужно говорить по английски совсем без каких-либо ошибок"},
         {"words": "I need your advice", "translate": "Мне нужен твой совет"},
-        {"words": "Your mother needs to work less", "translate": "Твоей маме нужно работать меньше"}
+        {"words": "Your mother needs to work less", "translate": "Твоей маме нужно работать меньше"},
+        {"words": "Our teachers don't explain it", "translate": "Наши учителя не объясняют это"}
     ]
 }
