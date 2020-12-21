@@ -36,6 +36,12 @@
         {"words": "This person doesn't try to change his life", "translate": "Этот человек не пытается изменить свою жизнь"},
         {"words": "My friend and I don't call them", "translate": "Я со своим другом не звоним им"},
         {"words": "Our teacher doesn't believe us", "translate": "Наш учитель нам не верит"},
-        {"words": "He thinks money doesn't bring poeple happyiness", "translate": "Он думает, деньги не приносят людям счастья"}
+        {"words": "He thinks money doesn't bring poeple happyiness", "translate": "Он думает, деньги не приносят людям счастья"},
+        {"words": "She needs to correct these mistakes", "translate": "Ей нужно исправить эти ошибки"},
+        {"words": "He needs to find a good job", "translate": "Ему нужно найти хорошую работу"},
+        {"words": "You need to remember this rule", "translate": "Тебе нужно запомнить это правило"},
+        {"words": "I need to speak English without any mistakes at all", "translate": "Мне нужно говорить по английски совсем без каких-либо ошибок"},
+        {"words": "I need your advice", "translate": "Мне нужен твой совет"},
+        {"words": "Your mother needs to work less", "translate": "Твоей маме нужно работать меньше"}
     ]
 }

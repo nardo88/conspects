@@ -21,6 +21,9 @@
         {"words": "attract", "translate": "привлекать"},
         {"words": "future", "translate": "будущее"},
         {"words": "bring", "translate": "приносить"},
-        {"words": "happiness", "translate": "счастье"}
+        {"words": "solve a problem", "translate": "решать проблему"},
+        {"words": "at all", "translate": "вовсе, совсем"},
+        {"words": "advice", "translate": "совет"},
+        {"words": "less", "translate": "меньше"}
     ]
 }
