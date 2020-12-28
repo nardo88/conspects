@@ -43,6 +43,12 @@
         {"words": "I need to speak English without any mistakes at all", "translate": "Мне нужно говорить по английски совсем без каких-либо ошибок"},
         {"words": "I need your advice", "translate": "Мне нужен твой совет"},
         {"words": "Your mother needs to work less", "translate": "Твоей маме нужно работать меньше"},
-        {"words": "Our teachers don't explain it", "translate": "Наши учителя не объясняют это"}
+        {"words": "Our teachers don't explain it", "translate": "Наши учителя не объясняют это"},
+        {"words": "Do you work for you mistakes?", "translate": "Ты работаешь над своими ошибками?"},
+        {"words": "Do you support this decision?", "translate": "Ты поддреживаешь это решение?"},
+        {"words": "Do you need to solve this problem right now?", "translate": "Тебе нужно решить эту проблему прямо сейчас?"},
+        {"words": "Do you often listen to music?", "translate": "Ты часто слушаешь музыку?"},
+        {"words": "Do you have enough practice?", "translate": "У тебя достаточно практики?"},
+        {"words": "Do we have enough knowledge?", "translate": "У нас достаточно практики?"}
     ]
 }

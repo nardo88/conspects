@@ -25,6 +25,9 @@
         {"words": "at all", "translate": "вовсе, совсем"},
         {"words": "advice", "translate": "совет"},
         {"words": "less", "translate": "меньше"},
-        {"words": "explain", "translate": "объяснять"}
+        {"words": "explain", "translate": "объяснять"},
+        {"words": "decision", "translate": "решение"},
+        {"words": "enough", "translate": "достаточно"},
+        {"words": "knowledge", "translate": "знания"}
     ]
 }

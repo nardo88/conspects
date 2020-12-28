@@ -81,6 +81,17 @@ img{
     margin-bottom: 20px;
     display: block;
 }
+.questin{
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: green;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
 
 .plus{
     padding: 10px 20px;
