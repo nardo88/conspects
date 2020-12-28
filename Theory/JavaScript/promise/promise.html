@@ -3,9 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 	<h1>Промисы</h1>
+	<h2>C курсов GLO</h2>
+	<p><strong>Создание promise</strong></p>
+	<img src="prim6.jpg" alt="">
+	<p>Конструктор Promise принимает в качестве аргумента callBack функцию, которую еще называют <b>executer</b>, эта функция принимает два аргумента (которые являются функциями): <b>resolve</b> - выполнится в случае успешного выполнения Promise. И <b>reject</b> - выполнится в случае ошибки.</p>
+	<h3>Пример функции которая возвращает promise</h3>
+	<img src="prim7.jpg" alt="">
+	<h3>Методы Promise</h3>
+	<p><b>all</b> - этот метод принимает в качестве аргумента массив промисов, и метод then выполнится только тогда, когда все промисы будут выполнены.</p>
+	<img src="prim8.jpg" alt="">
+	<p><b>race</b> - этот метод так же принимает массив промисов и в метод then попадет тот промис который авполнится первым</p>
+	<img src="prim9.jpg" alt="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<h2>Владилен</h2>
 	<p>Для понятия работы Promise сэмулируем запрос на сервер</p>
 	<p>Рассмотрим код:</p>
 	<img src="prim1.jpg" alt="">
@@ -38,40 +69,22 @@
 
 	<script>
 
-		console.log('Request data...')
-		const p = new Promise((resolve, reject) =>{
-			setTimeout (() =>{
-				console.log('Preparing data...')
-				const backendData = {
-					server: 'aws',
-					port: 2000,
-					status: 'working'
-				}
-				resolve(backendData)
-			}, 2000)
-		})
+		
 
 
-
-		p.then((data) => {
+		const getPromise = (data) => {
 			return new Promise((resolve, reject) => {
-				setTimeout(() => {
-					data.modifate = true
-					resolve(data)
-				}, 2000)
-				
-			})
-		}).then((dataClient) => {
-			console.log('Data received', dataClient)
+				if (true){
+					resolve(data);
+				} else {
+					reject('error');
+				}
+			}) 
+		}
 
-		}).catch((err) => console.error('Error: ', err))
-		.finally(() => console.log('Finally'))
-
-
-
-
-
-
+		Promise.race([getPromise('JavaScript'), getPromise('CSS'), getPromise('React')])
+			.then(data => console.log(data))
+		
 
 
 
