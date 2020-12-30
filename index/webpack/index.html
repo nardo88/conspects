@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>WebPack</h1>
+    <h2>Как использовать</h2>
+    <h3><span class="num">1</span> Инициализация</h3>
+    <p>В консоли вводим команду:</p>
+    <span class="code">npm init -y</span>
+    <p>После инициализации в папке с проектом появится файл <b>package.json</b> c вот таким содержанием:</p>
+    <img src="./prim1.jpg" alt="">
+    <h3><span class="num">2</span> Устанавливаем WebPack</h3>
+    <p>Для установки в консоли вводим команду</p>
+    <span class="code">npm i webpack webpack-cli -D</span>
+    <p>В папке с проектом появится папка <b>node_modules</b> куда скачаются файлы webpack. Что бы не пушить в репозиторий эти файлы создадим файл <b>.gitignore</b> и в него запишем строчку исключение</p>
+    <img src="./prim2.jpg" alt="">
+    <h3><span class="num">3</span> Сборка проекта</h3>
+    <p>Для сборки проекта в консоле вводим команду</p>
+    <span class="code">npx webpack</span>
+    <p>После этого в папке с проектом появится папка <b>dist</b> куда поместится файл <b>main.js</b>. Этот файл покдлючаем к index.html и все будет работать</p>
+    <h2>Как прописывать кастомные команды</h2>
+    <p>Заходим п файл <b>package.json</b> и в разделе script мы можем прописывать свои скрипты. Например что бы при каждом изменение файла компиляция запускалась автоматически мы можем прописать такую команду:</p>
+    <img src="./prim3.jpg" alt="">
+    <p>Теперь что бы запустить этот скрипт в консоле вводим:</p>
+    <span class="code">npm run watch</span>
+    <h2>Конфигурация webpack</h2>
+    <p><span class="num">1</span> В директории проекта создаем файл <b>webpack.config.js</b></p>
+    <p>Далее внутри этого файла создаем экспортируемый объект который называем module</p>
+    <img src="./prim4.jpg" alt="">
+    <p>Этот объект будет хранить в себе конфигурацию нашего сборщика. Рассмотрим начальные настройки</p>
+    <img src="./prim5.jpg" alt="">
+    <p>В разделе output мы используем <b>path.resolve()</b> для того что бы это работало нам надо установить плагин path. __dirname - это переменная которая содежит путь до нашего каталога с проектом.</p>
+    <p><span class="num">2</span> Добавляем в <b>package.json</b> в раздел script строчку <b>"build": "webpack"</b></p>
+    <p><span class="num">3</span> Добавляем правила в файле <b>webpack.config.js</b></p>
+    <img src="./prim6.jpg" alt="">
+    <p>теперь в консоли прописываем комнду для установки babel</p>
+    <span class="code">npm i -D babel-loader @babel/core @babel/preset-env</span>
+    <p>После этого компилируем наш bundle и подключаем его к проекту</p>
+    <h2>webpack dev server</h2>
+    <p>Аналог liveserver в VS CODE</p>
+    <p>Установка</p>
+    <span class="code">npm i webpack-dev-server -D</span>
+    <p>далее в <b>webpack.config.js</b> добавляем объект</p>
+    <img src="./prim7.jpg" alt="">
+    <p>полный код webpack.config.js</p>
+
+    <xmp style="background: rgb(214, 214, 214);">
+
+        const path = require('path')
+
+        module.exports = {
+            entry: './src/index.js',
+            devServer: {
+                open: true,
+                port: 8085,
+                hot: true,
+            },
+            output: {
+                filename: 'bundle.js',
+                path: path.resolve(__dirname, './dist')
+            },
+            mode: 'production',
+            module: {
+                rules : [
+                    {
+                        test : /\.js$/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/env']
+                            },
+                        },
+                        exclude: /node_modules/,
+                    }
+                ]
+            }
+        };
+    </xmp>
+
+
+
+
+
+
+</body>
+</html>
