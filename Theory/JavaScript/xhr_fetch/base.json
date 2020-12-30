@@ -1,0 +1,33 @@
+{
+	"base": [
+        {"words": "feel", "translate": "чувствовать"},
+        {"words": "also", "translate": "также" },
+        {"words": "that", "translate": "тот"},
+        {"words": "look", "translate": "выглядеть"},
+        {"words": "seem", "translate": "казаться"},
+        {"words": "happen", "translate": "случается"},
+        {"words": "often", "translate": "часто"},
+        {"words": "offer", "translate": "предложение"},
+        {"words": "on time", "translate": "вовремя"},
+        {"words": "useful", "translate": "полезный"},
+        {"words": "those", "translate": "тех"},
+        {"words": "early", "translate": "рано"},
+        {"words": "improve", "translate": "улучшать"},
+        {"words": "fluently", "translate": "свободно"},
+        {"words": "correctly", "translate": "правильно"},
+        {"words": "abroad", "translate": "за границей"},
+        {"words": "discuss", "translate": "обсуждать"},
+        {"words": "agree", "translate": "соглашаться"},
+        {"words": "attract", "translate": "привлекать"},
+        {"words": "future", "translate": "будущее"},
+        {"words": "bring", "translate": "приносить"},
+        {"words": "solve a problem", "translate": "решать проблему"},
+        {"words": "at all", "translate": "вовсе, совсем"},
+        {"words": "advice", "translate": "совет"},
+        {"words": "less", "translate": "меньше"},
+        {"words": "explain", "translate": "объяснять"},
+        {"words": "decision", "translate": "решение"},
+        {"words": "enough", "translate": "достаточно"},
+        {"words": "knowledge", "translate": "знания"}
+    ]
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="./index.js" defer ></script>
+</head>
+<body>
+    <h1>Модули</h1>
+    <h2><span class="num">1</span> способ - создание анонимной самовызывающейся функции</h2>
+    <img src="./prim1.jpg" alt="">
+    <p>Такой способ помогает создавать у каждого модуля свою область видимости, т.е. другие модули не будут видеть локальные переменные файла JS тем самым мы избегаем вероятность конфликта имен переменных.</p>
+    <h2><span class="num">2</span> способ - помещаем функцию в переменную</h2>
+    <img src="./prim2.jpg" alt="">
+    <p>Теперь за пределами car мы можем обращаться к нему. Car - это не функция, теперь это объект у которого есть метод run</p>
+    <h2><span class="num">3</span> способ - экспорт</h2>
+    <p>Допустим у нас есть файл moduleOn.js который содержит вот такой код:</p>
+    <img src="./prim3.jpg" alt="">
+    <P>Что бы экспортировать этот код мы добавляем в файл вот такую строку</P>
+    <img src="./prim4.jpg" alt="">
+    <p>Теперь в главной файле JS прописываем вот такую строку:</p>
+    <img src="./prim5.jpg" alt="">
+    <p>Название переменной произвольно, requare - принимает в себя путь до нашего модуля. писать .js не обязательно</p>
+    <p>Теперь нужно собрать эти два файла (index.js и moduleOne.js) в один bundle. Для этого обычно используют WebPack. Но могут попросить и другие варианты, рассмотрим один из них - <b>BROWSERIFY</b></p>
+    <p>Утсановка</p>
+    <span class="code">npm install -g browserify</span>
+    <p>Для сборки bandle вводим команду</p>
+    <span class="code">browserify index.js -o bundle.js</span>
+
+
+
+</body>
+</html>

@@ -1,9 +1,9 @@
 
-function getText() {
-    const request = new XMLHttpRequest()
-    request.open("GET", "http://jsonplaceholder.typicode.com/users", false)
-    request.send()
-}
 
-getText()
+fetch('base.json', {
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+    .then(response => response.text())
 
