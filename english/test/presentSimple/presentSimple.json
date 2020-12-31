@@ -49,6 +49,18 @@
         {"words": "Do you need to solve this problem right now?", "translate": "Тебе нужно решить эту проблему прямо сейчас?"},
         {"words": "Do you often listen to music?", "translate": "Ты часто слушаешь музыку?"},
         {"words": "Do you have enough practice?", "translate": "У тебя достаточно практики?"},
-        {"words": "Do we have enough knowledge?", "translate": "У нас достаточно знаний?"}
+        {"words": "Do we have enough knowledge?", "translate": "У нас достаточно знаний?"},
+        {"words": "Does he pay for it?", "translate": "Он платит за это?"},
+        {"words": "Does he look for a job?", "translate": "Он ищет работу?"},
+        {"words": "Does he need to come to this place?", "translate": "Ему нужно придти в это место?"},
+        {"words": "Does he often hear it?", "translate": "Он часто это слышит?"},
+        {"words": "Does it often happen?", "translate": "Это часто случается?"},
+        {"words": "Does he often think about it?", "translate": "Он часто думает об этом?"},
+        {"words": "Does this teacher expalin everything very well?", "translate": "Этот учитель очень хорошо все объясняет?"},
+        {"words": "Does this information seem useless?", "translate": "Эта информация кажется бесполнезной?"},
+        {"words": "Does this thing seem very important?", "translate": "Эта вещь кажется очень важной?"},
+        {"words": "Does this exam seem very difficult?", "translate": "Этот экзамен кажется очень сложным?"},
+        {"words": "Does their boss know all the truth?", "translate": "Их босс знает всю правду?"},
+        {"words": "Does your mother want to tell him all the truth?", "translate": "Твоя мама зочет сказать ему всю правду?"}
     ]
 }
