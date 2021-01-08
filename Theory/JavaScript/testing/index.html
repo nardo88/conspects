@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Тестирование</h1>
+    <h2>MOCHA</h2>
+    <p>Допустим у нас есть файл JS в котором мы моздали функцию которая возвращает наибольшее число</p>
+    <img src="./prim1.jpg" alt="">
+    <p><span class="num">1</span> Для тестирования создаем файл который называем <b>test.js</b></p>
+    <p><span class="num">2</span>Теперь нам необходимо установить тестировщик (самые популярные это mocha и jest)</p>
+    <p>Для начала проинициализируем приложение</p>
+    <span class="code">npm init -y</span>
+    <p>Для начала рассмотрим <b>mocha</b> оф сайт - <a target="_blank" href="https://mochajs.org/">https://mochajs.org/</a></p>
+    <p>Для установки вводим команду в терминале</p>
+    <span class="code">npm install --save-dev mocha</span>
+    <p>После установки в package.json мы увидим <b>mocha</b> в разделе <b>devDependencies</b></p>
+    <img src="./prim2.jpg" alt="" >
+    <p><span class="num">3</span> Теперь нам нужно установить библиотеку для тестирования которая называется <b>Chai</b> оф сайт - <a href="https://www.chaijs.com/">https://www.chaijs.com/</a>. Для установки вводим команду в терминале:</p>
+    <span class="code">npm install chai -D</span>
+    <p><span class="num">4</span> Теперь открываем файл test.js</p>
+    <p>Первое что нужно сделать - это импортировать функцию <b>assert</b> из <b>chai</b> и конечно же импортировать нашу функцию <b>over</b> из файла JS</p>
+    <img src="./prim3.jpg" alt="" >
+    <p>Далее вызываем функцию <b>describe</b> которая принимает два аргумента: описание и колбек функцию. Этот колбек вызывает функция <b>it</b> которая так же принимает два аргумента : описание и колбек. Вот этот колбек уже вызывает функцию assert</p>
+    <img src="./prim4.jpg" alt="" >
+    <p>Т.е. assert вызывает нашу функцию которую тестируем и проверяем чему должен быть равен результат.</p>
+    <p>Что бы запустить тест открываем <b>package.json</b> и в разделе scripts прописываем команду</p>
+    <img src="./prim5.jpg" alt="" >
+    <p>Теперь что бы запустить тест в терминале вводим команду</p>
+    <span class="code">npm run test</span>
+    <p>В результате мы увидим вот такой ответ</p>
+    <img src="./prim6.jpg" alt="" >
+    <p><span class="num">5</span> проверка с помощью expect</p>
+    <p>Подключаем функцию <b>expect</b></p>
+    <img src="./prim7.jpg" alt="" >
+    <p>И немного поменяем функцию over</p>
+    <img src="./prim8.jpg" alt="" >
+    <p>Теперь добавим еще один тест</p>
+    <img src="./prim9.jpg" alt="" >
+    <p>Можем одновременно задавать несколько тестов</p>
+    <img src="./prim10.jpg" alt="" >
+    <h2>JEST</h2>
+    <p>Оф сайт - <a target="_blank" href="https://jestjs.io/">https://jestjs.io/</a>  </p>
+    <p>Для установки вводим команду в терминале</p>
+    <span class="code">npm install --save-dev jest</span>
+    <p>После установки JEST устанавливаем BABEL</p>
+    <span class="code">npm i -D babel-jest @babel/core @babel/preset-env</span>
+    <p>Далее добаляем файл для настройки babel - <b>babel.config.js</b></p>
+    <p>В этот файл копируем вот такой код</p>
+    <xmp>
+        // babel.config.js
+        module.exports = {
+            presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
+        };
+    </xmp>
+
+    <p>В package.json в scripts добавляем команду</p>
+    <p>Файл который мы будем тестировать будет создавать объект по классу</p>
+    <img src="./prim11.jpg" alt="" >
+    <p>Теперь создаем файл с посфиксом - spec <b>car.spec.js</b></p>
+    <img src="./prim12.jpg" alt="" >
+    <p>Чтобы запустить тест в package.json добавляем строчку script </p>
+    <img src="./prim12.jpg" alt="" >
+    <p>Для запуска в консоле вводим команду</p>
+    <span class="code">npm run testJest</span>
+</body>
+</html>
