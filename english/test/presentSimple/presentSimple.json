@@ -56,11 +56,26 @@
         {"words": "Does he often hear it?", "translate": "Он часто это слышит?"},
         {"words": "Does it often happen?", "translate": "Это часто случается?"},
         {"words": "Does he often think about it?", "translate": "Он часто думает об этом?"},
-        {"words": "Does this teacher expalin everything very well?", "translate": "Этот учитель очень хорошо все объясняет?"},
+        {"words": "Does this teacher explain everything very well?", "translate": "Этот учитель очень хорошо все объясняет?"},
         {"words": "Does this information seem useless?", "translate": "Эта информация кажется бесполнезной?"},
         {"words": "Does this thing seem very important?", "translate": "Эта вещь кажется очень важной?"},
         {"words": "Does this exam seem very difficult?", "translate": "Этот экзамен кажется очень сложным?"},
         {"words": "Does their boss know all the truth?", "translate": "Их босс знает всю правду?"},
-        {"words": "Does your mother want to tell him all the truth?", "translate": "Твоя мама зочет сказать ему всю правду?"}
+        {"words": "Does your mother want to tell him all the truth?", "translate": "Твоя мама зочет сказать ему всю правду?"},
+        {"words": "Where do you go?", "translate": "Куда ты идешь?"},
+        {"words": "Where do they spend time together?", "translate": "Где они проводят свободное время вместе?"},
+        {"words": "Why do you agree with him?", "translate": "Почему ты согласен с ним?"},
+        {"words": "What do you think about it?", "translate": "Что ты об этом думаешь?"},
+        {"words": "What do you need to do?", "translate": "Что тебе нужно сделать?"},
+        {"words": "How do you get to work?", "translate": "Как ты добираешься до работы?"},
+        {"words": "What seems strange?", "translate": "Что выглядит странно?"},
+        {"words": "What helps you?", "translate": "Что помогает тебе?"},
+        {"words": "Who knows it?", "translate": "Кто знает это?"},
+        {"words": "Who do you know?", "translate": "Кого ты знаешь?"},
+        {"words": "Who do you support?", "translate": "Кого ты поддерживаешь?"},
+        {"words": "What books do you read?", "translate": "Какие книги ты читаешь?"},
+        {"words": "How mach money do you have?", "translate": "Сколько у тебя денег?"},
+        {"words": "How many friends do you have?", "translate": "Сколько у тебя друзей?"}
+
     ]
 }
