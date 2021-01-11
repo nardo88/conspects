@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./ownStyle.css">
+    <script src="./main.js" defer ></script>
+</head>
+<body>
+    <h1>Сортировка массива по полю объекта</h1>
+    <h2>Example</h2>
+    <div class="example">
+        <div class="control">
+            <button class="by-name">Сортировать по имени</button>
+            <button class="by-age">Сортировать по возрасту</button>
+        </div>
+        <ul class="wrapper">
+    
+        </ul>
+    </div>
+    <h2>Explain</h2>
+    <p>Стандартный метод массива sort принимает callBack функцию в которую он передает два сравниваемых элемента, если первый больше второго то возвращается 1 иначе возвращается -1. На этих данных произойдет сортировка. Т.е. функция CallBack сортировки по полю объекта будет выглядеть вот так:</p>
+    <img src="./prim1.jpg" alt="">
+    <p>Все что нам остается это создать новый массив который нам вернет метод sort, которому мы передали на вход функцию сортировки. После чего рендерим заново нашу страницу</p>
+    <img src="./prim2.jpg" alt="">
+
+</body>
+</html>
