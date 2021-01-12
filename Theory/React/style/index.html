@@ -27,6 +27,46 @@
     <img src="prim5.jpg" alt="">
     <p>Что бы указать несколько классов то мы используем строковую интерполяцию (или шаблонные строки)</p>
     <img src="prim6.jpg" alt="">
+    <p><span class="num">2</span> С помощью Styled Component</p>
+    <p><a href="https://styled-components.com/">Офф сайт</a></p>
+    <h3>Установка библиотеки</h3>
+    <span class="code">npm install --save styled-components</span>
+    <h3>Импорт createGlobalStyle</h3>
+    <p><b>createGlobalStyle</b> - это метод который создает глобальный объект который в себе будет содержать общие стили страницы</p>
+    <img src="prim7.jpg" alt="">
+    <h3>Создание глобальной компонены стилей</h3>
+    <img src="prim8.jpg" alt="">
+    <h3>Вставляем в JSX GlobalStyle</h3>
+    <img src="prim9.jpg" alt="">
+    <h3>Для создания стилей для отдельной компоненты мы должны импортировать styled</h3>
+    <img src="prim10.jpg" alt="">
+    <h3>Далее создаем компонент стилей тега</h3>
+    <img src="prim11.jpg" alt="">
+    <p>Т.е. мы создали тег div который имеет стили display: flex;</p>
+    <h3>Теперь просто вместо тега div в JSX указываем нашу стилевую компоненту</h3>
+    <img src="prim12.jpg" alt="">
+
+
+    <script>
+
+        import styled from 'styled-components'
+
+        const NavBar = styled.div`
+            display: flex;
+        `;
+
+
+        const Component = () => {
+            return(
+                <>
+                    <NavBar>
+                        some code
+                    </NavBar>
+                </>
+            )
+        }
+
+    </script>
 
 </body>
 </html>
