@@ -31,6 +31,14 @@
         {"words": "knowledge", "translate": "знания"},
         {"words": "important", "translate": "важный"},
         {"words": "unimportant", "translate": "не важный"},
-        {"words": "difficult", "translate": "сложный"}
+        {"words": "difficult", "translate": "сложный"},
+        {"words": "refuse", "translate": "отказываться"},
+        {"words": "complain", "translate": "жаловаться"},
+        {"words": "different", "translate": "различные"},
+        {"words": "pleasure", "translate": "удовольствие"},
+        {"words": "share", "translate": "разделять (мнение)"},
+        {"words": "point of view", "translate": "точка зрения"},
+        {"words": "inspire", "translate": "вдохновлять"},
+        {"words": "mention", "translate": "упоминать"}
     ]
 }
