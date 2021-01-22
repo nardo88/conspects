@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+<body>
+    <h1>Хук useRef</h1>
+    <p><b>useRef</b> - как и <strong>useState</strong> создает некое состояние, но которое не вызывает render при изменении этого state. Хук <strong>useRef</strong> возвращает нам объект у которого есть ключ <b>current</b>. В качестве входного параметра <b>useRef</b> принимает начальное состояние state.</p>
+    <p>Т.е. useRef полезен если нам нужно создать локальную переменную, изменение которой не вызывает render но которая при rendere будет сохранять свое значение.</p>
+    <p>Пример создания</p>
+    <img src="./prim1.jpg" alt="">
+    <h3>Второй пример использования</h3>
+    <p>Так же объект который вернул нам useRef мы можем использовать как обычную ref ссылку к элементу virtualDOM</p>
+    <img src="./prim2.jpg" alt="">
+    <p>Так же с помощью полученного объекта мы можем передать фокус - localState.current.focus()</p>
+
+
+
+   
+</body>
+</html>
