@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../init/own.css">
+</head>
+<body>
+    <h1>Авторизаяция в React приложении средствами FireBase</h1>
+    <h2><span class="num">1</span><span>Получение конфигурации приложения</span></h2>
+    <p>Заходим на FireBase и кликаем по кнопке <b>1 приложение</b></p>
+    <img src="./prim1.jpg" alt="">
+    <p>Откроется модальное окно в нем жмем шестеренку</p>
+    <img src="./prim2.jpg" alt="">
+    <p>Откроется страница с конфигурацией нашего приложения, прокручиваем в самы низ и находим там раздел <b>Firebase SDK snippet</b>. Здесь жмем на радио-кнопку <b>Конфигурация</b> и копруем объект который сгенерировал нам FireBase</p>
+    <img src="./prim3.jpg" alt="">
+    <p>Этот объект копируем в файл App.js</p>
+
+    <h2><span class="num">2</span><span>Устанавливаем FireBase в проект</span></h2>
+    <p>Для этого в консоли вводим команду</p>
+    <span class="code">npm install firebase --save</span>
+    <p>Во время установки я один раз ловиш Warning</p>
+    <img src="./prim4.jpg" alt="">
+    <p>Разрешилось все тем что я открыл в папке <b>.firebase</b> файл <b>hosting.YnVpbGQ.cache</b> и удалил все содержимое. Ошибки при установке были вызваны переполненным кешом.</p>
+    <h2><span class="num">3</span><span>Настраиваем авторизацию в FireBase</span></h2>
+    <p>Заходим в консоль FireBase и выбираем там раздел <b>Authentication</b>. Жмем кнопку <b>НАЧАТЬ РАБОТУ</b></p>
+    <p>В открывшемся окне выбираем GOOGLE, жмем индикатор <b>ВКЛ</b> и указываем адрес эл. почты для слыжбы поддержки проекта</p>
+    <img src="./prim5.jpg" alt="">
+    <p>Жмем <b>СОХРАНИТЬ</b> и возвращаемся в код</p>
+    <h2><span class="num">4</span><span>Импортируем в проект FireBase</span></h2>
+    <p>В разделе импортов в App.js добавляем две строчки:</p>
+    <img src="./prim6.jpg" alt="">
+    <h2><span class="num">5</span><span>Инициализация</span></h2>
+    <p>В файлу App.js после того места где мы добавили объект с конфигурацией FireBase, обращаемся к firebase и вызываем у него метод - <b>initializeApp</b>. В качестве аргумента передаем ему объект с нашим конфигом fireBase</p>
+    <img src="./prim7.jpg" alt="">
+    <h2><span class="num">6</span><span>Создаем кастомный ХУК для работы с авторизацией</span></h2>
+    <img src="./prim8.jpg" alt="">
+    <h2><span class="num">7</span><span>Создаем объект, который вернет нам хук и передаем его через пропсы в компоненту которая отрисовывает кнопки logIn и logOut</span></h2>
+    <p>пример такого JSX</p>
+    <img src="./prim9.jpg" alt="">
+
+
+
+
+
+
+
+</body>
+</html>
