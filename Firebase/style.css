@@ -80,3 +80,11 @@ img{
     margin-bottom: 20px;
     display: block;
 }
+
+h2 {
+    display: flex;
+    align-items: center;
+}
+.num{
+    margin-right: 10px;
+}
