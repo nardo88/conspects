@@ -39,6 +39,9 @@
         {"words": "share", "translate": "разделять (мнение)"},
         {"words": "point of view", "translate": "точка зрения"},
         {"words": "inspire", "translate": "вдохновлять"},
-        {"words": "mention", "translate": "упоминать"}
+        {"words": "mention", "translate": "упоминать"},
+        {"words": "kind", "translate": "добрый"},
+        {"words": "poor", "translate": "бедный"},
+        {"words": "sure", "translate": "уверен"}
     ]
 }
