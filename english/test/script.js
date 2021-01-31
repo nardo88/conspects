@@ -102,7 +102,7 @@ fetch('base.json').then(response => response.json()).then(data => {
     // получаем рандомные слова
     const wordsCollection = getRandomWords(words)
     // рендерим данные на странице
-    renderData(words);
+    renderData(wordsCollection);
     // запускаем проверку полей ввода
     checkValue(wordsCollection)
 })
