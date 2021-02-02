@@ -39,6 +39,18 @@
         {"words": "share", "translate": "разделять (мнение)"},
         {"words": "point of view", "translate": "точка зрения"},
         {"words": "inspire", "translate": "вдохновлять"},
-        {"words": "mention", "translate": "упоминать"}
+        {"words": "mention", "translate": "упоминать"},
+        {"words": "kind", "translate": "добрый"},
+        {"words": "poor", "translate": "бедный"},
+        {"words": "sure", "translate": "уверен"},
+        {"words": "obvious", "translate": "очевидный"},
+        {"words": "worse", "translate": "хуже"},
+        {"words": "high", "translate": "высокий"},
+        {"words": "low", "translate": "низкий"},
+        {"words": "informative", "translate": "информативный"},
+        {"words": "expensive", "translate": "дорогой (дорого)"},
+        {"words": "cheap", "translate": "дешевый (дешево)"},
+        {"words": "warm", "translate": "теплый"},
+        {"words": "hot", "translate": "горячий"}
     ]
 }
