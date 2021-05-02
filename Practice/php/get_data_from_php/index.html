@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Динамическое наполнение страницы данными из php</h1>
+    <h2>Подготовка данных</h2>
+    <img src="./img1.jpg" alt="">
+    <h2>Импорт данных на главную страницу</h2>
+    <img src="./img2.jpg" alt="">
+    <ul>
+        <li><b>require</b> - в качестве аргумента получает путь до файла от которого получает и возвращает данные. Если файл не доступен то вернет варнинг и фатальную ошибку (скрипт не отработает)</li>
+        <li><b>require_once</b> - в отличии от предыдущего метода, при этом методе файл с данными можно использовать только один раз в проекте.</li>
+        <li><b>include</b> - в отличии от require возвращает только варнинг есть файл не доступен (скрипт отработает)</li>
+        <li><b>include_once</b> - тоже самое что и require_once, с той разницей что в случает если файл не доступен, то вернет только варнинг</li>
+    </ul>
+    <h2>Вывод простых данных</h2>
+    <img src="./img3.jpg" alt="">
+    <p>т.е. мы просто обращаемся к ассоциативному массиву</p>
+    <h2>Вывод данных с помощью forEach</h2>
+    <img src="./img4.jpg" alt="">
+
+</body>
+</html>
