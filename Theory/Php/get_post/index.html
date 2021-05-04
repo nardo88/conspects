@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>GET и POST запросы</h1>
+    <p>После отправки формы любым из способов, формируется глобальный массив, из которого мы можем получить все данные полей формы. ($_GET и $_POST)</p>
+    <img src="./img1.jpg" alt="">
+    <h2>GET</h2>
+    <p>C точки зрения php основное отличие GET от POST - это то, что данные которые мы отправили GET запросом отображаются в адресной строке</p>
+    <img src="./img2.jpg" alt="">
+    <h2>POST</h2>
+    <p>НА самом деле есть еще отличия POST от GET. В Get запросе ограничено количество передаваемой информации. С GET запросом нельзя передавать картинки, файлы или длинные тексты.</p>
+    <p>Что бы использовать метод POST необходимо в форме указать метод POST</p>
+    <img src="./img3.jpg" alt="">
+    <p>При указании в атрибуте action путь до php файла, глобальный массив передастся этому файл php. Например</p>
+    <img src="./img4.jpg" alt="">
+    <p>Так выглядит сам файл content.php</p>
+    <img src="./img5.jpg" alt="">
+
+</body>
+</html>
