@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 	<h2>События мыши:</h2>
@@ -20,6 +21,129 @@
 	<h2>touch события</h2>
 	<img src="./prim3.jpg" alt="">
 	<p>Многие сенсорные экраны позволяют обнаруживать несколько касаний одновременно. У данных событий нет единого связанного  с ними набора координат. Вместо этого их объекты событий имеют свойство <b>touch</b> содержащее массивоподобное множество точек каждая из которых имеет собственное свойство clientX и clientY, pageX и pageY</p>
+	<h2>события загрузки документа - DOMContentLoaded</h2>
+	<img src="./img1.jpg" alt="">
+	<h2>События скролл</h2>
+	<p>Скролл можно слушать не только на <b>document</b>, но и на любом элементе, который имеет скролинг</p>
+	<style>
+		.scroll-block{
+			position: relative;
+			border: 1px solid #000;
+			width: 400px;
+			height: 300px;
+		}
+		.scroll-block__wrapper{
+			background: rgb(209, 238, 255);
+			overflow: auto;
+			position: relative;
+			height: 300px;
+		}
+
+		.scroll-block .text{
+			width: 100%;
+			height: 200%;
+
+		}
+		.data-scroll{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			font-size: 16px;
+			font-family: sans-serif;
+			z-index: 100;
+		}
+
+	</style>
+	<div class="scroll-block">
+		<span class="data-scroll">ТЕСТ</span>
+
+		
+		<div class="scroll-block__wrapper">
+			<p class="text">
+			</p>
+		</div>
+		
+		
+	</div>
+
+	<img src="./img2.jpg" alt="">
+
+
+	<script>
+
+
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const dataScroll = document.querySelector('.data-scroll');
+
+			const getData = i => {
+				dataScroll.textContent = `Высота скролла = ${i}`;
+			}
+
+			document.querySelector('.scroll-block__wrapper').addEventListener('scroll', e => {
+				getData(e.target.scrollTop);
+			})
+
+			getData(0)
+		})
+
+	</script>
+
+
+<h2>Событие скролла без скролла</h2>
+<p>Так же можно отслеживать события прокрутки колесика мыши, даже если у элемента скрола по факту нет. В этом нам поможет событие <b>wheel</b>. Что бы понимать куда мы крутили колесико мыши, у объекта события есть свойство - <b>wheelDelta</b>, при прокрутки вниз оно получает значение = -120, а при прокрутки вверх = 120</p>
+<style>
+	.wheel{
+		width: 200px;
+		height: 200px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		background: tomato;
+		color: #fff;
+		text-align: center;
+
+	}
+
+	.wheel__data{
+		font-size: 20px;
+		text-align: center;
+		font-family: sans-serif;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 100;
+	}
+</style>
+<div class="wheel">
+	покрути колесиком мыши
+</div>
+
+<script>
+
+
+	const wheel = document.querySelector('.wheel');
+
+	wheel.addEventListener('wheel', e => {
+		if (e.wheelDelta > 0){
+			wheel.textContent = 'Крутим вверх';
+		} else {
+			wheel.textContent = 'Крутим вниз';
+		}
+	})
+
+	wheel.addEventListener('mouseenter', () => {
+		document.body.style.overflow = 'hidden'
+	})
+
+	wheel.addEventListener('mouseleave', () => {
+		document.body.style.overflow = 'auto'
+
+	})
+</script>
+
+<img src="./img3.jpg" alt="">
 
 </body>
 </html>
