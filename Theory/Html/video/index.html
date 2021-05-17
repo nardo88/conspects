@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <h1>video</h1>
+    <h3>Синтаксис</h3>
+    <img src="./img1.jpg" alt="">
+
+    <h3>Атрибуты</h3>
+    <ul>
+        <li><b>autoplay</b> - видео начнет проигрываться сразу после загрузки страницы</li>
+        <li><b>сontrols</b> - появится стандартная панель управления видео</li>
+        <li><b>loop</b> - видео будет зациклено</li>
+        <li><b>preload</b> - Используется для загрузки видео вместе с загрузкой веб-страницы. Этот атрибут игнорируется, если установлен autoplay. (значение по умолчанию - none)
+            <ul>
+                <li><strong>none</strong> - Не загружать видео.</li>
+                <li><strong>metadata</strong> - Загрузить только служебную информацию (размеры видео, первый кадр, продолжительность и др.).</li>
+                <li><strong>auto</strong> - Загрузить видео целиком при загрузке страницы.</li>
+            </ul>  
+
+        </li>
+        <li><b>poster</b> - Указывает адрес картинки, которая будет отображаться, пока видео не доступно или не вопроизводится. (poster="./img1.jpg")</li>
+        <li><b>src</b> - Указывает путь к воспроизводимому видеоролику.</li>
+        <li><b>muted</b> - если указать значение "muted", то у видео будет отключен звук</li>
+        <li><b>playsinline</b> - атрибут для корректного отображения видео в safari</li>
+       
+    </ul>
+    <xmp>
+        <video class="video-girl__item" muted="muted" playsinline="" autoplay="" loop="" preload="auto">
+            <source src="./video/promo.mp4" type="video/mp4"><!-- MP4 для Safari, IE9, iPhone, iPad, Android, и Windows Phone 7 -->
+            <source src="./video/promo.webm" type="video/webm"><!-- WebM/VP8 для Firefox4, Opera, и Chrome -->
+        </video>
+    </xmp>
+
+    <p>Часто встают проблемы с браузером safari. Видео не проигрывается. Что делать? Во-первых, видео должно быть в формате mp4. Во-вторых, должны стоять атрибуты muted и playsinline. И в-третьих, на устройстве (iphone, mac) должен быть отключен энергосберегающий режим.</p>
+    
+</body>
+
+</html>
