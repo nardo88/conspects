@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Базы данных</h1>
+    <p>Основные настройки <b>phpMyAdmin</b></p>
+    <img src="./img1.jpg" alt="">
+    <p>Кодировка позволяет избежать встречи с краказябрами, а тема <b>pmahomme</b> сделает интерфейс более приятный для глаза</p>
+    <h2>Создание БД вручную средставим phpMyAdmin</h2>
+    <h3>Создание БД</h3>
+    <p><span class="num">1</span> Кликаем по кнопке <b>Создать БД</b></p>
+    <img src="./img2.jpg" alt="">
+    <p><span class="num">2</span> В открывшемся окне мы указываем имя нашей будущей БД. Кодировку можно не трогать, так как мы ее указали на глобальном уровне</p>
+    <img src="./img3.jpg" alt="">
+    <p>После указания имени БД жмем кнопку <b>Создать</b></p>
+    <h3>Создание таблиц</h3>
+    <p><span class="num">1</span> Сразу же откроется окно, где нам предложат создать таблицу. Указываем имя и количество столбцов в таблице</p>
+    <img src="./img4.jpg" alt="">
+    <p><span class="num">2</span> Как правило первый столбец таблицы выделяют под уникальный индекс записи - id. В разделе <b>ИНДЕКС</b> для поле id выберем тип <b>PRIMARY</b>. Так же указываем галочку A_I (автоинкремент)</p>
+    <img src="./img5.jpg" alt="">
+    <p><span class="num">3</span> Оставшиеся поля заполняем по нашему усмотрению</p>
+    <img src="./img6.jpg" alt="">
+    <h4>Варианты типа полей</h4>
+    <ul>
+        <li><b>INT</b> - целочисленный тип</li>
+        <li><b>TEXT</b> - текст (подходит для абзацев)</li>
+        <li><b>VARCHAR</b> - небольшая строка</li>
+        <li><b>DATE</b> - дата</li>
+    </ul>
+    <p>Жмем <b>Созранить</b></p>
+    <h2>Наполнение таблицы средствами phpMyAdmin</h2>
+    <p><span class="num">1</span> Открываем таблицу и верхней панели нажимаем кнопку <b>Вставить</b></p>
+    <img src="./img7.jpg" alt="">
+    <p><span class="num">2</span> Интерфейс добавления записи интуитивно понятен, заполняем поля и жмем кнопку <b>Вперед</b> (id указывать ненужно, т.к это инкремент и он заполнится автоматом)</p>
+    <img src="./img8.jpg" alt="">
+    <p>Для просмотра самой таблицы жмем вкладку <b>Обзор</b></p>
+    <img src="./img9.jpg" alt="">
+    <h2>Создание БД средствами SQL</h2>
+    <p><span class="num">1</span> Переходим на главную страницу phpMyAdmin в самом низу видим кнопку <b>Консоль</b></p>
+    <img src="./img10.jpg" alt="">
+    <h3>Удаление БД</h3>
+    <span class="code">DROP DATABASE glo_php;</span>
+    <p>после каждой команды ставится точка с запятой. Для выполнения запроса жмем Ctrl + Enter</p>
+    <h3>Создание БД</h3>
+    <span class="code">CREATE DATABASE glo_php;</span>
+    <h3>Создание таблицы</h3>
+    <span class="code">CREATE TABLE glo_php.users (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY);</span>
+    <ul>
+        <li><b>CREATE TABLE</b> - создаем таблицу</li>
+        <li><b>glo_php.users</b> - в базе glo_php имя таблицы users</li>
+        <li><b>id</b> - название солбца</li>
+        <li><b>INT</b> - тип столбца</li>
+        <li><b>NOT NULL</b> - обязательное поле</li>
+        <li><b>AUTO_INCREMENT</b> - автоинкремент</li>
+        <li><b>PRIMARY KEY</b> - главное поле</li>
+    </ul>
+    <h3>Добавление остальных полей</h3>
+    <span class="code">ALTER TABLE users ADD login VARCHAR(30) NOT NULL;</span>
+
+    <ul>
+        <li><b>ALTER TABLE</b> - работаем с полями таблицы</li>
+        <li><b>users</b> - название таблицы</li>
+        <li><b>ADD</b> - действие (добавить)</li>
+        <li><b>login</b> - название поля</li>
+        <li><b>VARCHAR(30)</b> - тип и длина</li>
+        <li><b>NOT NULL</b> - не пустое поле</li>
+    </ul>
+    <h3>Добавление нескольких полей</h3>
+    <span class="code">ALTER TABLE users ADD (password VARCHAR(30) NOT NULL, country VARCHAR(30) NOT NULL, test INT);</span>
+    <img src="./img11.jpg" alt="">
+    <h3>Удаление поля test</h3>
+    <span class="code">ALTER TABLE users DROP test;</span>
+    <h2>Заполнение таблицы средствами SQL</h2>
+    <h3>Добавление записи</h3>
+    <span class="code">INSERT INTO users (login, password, country) VALUES ('nardo', '123456', 'Russia')</span>
+    <p>VALUES - это значения полей</p>
+    <img src="./img12.jpg" alt="">
+    <h3>Добавление нескольких строк</h3>
+    <span class="code">INSERT INTO users (login, password, country) VALUES ('nardo', '123456', 'Russia'), ('nagato', '654321', 'USA')</span>
+    <img src="./img13.jpg" alt="">
+    <h3>Показать все записи</h3>
+    <span class="code">SELECT * FROM `users`</span>
+    <h3>Показать определенные записи</h3>
+    <span class="code">SELECT * FROM users WHERE country = 'Russia'</span>
+    <p>иными словами показать все ( * ) из таблицы users где country = 'Russia' </p>
+    <p>Второй вариант</p>
+    <img src="./img14.jpg" alt="">
+    <p>Третий вариант</p>
+    <img src="./img15.jpg" alt="">
+    <p>т.е. показать логин и стран в таблице users где страна равна USA</p>
+
+
+</body>
+</html>
