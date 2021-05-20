@@ -94,7 +94,22 @@
     <p>Третий вариант</p>
     <img src="./img15.jpg" alt="">
     <p>т.е. показать логин и стран в таблице users где страна равна USA</p>
-
+    <h3>Сортировка полей</h3>
+    <span class="code">SELECT * FROM glo_php.users ORDER BY id</span>
+    <p>Сортировка записей по id</p>
+    <img src="./img16.jpg" alt="">
+    <p>Если в конце запроса добавить слово DESC то сортировка будет по убыванию</p>
+    <img src="./img17.jpg" alt="">
+    <h3>Связывание таблиц при помощи внешнего ключа</h3>
+    <p>Что имеется ввиду. Допустим у нас есть таблица с пользователями (user). Поле таблицы login должно быть уникальное. У пользователя могут быть заказы (таблица orders). Как определить к кому относится тот или иной заказ, к какому пользователю? В таблице orders нам нужно сделать так что бы в поле order_login подставлялось значение из таблицы users. Иными словами нельзя создать заказ пользователя, запись которого будет отсутствовать в таблице users. Как установить эту связь?</p>
+    <p>Перед тем как устанавливать связть в таблице user необходимо сделать поле login уникальным, делается это следующей командой:</p>
+    <span class="code">ALTER TABLE users ADD UNIQUE (login)</span>
+    <img src="./img18.jpg" alt="">
+    <p>После этого создаем связь</p>
+    <span class="code">ALTER TABLE orders ADD CONSTRAINT FK_users_orders FOREIGN KEY (order_login) REFERENCES users (login) ON UPDATE CASCADE ON DELETE CASCADE</span>
+    <img src="./img19.jpg" alt="">
+    <p>Что бы разорвать связь вводим команду:</p>
+    <span class="code">ALTER TABLE orders DROP FOREIGN KEY FK_users_orders</span>
 
 </body>
 </html>
