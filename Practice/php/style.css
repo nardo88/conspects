@@ -3,6 +3,12 @@
     font-family: sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: skyblue;
+    font-weight: bold;
+}
+
 body{
     background: #ffffff;
     font-size: 18px;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Преобразование данных из БД (MySQL) d JSON</h1>
+    <p> <a href="https://github.com/nardo88/from_SQL_to_JSON" target="_blank">Ссылка на GitHub</a>  </p>
+    <p>Алгоритм действий следующий</p>
+    <ol>
+        <li>Получить данные из БД</li>
+        <li>Создать пустой массив</li>
+        <li>Создать класс который будет создавать объект с ключами</li>
+        <li>Пробежаться по массиву полученному из БД и на каждой итерации создавать объект на основании класса и запушить этот объект в новый массив</li>
+        <li>После этого новый массив с объектами кодируем в JSON и возвращаем его через echo</li>
+    </ol>
+    <img src="./img1.jpg" alt="">
+</body>
+</html>
