@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Безопасность</h1>
+    <h2>XSS</h2>
+    <p><b>XSS</b> - (англ. Cross-Site Scripting — «межсайтовый скриптинг») — довольно распространенная уязвимость, которую можно обнаружить на множестве веб-приложений. Ее суть довольно проста, злоумышленнику удается внедрить на страницу JavaScript-код, который не был предусмотрен разработчиками.</p>
+    <h3>Пример</h3>
+    <p>Допустим у нас есть форма, для отправки комментариев. В поле ввода можно ввести вот такой код:</p>
+    <img src="./img1.jpg" alt="">
+    <p>Этот код будет бесконечно выводить alert</p>
+    <h3>Пример XSS инъекции</h3>
+	<video controls="controls"  width="50%" height="auto"  src="https://firebasestorage.googleapis.com/v0/b/forconspects.appspot.com/o/video%2Fadd_xss.mp4?alt=media&token=adc9b493-ebb3-4636-b765-d9b192664dbd"></video>
+    <p>Что бы избежать добавления тегов в сообщении можно использовать метод <b>strip_tags</b></p>
+    <img src="./img2.jpg" alt="">
+    <p>Минус этого метода в том, что если пользователь без злого умысла захочет указать в сообщении знак больше или меньше (&lt; или &gt;), то strip_tags вырежет все, что будет между ними или же просто удалит эти знаки.</p>
+    <p>Кроме <b>strip_tags</b> можно использовать <b>htmlspecialchars</b> - этот метод преобразует теги в строки и браузер не будет воспринимать код как код. Для него это будет обычная строка</p>
+    <img src="./img3.jpg" alt="">
+
+    
+
+</body>
+</html>
