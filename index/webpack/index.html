@@ -52,17 +52,16 @@
     <xmp style="background: rgb(214, 214, 214);">
 
         const path = require('path')
-
+ 
         module.exports = {
-            entry: './src/index.js',
-            devServer: {
-                open: true,
-                port: 8085,
-                hot: true,
-            },
+            entry: './src/main.js',
+            
             output: {
-                filename: 'bundle.js',
-                path: path.resolve(__dirname, './dist')
+                filename: 'slider-scroll.js',
+                path: path.resolve(__dirname, './js'),
+                environment: {
+                    arrowFunction: false,
+                }
             },
             mode: 'production',
             module: {
