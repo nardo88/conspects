@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Создание темы</h1>
+    <p><a href="./e-store.rar">ГОТОВАЯ ЗАГОТОВКА ТЕМЫ</a></p>
+    <p><span class="num">1</span> В папке с темами Wordpress создаем папку, например назовем ее <b>e-store</b></p>
+    <p>Далее в этой папке необходимо создать файлы:</p>
+    <ul>
+        <li>index.php</li>
+        <li>style.css</li>
+    </ul>
+    <p>После этого в консоле Wordpress появится наша тема</p>
+    <p><span class="num">2</span> Далее идем на <a href="https://underscores.me/" target="_blank">https://underscores.me/</a> жмем на <b>Advanced Options</b></p>
+    <img src="./img1.jpg" alt="">
+    <p>Вписываем имя нашей темы и ставим галочку woocommerce, после чего жмем сгенерировать</p>
+    <img src="./img2.jpg" alt="">
+    <p><span class="num">3</span> У сгенерированной темы, все штатные файлы копируем в папку с нашей темой в Wordpress</b></p>
+    <img src="./img3.jpg" alt="">
+    <p>Удаляем файлы:</p>
+    <ul>
+        <li>LICENSE</li>
+        <li>phpcs.xml.dist</li>
+        <li>README.md</li>
+        <li>readme.txt</li>
+    </ul>
+    <p>Так же в папку с темой копируем папку из сгенерированной темы <b>template-parts</b> - в этой папке будут храниться части кода, которые относятся к ками-то страницам. Например вывод карточки товаров. Т.е. в том разделе где нам надо поместить этот участок кода, мы просто будем обращаться к этому файлу.</p>
+    <p><span class="num">4</span> Приводим в порядок файл style.css. Копируем содержимое style.css из сгенерированной темы и переносим в наш файл. В начале файла правим данные нашей темы</p>
+    <img src="./img4.jpg" alt="">
+    <p>Что касается стилей которые прописаны в style.css генератором. Там указаны стили normalyze. Если верстка была выполнена с использованием Bootstrap, то эти стили можно закомментировать, т.к. в Bootstrap уже встроены эти стили.</p>
+
+    <p><span class="num">5</span> Далее в папке с темой в Wordpress создаем папку <b>templates</b> - в этой папке будут храниться шаблоны страниц, например в этой папке можно создать файл main-page.php (шаблон главной страницы сайта)</p>
+    <p><span class="num">6</span> Далее в папке с темой в Wordpress создаем папку <b>includes</b> - в этой папке будут храниться весь функционал. В эту папку копируем файлы из папки <b>inc</b> сгенерированной темы через underscores</p>
+    <p><span class="num">7</span> Далее в папке с темой в Wordpress создаем папку <b>assets</b> - это общая папка для фронтенда. В этой папке должны быть подпапки:</p>
+    <ul>
+        <li>fonts</li>
+        <li>css</li>
+        <li>js</li>
+        <li>img</li>
+    </ul>
+    <p>В эти папки переносим скрипты картинки и стили из верстки</p>
+    <p><span class="num">8</span> Далее в папке с темой в Wordpress создаем папку <b>woocommerce</b> - В эту папку мы скопируем файлы из плагина самого woocommerce, НО! Внутри этой папки создаем еще одну директорию <b>includes</b>, в этой папке должен быть файл который будет отвечать за наши отношения с Woocommerce, этот файл должен называться <b>wc-functions.php</b>. Там же создаем еще один файл - <b>wc-functions-remove.php</b>. В этом файле мы будем выключать глобально некоторые настройки</p>
+    <p><span class="num">9</span> Далее нам необходимо определить, на чем мы будем делать функционал и настройки произвольных полей нашей темы. Для этого будем использовать фреймворк <b>carbonefields</b></p>
+    <p><a href="https://docs.carbonfields.net/plugin-quickstart.html#without-composer" target="_blank">https://carbonfields.net/</a></p>
+    <p>Заходим на офф сайт этого фреймворка и жмем внопку скачать</p>
+    <img src="./img5.jpg" alt="">
+    <p>Скаченный архив разархивируем и папку <b>carbon-fields</b> помещаем в папку wp-content\themes\e-store\includes</p>
+    <p>СКАЧЕННЫЙ АРХИВ У МЕНЯ ВЫДАВАЛ ФАТАЛЬНУЮ ОШИБКУ. ВОТ ССЫЛКА НА НОРМАЛЬНУЮ ВЕРСИЮ <a href="./carbon-fields.rar">Архив</a></p>
+    <img src="./img6.jpg" alt="">
+    <p><span class="num">10</span> Все что нам остается сделать - это все правильно переподключить, что бы избежать фатальных ошибок и варнингов. Для этого открываем файл <b>functions.php</b> в корне темы Wordpress</p>
+    <p>В папке <b>includes</b> (которая находится в корне темы) создаем файл theme-settings.php</p>
+    <p>В этот файл добавляем вот такой код:</p>
+    <img src="./img7.jpg" alt="">
+    <xmp>
+        if (! defined('ABSPATH')){
+            exit;
+        }
+
+    </xmp>
+    <p>Далее из файла <b>functions.php</b> (который находится в корне темы) необходимо вырезать объявление функции <b>estore_setup</b> вместе с ее вызовом</p>
+    <img src="./img8.jpg" alt="">
+    <img src="./img9.jpg" alt="">
+    <p>И вставить в только что созданный файл <b>theme-settings.php</b></p>
+    <p>Из этой функции УДАЛЯЕМ строчку <b>load_theme_textdomain</b> и <b>register_nav_menus</b> (nav_menu - мы сделаем отдельным файлом)</p>
+    <p><b>custom-background</b> так же удаляем. В итоге файл будет выглядеть вот так:</p>
+    <img style="width: 700px;" src="./code.png" alt="">
+    <p>Теперь нужно подключить этот файл в functions.php. Подключаем вот таким образом (в самом начале файла прописываем строчку)</p>
+    <img src="./img10.jpg" alt="">
+    <p>Вот этот кусок кода, так же отвечает за ширину отображения контента, его та же надо перенестив файл <b>theme-settings.php</b> (копируем этот участок кода в самый конец файла).</p>
+    <img src="./img11.jpg" alt="">
+    <p>Регистрация виджетов. Для виджетов сделаем так же отдельный файл в папке <b>includes</b>. Назовем его <b>widget-areas.php</b> и в этот файл копируем вот этот участок</p>
+    <p>Точно так же в начало файла добавляем код </p>
+    <xmp>
+        if (! defined('ABSPATH')){
+            exit;
+        }
+    </xmp>
+
+    <p>После копируем вот этот</p>
+    <img src="./img12.jpg" alt="">
+    <p>Не забываем подключить только что созданный файл в <b>functions.php</b></p>
+    <p>Далее у нас идет подключение скриптов и стилей, для них мы тоже делаем отдельный файл <b>enqueue-script-style.php</b></p>
+    <p>Процедура все та же, сначала условие  if (! defined('ABSPATH')). Затем копируем из functions.php вот такой кусок</p>
+    <img src="./img13.jpg" alt="">
+    <p>И точно так же подключаем этот файл в functions.php</p>
+    <img src="./img14.jpg" alt="">
+    <p>Вообще хорошей практикой считается разделять подключение стилей и скриптов в отдельные функции, т.е. файл <b>enqueue-script-style.php</b> в итоге будет выглядетьпримерно так: (опять же пути до файлов скриптов и стилей пока указан не корректно т.к. мы эти файлы пока не переносили)</p>
+    <img src="./img15.jpg" alt="">
+    <p>Теперь поправим пути до файлов которые нам сгенерировал генератор темы. (эти файлы мы поместили в папку includes, а пути указаны как inc)</p>
+    <img src="./img16.jpg" alt="">
+    <p>Еще раз - мы в файле functions.php который находится в папке с темой wordpress поправили пути до файлов которые теперь находятся в папке includes</p>
+    <p><span class="num">11</span> Теперь открываем файл <b>woocommerce.php</b> который находится в папку <b>includes</b>/ Здесь на мнужна строчка</p>
+    <img src="./img17.jpg" alt="">
+    <p>Эта строчка отвечает за отключение всех скриптов, ее перемещаем в файл <b>wc-functions-remove.php</b> который находится в папке woocommerce/includes</p>
+    <p>Так же в начало файла wc-functions-remove.php помещаем уже знакомый нам код</p>
+    <xmp>
+        if (! defined('ABSPATH')){
+            exit;
+        }
+    </xmp>
+    <p>Далее этот участок кода из файла <b>woocommerce.php</b> мы переносим в файл настройки темы <b>theme-settings.php</b> </p>
+    <img src="./img18.jpg" alt="">
+    <p><span class="num">12</span> Теперь необходимо подключить <b>carbon-fields</b> и файлы <b>wc-functions-remove.php</b> и <b>wc-functions.php</b> которые находят в woocommers/includes</p>
+    <p>Подключать мы будем в <b>functions.php</b>. В самом конце файла находим вот такой участок</p>
+    <img src="./img19.jpg" alt="">
+    <p>И добавляем две строчки что бы все выглядело вот так</p>
+    <img src="./img20.jpg" alt="">
+    <p><span class="num">13</span> Подключаем <b>carbon-fields</b>. Для этого в папке <b>includes</b> корневой папки темы, создаем папку <b>custom-fields-options</b>. В этой директории мы создаем парочку файлов.</p>
+    <ul>
+        <li><b>theme-options.php</b> - здесь мы будем подключать глобальные настройки</li>
+        <li><b>metabox.php</b> - здесь мы будем подключатьнастройки метабоксов</li>
+    </ul>
+    <p>Теперь что бы подключить <b>carbon-fields</b> в файле function.php d начало файла добавляем вот такой код:</p>
+    <xmp>
+        
+add_action( 'after_setup_theme', 'crb_load' );
+function crb_load() {
+	load_template( get_template_directory() . '/includes/carbon-fields/vendor/autoload.php' );
+	\Carbon_Fields\Carbon_Fields::boot();
+}
+    </xmp>
+    <img src="./img21.jpg" alt="">
+    <p>Теперь чуть нижу добавим вот такой код для подключения двух файлов которые только что создали (theme-options.php и metabox.php)</p>
+
+
+    <xmp>
+add_action( 'carbon_fields_register_fields', 'estore_register_custom_fields' );
+function estore_register_custom_fields() {
+	require get_template_directory() . '/includes/custom-fields-options/metabox.php';
+	require get_template_directory() . '/includes/custom-fields-options/theme-optons.php';
+}
+    </xmp>
+
+    <img src="./img22.jpg" alt="">
+
+
+
+<p>Теперь в файлы theme-options.php и metabox.php добавляем такой код:</p>
+<h2>theme-options.php</h2>
+<xmp>
+    <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+// Default options page
+$basic_options_container = Container::make( 'theme_options', 'Basic Options' )
+                                    ->add_fields( array(
+	                                    Field::make( 'header_scripts', 'crb_header_script' ),
+	                                    Field::make( 'footer_scripts', 'crb_footer_script' ),
+                                    ) );
+
+// Add second options page under 'Basic Options'
+Container::make( 'theme_options', 'Social Links' )
+         ->set_page_parent( $basic_options_container ) // reference to a top level container
+         ->add_fields( array(
+		Field::make( 'text', 'crb_facebook_link' ),
+		Field::make( 'text', 'crb_twitter_link' ),
+	) );
+
+// Add third options page under "Appearance"
+Container::make( 'theme_options', 'Customize Background' )
+         ->set_page_parent( 'themes.php' ) // identificator of the "Appearance" admin section
+         ->add_fields( array(
+		Field::make( 'color', 'crb_background_color' ),
+		Field::make( 'image', 'crb_background_image' ),
+	) );
+</xmp>
+
+
+
+<h2>Для metabox.php </h2>
+
+<xmp>
+    <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+Container::make( 'post_meta', 'Custom Data' )
+         ->show_on_post_type('page')
+         ->show_on_template( 'templates/main-page.php' )
+         ->add_fields( array(
+	         Field::make( 'image', 'crb_photo' ),
+         ) );
+</xmp>
+
+
+<p>Так же в штсдгвуы добавляем файл helper который поможет дебажить код. Файлик можно скачать в готовом шаблоне</p>
+</body>
+</html>
