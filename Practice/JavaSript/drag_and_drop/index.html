@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: 45px;
+        }
+
+        .drop-area {
+            width: 80vw;
+            height: 80%;
+            border: 2px #000 dashed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            font-weight: bold;
+
+
+        }
+
+        .drop-area--active {
+            background: rgb(187, 187, 187);
+            border: 3px #000 dashed;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Загрузка файлов через DnD</h1>
+    <div class="container">
+        <div class="drop-area">Перетащи сюда файл</div>
+    </div>
+    <img src="./img1.jpg" alt="">
+
+
+    <script>
+
+        const dropArea = document.querySelector('.drop-area');
+
+        // срабатывает когда файл отпустили
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            // c помощью диструктуризации получаем массив файлов
+            let files = [...e.dataTransfer.files];
+            dropArea.classList.remove('drop-area--active')
+            dropArea.textContent = files[0].name
+        })
+
+        dropArea.addEventListener('dragstart', e => {
+            e.preventDefault();
+            console.log('start');
+        })
+
+        // срабатывает каждый раз когда курсор над элементом
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault()
+            console.log('over');
+            dropArea.classList.add('drop-area--active')
+        })
+
+        // срабатывает когда курсов отвели
+        dropArea.addEventListener('dragleave', e => {
+            e.preventDefault()
+            dropArea.classList.remove('drop-area--active')
+
+            console.log('leave');
+        })
+
+    </script>
+</body>
+
+</html>

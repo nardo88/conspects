@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Загрузка файлов через DnD</h1>
+    <p>Первое что делаем это создаем два state для массива файлов и состоянием области DnD</p>
+    <img src="./img1.jpg" alt="">
+    <p>Далее на область куда будем перетаскивать (обыкновенный div) вешаем три слушателя события</p>
+    <ul>
+        <li><b>onDragStart</b></li>
+        <li><b>onDragLeave</b></li>
+        <li><b>onDragOver</b></li>
+    </ul>
+    <p>onDragStart onDragOver - должны запускать функцию которая будет менять наш state в значение true. </p>
+    <img src="./img2.jpg" alt="">
+    <p>Обязательно не забываем отключать стандартное поведение браузера</p>
+    <p>onDragLeave - должна вызывать функцию которая будет делать обратное, т.е. возвращать state в значение false</p>
+    <img src="./img3.jpg" alt="">
+    <p>Для чего нужна эта игра со  state? C помощью значения true или false мы можем визуально изменять нашу область куда перетаскивается файл, например добавлять стили которые будут меня цвет фона и т.д</p>
+    <p>Без этих трех слушателей ничего не будет работать.</p>
+    <p>Теперь повесим на нашу область четвертый слушатель - <b>onDrop</b>. Это событие сработает когда мы отпустим файлы. Получить файлы можно с помощью свойства объекта события <b>e.dataTransfer.files</b>. В массиве <b>files</b> буду храниться наши файлы</p>
+    <img src="./img4.jpg" alt="">
+
+</body>
+</html>
