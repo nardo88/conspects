@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Использование препроцессора SASS в React</h1>
+    <p>Для того что бы использовать препроцессор SASS в React необходимо установить пакет который называется <b>node sass</b></p>
+    <p><a href="https://www.npmjs.com/package/node-sass" target="_blank">Ссылка на оф страницу </a></p>
+    <p>Но перед тем как устанавливать этот пакет необходимо обратить внимание на один нюанс. Дело в то, что определенные версии NODE SASS работают с определенными версиями Node.js. Соответствие версий можно посмотреть в таблице на официальном сайте. Выглядит она так:</p>
+    <img src="./img1.jpg" alt="">
+    <p>Т.е. перед тем как устанавливать SASS необходимо уточнить какая у нас версия Node.js, сделать это можно введя в консоле команду:</p>
+    <span class="code">node -v</span>
+    <p>Для того что бы установить node-sass нужно версии вводим в консоле вот такую команду</p>
+    <span class="code">npm install node-sass@4.14</span>
+    <p>В этом примере мы установим версию 4.14</p>
+    <p>В случае если мы не указали версию node-sass у нас установится последняя версия программы. Как это исправить? Открываем <b>package.json</b>, ищем в списке <b>dependencies</b> - <b>node-sass</b> и меняем первую цифру. Если нам нужна 4-ая версия, запись будет выглядеть вот так:</p>
+    <img src="./img2.jpg" alt="">
+    <p>После чего просто переустанавливаем зависимости</p>
+    <span class="code">npm i</span>
+    <p>Все что нам остается это переименовать файлы css в scss и поправить расширения файлов стилей в импортах</p>
+</body>
+</html>
